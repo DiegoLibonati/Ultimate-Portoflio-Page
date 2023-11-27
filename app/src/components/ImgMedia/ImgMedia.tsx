@@ -6,7 +6,7 @@ export const ImgMedia = ({
   id,
   src,
   alt,
-  likes,
+  title,
 }: ImgMediaType): JSX.Element => {
   const { redirectTo } = useRouter();
   const { theme } = useUiStore();
@@ -20,11 +20,11 @@ export const ImgMedia = ({
         className="relative z-20 rounded-lg w-full h-full object-cover hover:opacity-25 cursor-pointer"
       ></img>
       <h2
-        className={`absolute z-10 text-sm md:text-5xl ${
+        className={`absolute z-10 text-sm text-center md:text-5xl ${
           theme ? "text-black" : "text-white"
         }`}
       >
-        {likes} 💕
+        {title}
       </h2>
     </div>
   );

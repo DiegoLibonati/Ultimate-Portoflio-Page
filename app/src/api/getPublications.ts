@@ -1,11 +1,15 @@
 import { PublicationType } from "../entities/types";
-import portfolioApi from "./portfolioApi";
 
 export const getPublications = async (): Promise<PublicationType[]> => {
   try {
-    const result = await portfolioApi.get("/publications/publications");
-
-    return result.data.data;
+    const result = await fetch("/publications.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    const publications = await result.json();
+    return publications;
   } catch (e) {
     console.log(e);
     throw e;

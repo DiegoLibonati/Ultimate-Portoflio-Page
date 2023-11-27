@@ -74,12 +74,10 @@ export type TabType = {
 
 // ButtonPublicationType
 export type ButtonPublicationType = {
+  id?: string;
   children: React.ReactNode;
   hasMargin?: boolean;
-  onClick?: () => void;
-  onMouseEnter?: () => void;
-  onMouseDown?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-  onTouchStart?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
 // useCheckMobileScreen
@@ -143,10 +141,6 @@ export type UsePublicationsStore = {
   handleSetPublications: (
     publications: Promise<PublicationType[]>
   ) => Promise<void>;
-  handleEditLikes: (
-    idPublication: number | undefined,
-    likes: number
-  ) => Promise<void>;
 };
 
 // PublicationType
@@ -156,9 +150,8 @@ export type PublicationType = {
   date: string;
   status: string;
   title: string;
-  description: string;
   link: string;
-  likes: number;
+  description: string;
   ubication: string;
 };
 
@@ -183,25 +176,7 @@ export type ImgMediaType = {
   id: number;
   src: string;
   alt: string;
-  likes: number;
-};
-
-// UseLikesReturnType
-export type UseLikesReturnType = {
-  likes: number;
-  buttonEffect: boolean;
-  handleSetLikes: (paramsLike: number = 0) => void;
-};
-
-// PutLikesType
-export type PutLikesType = {
-  id: number | undefined;
-  likes: number;
-};
-
-// UseLikesType
-export type UseLikesType = {
-  idPublication: number | undefined;
+  title: string;
 };
 
 // usePaginatorType

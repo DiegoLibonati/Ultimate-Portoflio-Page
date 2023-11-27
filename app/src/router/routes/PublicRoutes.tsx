@@ -11,11 +11,16 @@ import { useProfileStore } from "../../hooks/useProfileStore";
 import { PublicationPage } from "../../pages/PublicationPage";
 import { getPublications } from "../../api/getPublications";
 import { usePublicationsStore } from "../../hooks/usePublicationsStore";
+import { images } from "../../assets/exports";
+import { useUiStore } from "../../hooks/useUiStore";
+import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
 
 export const PublicRoutes = (): JSX.Element => {
   const { pathname, redirectTo } = useRouter();
   const { handleSetProfile } = useProfileStore();
   const { handleSetPublications } = usePublicationsStore();
+  const { theme } = useUiStore();
+  const { isMobile } = useCheckMobileScreen();
 
   useEffect(() => {
     const profileData = getProfile();
@@ -40,6 +45,13 @@ export const PublicRoutes = (): JSX.Element => {
         ></Route>
         <Route path="/*" element={<Navigate to="/feed"></Navigate>}></Route>
       </Routes>
+      {!isMobile && (
+        <img
+          src={theme ? images.lightDl : images.nightDL}
+          alt="imagen"
+          className="fixed bottom-0 right-0 w-32 h-32 object-cover opacity-30"
+        ></img>
+      )}
       <Footer></Footer>
     </>
   );

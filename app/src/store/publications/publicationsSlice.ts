@@ -36,29 +36,9 @@ export const publicationsSlice = createSlice({
       state.activePublication = action.payload;
       return;
     },
-    setLikes: (state, action: PayloadAction<payload["likes"]>) => {
-      if (
-        state.activePublication &&
-        action.payload.idPublication === state.activePublication.id
-      ) {
-        state.activePublication!.likes = action.payload.likes;
-      }
-
-      if (state.publications.length > 0) {
-        state.publications.map((publication: PublicationType) => {
-          if (publication.id === action.payload.idPublication) {
-            publication.likes = action.payload.likes;
-          }
-          return publication;
-        });
-      }
-
-      return;
-    },
   },
 });
 
-export const { setPublications, setPublication, setLikes } =
-  publicationsSlice.actions;
+export const { setPublications, setPublication } = publicationsSlice.actions;
 
 export default publicationsSlice.reducer;

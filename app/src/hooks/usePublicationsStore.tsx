@@ -1,6 +1,5 @@
 import { PublicationType, UsePublicationsStore } from "../entities/types";
 import {
-  setLikes,
   setPublication,
   setPublications,
 } from "../store/publications/publicationsSlice";
@@ -26,19 +25,10 @@ export const usePublicationsStore = (): UsePublicationsStore => {
     return;
   };
 
-  const handleEditLikes = async (
-    idPublication: number | undefined,
-    likes: number
-  ): Promise<void> => {
-    dispatch(setLikes({ idPublication: idPublication, likes: likes }));
-    return;
-  };
-
   return {
     activePublication,
     publications,
     handleSetPublication,
     handleSetPublications,
-    handleEditLikes,
   };
 };

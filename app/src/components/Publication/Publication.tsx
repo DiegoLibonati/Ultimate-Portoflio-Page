@@ -1,31 +1,20 @@
 import { TbPinnedFilled } from "react-icons/tb";
-import { AiOutlineHeart, AiOutlineShareAlt, AiFillHeart } from "react-icons/ai";
+import { AiOutlineShareAlt } from "react-icons/ai";
 import { SiGooglemaps } from "react-icons/si";
 import { useProfileStore } from "../../hooks/useProfileStore";
 import { ButtonPublication } from "../ButtonPublication/ButtonPublication";
 import { useRouter } from "../../hooks/useRouter";
 import { PublicationComponentType } from "../../entities/types";
 import { parseDate } from "../../helpers/parseDate";
-import { useLikes } from "../../hooks/useLikes";
-import { useEffect, useState } from "react";
 import { useUiStore } from "../../hooks/useUiStore";
-import { useHost } from "../../hooks/useHost";
 import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
-import { images } from "../../assets/exports";
 
 export const Publication = ({
   publication,
 }: PublicationComponentType): JSX.Element => {
-  const [preventClick, setPreventClick] = useState<boolean>(false);
-  const [wasLike, setWasLike] = useState<boolean>(false);
-
   const { profile } = useProfileStore();
   const { redirectTo } = useRouter();
-  const { buttonEffect, handleSetLikes } = useLikes({
-    idPublication: publication?.id,
-  });
   const { theme, handleSetAlert } = useUiStore();
-  const { hostname, protocol, port } = useHost();
   const { isMobile } = useCheckMobileScreen();
 
   const onUsernameClick = (): void => {
@@ -34,38 +23,51 @@ export const Publication = ({
   };
 
   const onPublicationClick = (): void => {
-    if (!preventClick) {
-      redirectTo(`/publication/${publication?.id}`);
-      return;
+    redirectTo(`/publication/${publication?.id}`);
+    return;
+  };
+
+  const onCopyClipboard = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ): Promise<void> => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      await navigator.share({
+        title: "Diego Libonati",
+        text: "Diego Libonati Portfolio!",
+        url: window.location.origin + `/#/publication/${publication?.id}`,
+      });
+      handleSetAlert(
+        true,
+        "¡It is successfully copied to your clipboard!",
+        "Success"
+      );
+    } catch (err) {
+      alert(err);
+      handleSetAlert(
+        true,
+        "¡Could not copy link successfully to your clipboard!",
+        "Error"
+      );
     }
     return;
   };
 
-  useEffect(() => {
-    if (preventClick && isMobile) {
-      const timeout = setTimeout(() => {
-        setPreventClick(false);
-      }, 500);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [isMobile, preventClick]);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setWasLike(false);
-    }, 1750);
-
-    return () => clearTimeout(timeout);
-  }, [wasLike]);
-
   return (
     <article
-      className={`flex flex-row justify-start p-2 mt-2 rounded-lg cursor-pointer ${
+      className={`flex flex-row justify-start py-2 pl-2 pr-5 mt-2 rounded-lg cursor-pointer ${
         publication?.isPinned && "flex-wrap"
-      } ${theme ? "hover:bg-hoverGray3" : "hover:bg-hoverGray2"}`}
+      } ${
+        theme && !isMobile
+          ? "hover:bg-hoverGray3"
+          : !theme && !isMobile
+          ? "hover:bg-hoverGray2"
+          : theme && isMobile
+          ? "bg-hoverGray3 m-2"
+          : "bg-hoverGray2 m-2"
+      }`}
       onClick={onPublicationClick}
-      onMouseEnter={() => setPreventClick(false)}
     >
       {publication?.isPinned ? (
         <div className="flex flex-row items-center w-full mb-1">
@@ -90,7 +92,6 @@ export const Publication = ({
                 theme ? "text-black" : "text-white"
               }`}
               onClick={() => onUsernameClick()}
-              onMouseEnter={() => setPreventClick(true)}
             >
               {profile.username}{" "}
             </h2>
@@ -133,19 +134,12 @@ export const Publication = ({
               alt={"Diego Libonati"}
               className="relative z-20 rounded-lg w-full max-h-52 object-cover md:max-h-96 hover:opacity-25 transition-opacity"
             ></img>
-            {wasLike && (
-              <img
-                src={images.heart}
-                alt={"heart gif"}
-                className="absolute z-50 h-72 w-72"
-              ></img>
-            )}
             <h2
-              className={`absolute z-10 text-7xl ${
+              className={`absolute z-10 text-7xl text-center ${
                 theme ? "text-black" : "text-white"
               }`}
             >
-              {publication?.likes} 💕
+              {publication?.title}
             </h2>
           </div>
           <div className="flex flex-row items-center justify-start mt-2">
@@ -155,74 +149,17 @@ export const Publication = ({
             </h2>
           </div>
         </div>
-
         <div className="flex flex-row items-center justify-end w-full mt-1 mr-2 relative">
           <ButtonPublication
             hasMargin={true}
-            onClick={(): void => {
-              navigator.clipboard.writeText(
-                protocol + hostname + port + `/#/publication/${publication?.id}`
-              );
-              handleSetAlert(
-                true,
-                "¡It is successfully copied to your clipboard!",
-                "Success"
-              );
-              return;
-            }}
-            onMouseEnter={(): void => {
-              setPreventClick(true);
-              return;
-            }}
-            onTouchStart={(): void => {
-              setPreventClick(true);
-              return;
-            }}
+            id="copy_link"
+            onClick={(e) => onCopyClipboard(e)}
           >
             <AiOutlineShareAlt
               size={30}
               color={"#495057"}
               className={"hover:fill-primaryPurpure"}
             ></AiOutlineShareAlt>
-          </ButtonPublication>
-
-          <ButtonPublication
-            hasMargin={true}
-            onMouseEnter={(): void => {
-              setPreventClick(true);
-              return;
-            }}
-            onTouchStart={(): void => {
-              setPreventClick(true);
-              return;
-            }}
-            onClick={(): void => {
-              if (preventClick) {
-                handleSetLikes();
-                setWasLike(true);
-                return;
-              }
-              return;
-            }}
-          >
-            <AiOutlineHeart
-              size={30}
-              color={"#495057"}
-              className={"hover:fill-primaryPurpure"}
-            ></AiOutlineHeart>
-
-            <AiFillHeart
-              size={30}
-              color={"red"}
-              className={`absolute opacity-0 ${
-                buttonEffect ? "z-10" : "-z-10"
-              }`}
-              style={{
-                animation: buttonEffect
-                  ? "appear 1s ease"
-                  : "disappear 2s ease",
-              }}
-            ></AiFillHeart>
           </ButtonPublication>
         </div>
       </div>

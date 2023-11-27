@@ -1,10 +1,10 @@
 import { images } from "../../assets/exports";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { useScroll } from "../../hooks/useScroll";
-import "./NavBar.css";
 import { useRouter } from "../../hooks/useRouter";
 import { links } from "../../constants/links";
 import { useUiStore } from "../../hooks/useUiStore";
+import "./NavBar.css";
 
 export const NavBar = (): JSX.Element => {
   const { scrolled } = useScroll();

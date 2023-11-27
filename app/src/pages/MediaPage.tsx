@@ -35,7 +35,7 @@ export const MediaPage = (): JSX.Element => {
                   src={publication.link}
                   alt={publication.title}
                   id={publication.id}
-                  likes={publication.likes}
+                  title={publication.title}
                 ></ImgMedia>
               );
             })}

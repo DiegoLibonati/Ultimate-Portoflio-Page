@@ -5,6 +5,7 @@ import { Publication } from "../components/Publication/Publication";
 import { getPublication } from "../api/getPublication";
 import { usePublicationsStore } from "../hooks/usePublicationsStore";
 import { useUiStore } from "../hooks/useUiStore";
+import { PublicationType } from "../entities/types";
 
 export const PublicationPage = () => {
   const { params, redirectTo } = useRouter();
@@ -14,8 +15,10 @@ export const PublicationPage = () => {
   useEffect(() => {
     const publication = getPublication(params.id);
 
-    publication.catch(() => {
-      return redirectTo("/feed");
+    publication.then((pub: PublicationType) => {
+      if (!pub) {
+        return redirectTo("/feed");
+      }
     });
 
     handleSetPublication(publication);
