@@ -163,14 +163,16 @@ export const Publication = ({
               {publication?.title}
             </h2>
           </div>
-          <div className="flex flex-row items-center justify-start mt-2">
-            <SiGooglemaps size={15} color="#868E96"></SiGooglemaps>
-            <h2 className="text-primaryGray text-xs ml-1">
-              {publication?.ubication}
-            </h2>
-          </div>
+          {publication?.ubication ? (
+            <div className="flex flex-row items-center justify-start mt-2">
+              <SiGooglemaps size={15} color="#868E96"></SiGooglemaps>
+              <h2 className="text-primaryGray text-xs ml-1">
+                {publication?.ubication}
+              </h2>
+            </div>
+          ) : null}
         </div>
-        <div className="flex flex-row items-center justify-end w-full mt-1 mr-2 relative">
+        <div className="flex flex-row items-center justify-end w-full mt-2 mr-2 relative">
           <ButtonPublication
             hasMargin={true}
             id="copy_link"
