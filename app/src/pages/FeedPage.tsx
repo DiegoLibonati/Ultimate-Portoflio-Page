@@ -26,14 +26,16 @@ export const FeedPage = (): JSX.Element => {
         }`}
         ref={parentRef}
       >
-        {publications.map((publication: PublicationType) => {
-          return (
-            <Publication
-              key={publication.id}
-              publication={publication}
-            ></Publication>
-          );
-        })}
+        {publications
+          .sort((pub, pub2) => pub2.isPinned - pub.isPinned)
+          .map((publication: PublicationType) => {
+            return (
+              <Publication
+                key={publication.id}
+                publication={publication}
+              ></Publication>
+            );
+          })}
 
         <Paginator
           actualPage={actualPage}

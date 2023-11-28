@@ -28,17 +28,19 @@ export const MediaPage = (): JSX.Element => {
           ref={parentRef}
         >
           <article className="grid grid-cols-3 gap-2 mt-2 w-full h-full">
-            {publications.map((publication: PublicationType) => {
-              return (
-                <ImgMedia
-                  key={publication.id}
-                  src={publication.link}
-                  alt={publication.title}
-                  id={publication.id}
-                  title={publication.title}
-                ></ImgMedia>
-              );
-            })}
+            {publications
+              .sort((pub, pub2) => pub2.isPinned - pub.isPinned)
+              .map((publication: PublicationType) => {
+                return (
+                  <ImgMedia
+                    key={publication.id}
+                    src={publication.link}
+                    alt={publication.title}
+                    id={publication.id}
+                    title={publication.title}
+                  ></ImgMedia>
+                );
+              })}
           </article>
 
           <Paginator
