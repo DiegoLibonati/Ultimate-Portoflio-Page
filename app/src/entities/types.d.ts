@@ -207,3 +207,17 @@ export type ButtonPaginatorType = {
   element: number;
   handleSetPage: (page: number) => void;
 };
+
+// UseTruncateType
+export type UseTruncateType = {
+  propertyValue: string;
+  fontType: string;
+};
+
+// UseTruncateReturnType
+export type UseTruncateReturnType = {
+  shouldTruncate: boolean;
+  readMore: boolean;
+  elementRef: (node: HTMLParagraphElement) => void;
+  setReadMore: React.Dispatch<React.SetStateAction<boolean>>;
+};

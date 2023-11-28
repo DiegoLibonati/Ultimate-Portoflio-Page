@@ -8,6 +8,7 @@ import { PublicationComponentType } from "../../entities/types";
 import { parseDate } from "../../helpers/parseDate";
 import { useUiStore } from "../../hooks/useUiStore";
 import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
+import { useTruncate } from "../../hooks/useTruncate";
 
 export const Publication = ({
   publication,
@@ -16,6 +17,10 @@ export const Publication = ({
   const { redirectTo } = useRouter();
   const { theme, handleSetAlert } = useUiStore();
   const { isMobile } = useCheckMobileScreen();
+  const { readMore, shouldTruncate, elementRef, setReadMore } = useTruncate({
+    propertyValue: "line-height",
+    fontType: "px",
+  });
 
   const onUsernameClick = (): void => {
     redirectTo("/feed");
@@ -120,11 +125,27 @@ export const Publication = ({
           </h2>
           <p
             className={`text-base mt-1 md:text-lg ${
-              theme ? "text-black" : "text-white"
-            }`}
+              shouldTruncate && !readMore ? "line-clamp-3" : "line-clamp-none"
+            } ${theme ? "text-black" : "text-white"}`}
+            ref={elementRef}
           >
             {publication?.description}
           </p>
+          {shouldTruncate && (
+            <button
+              className={
+                "text-primaryPurpure text-start text-base font-semibold md:text-lg hover:underline"
+              }
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setReadMore(!readMore);
+              }}
+            >
+              {readMore ? "Read Less" : "Read More"}
+            </button>
+          )}
         </div>
 
         <div className="flex flex-col w-full mt-1 relative">
