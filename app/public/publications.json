@@ -1,12 +1,52 @@
 [
   {
     "id": 1,
-    "IsPinned": 1,
+    "isPinned": 1,
     "date": "06/09/2023",
     "status": "😎 Happy",
     "title": "Hello World!",
     "description": "I am pleased to announce my new portfolio. On this page I will upload posts of my day to day life, both projects and adventures that I want to share with the public. Welcome to my world, welcome to Diego Libonati's world.",
     "link": "https://raw.githubusercontent.com/DiegoLibonati/media/main/WhatsApp%20Image%202023-09-06%20at%208.18.32%20PM.jpeg",
     "ubication": "CABA, Argentina"
+  },
+  {
+    "id": 2,
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🎨 Painter",
+    "title": "Dierillo App Page",
+    "link": "https://raw.githubusercontent.com/DiegoLibonati/media/main/dierillo-2.jpg",
+    "description": "I made a web application that will allow different users to enter different rooms using `Socket IO` (which allows us to handle sockets) to be able to play the iconic game pinturillo. This version of pinturillo was made from scratch, my version was called Dierillo. It should be noted that I didn't use code from anywhere else, it was pure improvisation. Users will be able to enter a room through a name or see which rooms are active through the page that is responsible for displaying which rooms have not started yet. After the owner of the lobby and/or room starts the game, the users will paint 1 by 1 during 3 rounds for 90 seconds the words they have to paint and the users that are not painting will have to guess the word and score points.",
+    "github": "https://github.com/DiegoLibonati/Pinturillo-Clone-App-Page"
+  },
+  {
+    "id": 3,
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "😎 3D",
+    "title": "3D Object Viewer Page",
+    "link": "https://raw.githubusercontent.com/DiegoLibonati/media/main/3d-object-viewer-3.jpg",
+    "description": "This page allows you to visualize objects in 3D. In addition to being able to change different properties live through a menu. You can also import models as gltf or glb to visualize them and change their properties. These properties are the position on the canvas (x,y,z), the scale: width, height or depth. You can also hide the title, change the color, metallicity and roughness. It is a 100% responsive page",
+    "github": "https://github.com/DiegoLibonati/3D-Object-Viewer-Page"
+  },
+  {
+    "id": 4,
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📸 Photographer",
+    "title": "Instagram Clone App Page",
+    "link": "https://raw.githubusercontent.com/DiegoLibonati/media/main/instagram-react-0.jpg",
+    "description": "Welcome to my Instagram clone! After 2 months of working on it in my free time, I have completed a comprehensive version of an Instagram clone. The platform includes features such as creating an account, user suggestions, following and unfollowing other users, searching for users, exploring random posts, receiving notifications for likes, comments, and follows, creating posts, liking and commenting on posts, viewing profiles, editing user information, and a home page with a post feed. The platform was developed with a mobile-first approach, ensuring it is fully responsive.",
+    "github": "https://github.com/DiegoLibonati/Instagram-Clone-App-Page"
+  },
+  {
+    "id": 5,
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🕹️ Gamer",
+    "title": "FreeToPlayGames App Page",
+    "link": "https://raw.githubusercontent.com/DiegoLibonati/media/main/gamesapp.png",
+    "description": "This time I made an integrative app in React JS. This application has the following features: React, Redux Toolkit, React Router V6, Firebase V9 SDK, Axios, React Custom Hooks. It consists of 3 sections, the main section that serves to receive the user who is registered, logged in or simply logged in with Google. Also in it you can interact with different games. In this section you can add games to favorites. Then as I mentioned before the favorites section where all the user's favorite games will appear and finally a section of games where all the games will appear and the user can filter by categories provided by the API. This API is not mine, it is taken from the internet. For this application i use: react js, firebase, firestore and native css",
+    "github": "https://github.com/DiegoLibonati/Games-APP"
   }
 ]

@@ -8,10 +8,12 @@ import { Tag } from "../Tag/Tag";
 import { useProfileStore } from "../../hooks/useProfileStore";
 import { Loader } from "../Loader/Loader";
 import { useUiStore } from "../../hooks/useUiStore";
+import { useRouter } from "../../hooks/useRouter";
 
 export const Profile = () => {
   const { profile } = useProfileStore();
   const { theme } = useUiStore();
+  const { redirectTo } = useRouter();
 
   return (
     <section className="flex flex-col w-full items-center md:w-[80%] lg:w-[75%] xl:w-[56%] 2xl:w-[48%] 3xl:w-[40%]">
@@ -88,6 +90,7 @@ export const Profile = () => {
               <LiaLinkSolid className="fill-primaryGray mr-1"></LiaLinkSolid>
             }
             textTag="/links"
+            onClickTag={() => redirectTo(links.links)}
             isLink={true}
           ></Tag>
 

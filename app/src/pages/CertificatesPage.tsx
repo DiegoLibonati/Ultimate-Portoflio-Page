@@ -1,16 +1,17 @@
 import { Paginator } from "../components/Paginator/Paginator";
 import { Publication } from "../components/Publication/Publication";
 import { PublicationType } from "../entities/types";
+import { useCertificatesStore } from "../hooks/useCertificatesStore";
 import { usePaginator } from "../hooks/usePaginator";
-import { usePublicationsStore } from "../hooks/usePublicationsStore";
+import { useRouter } from "../hooks/useRouter";
 import { useUiStore } from "../hooks/useUiStore";
 import { MainLayout } from "../layout/MainLayout";
-import { useRouter } from "../hooks/useRouter";
 
-export const FeedPage = (): JSX.Element => {
+export const CertificatesPage = (): JSX.Element => {
   const { params } = useRouter();
   const { theme } = useUiStore();
-  const { publications: arrPublications } = usePublicationsStore();
+  const { certificates } = useCertificatesStore();
+
   const {
     publications,
     parentRef,
@@ -20,7 +21,7 @@ export const FeedPage = (): JSX.Element => {
   } = usePaginator({
     page: Number(params.page),
     perPage: 4,
-    customArr: arrPublications,
+    customArr: certificates,
   });
 
   return (
@@ -38,10 +39,11 @@ export const FeedPage = (): JSX.Element => {
               <Publication
                 key={publication.id}
                 publication={publication}
-                section="publication"
+                section="certificate"
               ></Publication>
             );
           })}
+
         <Paginator
           actualPage={actualPage}
           elementsToRender={elementsToRender}

@@ -2,11 +2,15 @@ import { ImgMedia } from "../components/ImgMedia/ImgMedia";
 import { Paginator } from "../components/Paginator/Paginator";
 import { PublicationType } from "../entities/types";
 import { usePaginator } from "../hooks/usePaginator";
+import { usePublicationsStore } from "../hooks/usePublicationsStore";
+import { useRouter } from "../hooks/useRouter";
 import { useUiStore } from "../hooks/useUiStore";
 import { MainLayout } from "../layout/MainLayout";
 
 export const MediaPage = (): JSX.Element => {
+  const { params } = useRouter();
   const { theme } = useUiStore();
+  const { publications: arrPublications } = usePublicationsStore();
   const {
     publications,
     parentRef,
@@ -14,8 +18,9 @@ export const MediaPage = (): JSX.Element => {
     elementsToRender,
     handleSetPage,
   } = usePaginator({
-    page: 1,
+    page: Number(params.page),
     perPage: 9,
+    customArr: arrPublications,
   });
 
   return (

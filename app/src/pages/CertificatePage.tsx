@@ -2,26 +2,26 @@ import { useEffect } from "react";
 import { useRouter } from "../hooks/useRouter";
 import { MainLayout } from "../layout/MainLayout";
 import { Publication } from "../components/Publication/Publication";
-import { getPublication } from "../api/getPublication";
-import { usePublicationsStore } from "../hooks/usePublicationsStore";
+import { getCertificate } from "../api/getCertificate";
 import { useUiStore } from "../hooks/useUiStore";
 import { PublicationType } from "../entities/types";
+import { useCertificatesStore } from "../hooks/useCertificatesStore";
 
-export const PublicationPage = () => {
+export const CertificatePage = () => {
   const { params, redirectTo } = useRouter();
-  const { activePublication, handleSetPublication } = usePublicationsStore();
+  const { activeCertificate, handleSetCertificate } = useCertificatesStore();
   const { theme } = useUiStore();
 
   useEffect(() => {
-    const publication = getPublication(params.id);
+    const certificate = getCertificate(params.id);
 
-    publication.then((pub: PublicationType) => {
-      if (!pub) {
+    certificate.then((cer: PublicationType) => {
+      if (!cer) {
         return redirectTo("/feed/1");
       }
     });
 
-    handleSetPublication(publication);
+    handleSetCertificate(certificate);
   }, []);
 
   return (
@@ -32,8 +32,8 @@ export const PublicationPage = () => {
         }`}
       >
         <Publication
-          publication={activePublication}
-          section="publication"
+          publication={activeCertificate}
+          section="certificate"
         ></Publication>
       </section>
     </MainLayout>

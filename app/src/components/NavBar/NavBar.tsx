@@ -34,7 +34,7 @@ export const NavBar = (): JSX.Element => {
           <img
             src={theme ? images.lightDl : images.nightDL}
             alt="DiegoLibonati"
-            className="h-full w-full object-cover"
+            className="h-full w-full min-h-full object-cover"
           ></img>
         </button>
         <button

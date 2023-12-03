@@ -7,6 +7,7 @@ export const ButtonPaginator = ({
   handleSetPage,
 }: ButtonPaginatorType): JSX.Element => {
   const { theme } = useUiStore();
+
   return (
     <button
       className={`text-center text-lg h-10 w-10 mx-1 font-semibold rounded-lg ${

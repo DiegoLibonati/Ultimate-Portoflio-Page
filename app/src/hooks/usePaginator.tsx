@@ -4,14 +4,13 @@ import {
   usePaginatorReturnType,
   usePaginatorType,
 } from "../entities/types";
-import { usePublicationsStore } from "./usePublicationsStore";
+import { useRouter } from "./useRouter";
 
 export const usePaginator = ({
   page,
   perPage,
+  customArr,
 }: usePaginatorType): usePaginatorReturnType => {
-  const { publications } = usePublicationsStore();
-
   const [actualPage, setActualPage] = useState<number>(page);
   const [navHeight] = useState<number>(60);
   const [lastPage, setLastPage] = useState<number>(0);
@@ -23,37 +22,53 @@ export const usePaginator = ({
 
   const parentRef = useRef<HTMLElement | null>(null);
 
+  const { params, pathname, redirectTo } = useRouter();
+
   const handleSetPage = (page: number): void => {
+    let number = null;
+
     if (page <= 0) {
       setActualPage(1);
+      number = 1;
     } else if (page > lastPage) {
       setActualPage(lastPage);
+      number = lastPage;
     } else {
       setActualPage(page);
+      number = page;
     }
+
+    history.replaceState(null, "", `#/${pathname.split("/")[1]}/${number}`);
 
     return;
   };
 
   useEffect(() => {
-    if (publications.length > 0) {
+    if (customArr.length > 0) {
       setArr(
-        publications.slice(
+        customArr.slice(
           elementsPerPage * (actualPage - 1),
           elementsPerPage * actualPage
         )
       );
+
       return;
     }
-  }, [publications, elementsPerPage, actualPage]);
+  }, [customArr, elementsPerPage, actualPage]);
 
   useEffect(() => {
-    if (publications.length > 0) {
-      const pages = Math.ceil(publications.length / elementsPerPage);
+    if (customArr.length > 0) {
+      const pages = Math.ceil(customArr.length / elementsPerPage);
       setLastPage(pages);
+
+      if (params.page > pages) {
+        setActualPage(1);
+        return redirectTo("/feed/1");
+      }
+
       setElementsToRender([...Array(pages).keys()].map((key) => key + 1));
     }
-  }, [publications]);
+  }, [customArr]);
 
   useEffect(() => {
     if (parentRef!.current) {

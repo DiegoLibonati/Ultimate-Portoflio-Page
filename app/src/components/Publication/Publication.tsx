@@ -1,5 +1,5 @@
 import { TbPinnedFilled } from "react-icons/tb";
-import { AiOutlineShareAlt } from "react-icons/ai";
+import { AiFillGithub, AiOutlineShareAlt } from "react-icons/ai";
 import { SiGooglemaps } from "react-icons/si";
 import { useProfileStore } from "../../hooks/useProfileStore";
 import { ButtonPublication } from "../ButtonPublication/ButtonPublication";
@@ -9,8 +9,10 @@ import { parseDate } from "../../helpers/parseDate";
 import { useUiStore } from "../../hooks/useUiStore";
 import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
 import { useTruncate } from "../../hooks/useTruncate";
+import { openInNewTab } from "../../helpers/openInNewTab";
 
 export const Publication = ({
+  section,
   publication,
 }: PublicationComponentType): JSX.Element => {
   const { profile } = useProfileStore();
@@ -22,13 +24,17 @@ export const Publication = ({
     fontType: "px",
   });
 
-  const onUsernameClick = (): void => {
-    redirectTo("/feed");
+  const onUsernameClick = (
+    e: React.MouseEvent<HTMLHeadElement, MouseEvent>
+  ): void => {
+    e.preventDefault();
+    e.stopPropagation();
+    redirectTo("/feed/1");
     return;
   };
 
   const onPublicationClick = (): void => {
-    redirectTo(`/publication/${publication?.id}`);
+    redirectTo(`/${section}/${publication?.id}`);
     return;
   };
 
@@ -41,7 +47,7 @@ export const Publication = ({
       await navigator.share({
         title: "Diego Libonati",
         text: "Diego Libonati Portfolio!",
-        url: window.location.origin + `/#/publication/${publication?.id}`,
+        url: window.location.origin + `/#/${section}/${publication?.id}`,
       });
       handleSetAlert(
         true,
@@ -56,6 +62,16 @@ export const Publication = ({
         "Error"
       );
     }
+    return;
+  };
+
+  const onGithubClick = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    link: string
+  ): Promise<void> => {
+    e.preventDefault();
+    e.stopPropagation();
+    openInNewTab(link);
     return;
   };
 
@@ -96,7 +112,7 @@ export const Publication = ({
               className={`text-sm font-bold hover:underline hover:underline-offset-2 cursor-pointer ${
                 theme ? "text-black" : "text-white"
               }`}
-              onClick={() => onUsernameClick()}
+              onClick={(e) => onUsernameClick(e)}
             >
               {profile.username}{" "}
             </h2>
@@ -153,10 +169,10 @@ export const Publication = ({
             <img
               src={publication?.link}
               alt={"Diego Libonati"}
-              className="relative z-20 rounded-lg w-full max-h-52 object-cover md:max-h-96 hover:opacity-25 transition-opacity"
+              className="relative z-20 rounded-lg w-full min-h-[11.25rem] max-h-52 object-cover md:max-h-96 md:min-h-[21.25rem] hover:opacity-25 transition-opacity"
             ></img>
             <h2
-              className={`absolute z-10 text-7xl text-center ${
+              className={`absolute z-10 text-md text-center truncate ${
                 theme ? "text-black" : "text-white"
               }`}
             >
@@ -184,6 +200,20 @@ export const Publication = ({
               className={"hover:fill-primaryPurpure"}
             ></AiOutlineShareAlt>
           </ButtonPublication>
+
+          {publication?.github ? (
+            <ButtonPublication
+              hasMargin={true}
+              id="copy_link"
+              onClick={(e) => onGithubClick(e, publication!.github!)}
+            >
+              <AiFillGithub
+                size={30}
+                color={"#495057"}
+                className={"hover:fill-primaryPurpure"}
+              ></AiFillGithub>
+            </ButtonPublication>
+          ) : null}
         </div>
       </div>
     </article>

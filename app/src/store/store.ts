@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import profileSlice from "./profile/profileSlice";
 import uiSlice from "./ui/uiSlice";
 import publicationsSlice from "./publications/publicationsSlice";
+import certificatesSlice from "./certificates/certificatesSlice";
 // ...
 
 export const store = configureStore({
@@ -9,6 +10,7 @@ export const store = configureStore({
     profile: profileSlice,
     ui: uiSlice,
     publications: publicationsSlice,
+    certificates: certificatesSlice,
   },
 });
 

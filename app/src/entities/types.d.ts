@@ -13,6 +13,7 @@ export type TagType = {
   icon?: JSX.Element;
   textTag: string;
   isLink?: boolean;
+  onClickTag?: () => void;
 };
 
 // InputType
@@ -143,6 +144,18 @@ export type UsePublicationsStore = {
   ) => Promise<void>;
 };
 
+// UseCertificatesStore
+export type UseCertificatesStore = {
+  activeCertificate: CertificateType | null;
+  certificates: CertificateType[];
+  handleSetCertificate: (
+    publication: Promise<CertificateType>
+  ) => Promise<void>;
+  handleSetCertificates: (
+    certificates: Promise<CertificateType[]>
+  ) => Promise<void>;
+};
+
 // PublicationType
 export type PublicationType = {
   id: number;
@@ -152,7 +165,8 @@ export type PublicationType = {
   title: string;
   link: string;
   description: string;
-  ubication: string;
+  ubication?: string;
+  github?: string;
 };
 
 //PublicationStateType
@@ -163,6 +177,7 @@ export type PublicationStateType = {
 
 // PublicationComponentType
 export type PublicationComponentType = {
+  section: string;
   publication: PublicationType | null;
 };
 
@@ -183,6 +198,7 @@ export type ImgMediaType = {
 export type usePaginatorType = {
   page: number;
   perPage: number;
+  customArr: PublicationType[] | CertificateType[] | never;
 };
 
 // usePaginatorReturnType
@@ -220,4 +236,22 @@ export type UseTruncateReturnType = {
   readMore: boolean;
   elementRef: (node: HTMLParagraphElement) => void;
   setReadMore: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+// CertificateType
+export type CertificateType = {
+  id: number;
+  isPinned: number;
+  date: string;
+  status: string;
+  title: string;
+  link: string;
+  description: string;
+  ubication?: string;
+};
+
+//CertificateStateType
+export type CertificateStateType = {
+  certificates: CertificateType[];
+  activeCertificate: CertificateType | null;
 };

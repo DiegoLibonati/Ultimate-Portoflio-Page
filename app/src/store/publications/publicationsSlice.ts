@@ -5,10 +5,6 @@ import { PublicationStateType, PublicationType } from "../../entities/types";
 interface payload {
   publications: PublicationType[];
   activePublication: PublicationType;
-  likes: {
-    idPublication: number | undefined;
-    likes: number;
-  };
 }
 
 // Define the initial state using that type

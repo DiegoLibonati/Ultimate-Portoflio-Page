@@ -17,10 +17,10 @@ export const ImgMedia = ({
         onClick={() => redirectTo(`/publication/${id}`)}
         src={src}
         alt={alt}
-        className="relative z-20 rounded-lg w-full h-full object-cover hover:opacity-25 cursor-pointer"
+        className="relative z-20 rounded-lg w-full h-full min-h-full object-cover hover:opacity-25 cursor-pointer"
       ></img>
       <h2
-        className={`absolute z-10 text-sm text-center md:text-5xl ${
+        className={`absolute z-10 text-md text-center ${
           theme ? "text-black" : "text-white"
         }`}
       >
