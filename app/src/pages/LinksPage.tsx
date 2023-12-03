@@ -8,8 +8,12 @@ import {
 } from "react-icons/ai";
 import { MdWorkOutline } from "react-icons/md";
 import { useUiStore } from "../hooks/useUiStore";
+import { lazy, Suspense } from "react";
+import { Loader } from "../components/Loader/Loader";
 
-export const LinksPage = () => {
+const Image = lazy(() => import("../components/Image/Image"));
+
+const LinksPage = () => {
   const { profile } = useProfileStore();
   const { theme } = useUiStore();
 
@@ -21,11 +25,15 @@ export const LinksPage = () => {
     >
       <section className="flex flex-col w-full h-full md:w-[70%] lg:w-[63%] xl:w-[48%] 2xl:w-[40%] 3xl:w-[35%] mt-6">
         <article className="flex flex-col items-center justify-center w-full">
-          <img
-            src={profile.avatar}
-            alt={profile.username}
-            className="w-36 h-36 rounded-full object-cover"
-          ></img>
+          <Suspense fallback={<Loader className="w-36 h-36"></Loader>}>
+            <Image
+              src={profile.avatar}
+              alt={profile.username}
+              className="w-36 h-36 rounded-full object-cover"
+              width={"100%"}
+              height={"100%"}
+            ></Image>
+          </Suspense>
           <h2
             className={`font-semibold mt-2 text-3xl ${
               theme ? "text-black" : "text-white"
@@ -73,3 +81,5 @@ export const LinksPage = () => {
     </main>
   );
 };
+
+export default LinksPage;

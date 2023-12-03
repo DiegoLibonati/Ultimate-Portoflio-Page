@@ -1,13 +1,16 @@
 import { useEffect } from "react";
 import { useRouter } from "../hooks/useRouter";
 import { MainLayout } from "../layout/MainLayout";
-import { Publication } from "../components/Publication/Publication";
 import { getPublication } from "../api/getPublication";
 import { usePublicationsStore } from "../hooks/usePublicationsStore";
 import { useUiStore } from "../hooks/useUiStore";
 import { PublicationType } from "../entities/types";
+import { lazy, Suspense } from "react";
+import { Loader } from "../components/Loader/Loader";
 
-export const PublicationPage = () => {
+const Publication = lazy(() => import("../components/Publication/Publication"));
+
+const PublicationPage = () => {
   const { params, redirectTo } = useRouter();
   const { activePublication, handleSetPublication } = usePublicationsStore();
   const { theme } = useUiStore();
@@ -31,11 +34,15 @@ export const PublicationPage = () => {
           theme ? "bg-primaryWhite" : "bg-primaryBlack"
         }`}
       >
-        <Publication
-          publication={activePublication}
-          section="publication"
-        ></Publication>
+        <Suspense fallback={<Loader className="my-6"></Loader>}>
+          <Publication
+            publication={activePublication}
+            section="publication"
+          ></Publication>
+        </Suspense>
       </section>
     </MainLayout>
   );
 };
+
+export default PublicationPage;

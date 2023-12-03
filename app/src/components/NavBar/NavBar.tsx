@@ -4,7 +4,11 @@ import { useScroll } from "../../hooks/useScroll";
 import { useRouter } from "../../hooks/useRouter";
 import { links } from "../../constants/links";
 import { useUiStore } from "../../hooks/useUiStore";
+import { lazy, Suspense } from "react";
 import "./NavBar.css";
+import { Loader } from "../Loader/Loader";
+
+const Image = lazy(() => import("../Image/Image"));
 
 export const NavBar = (): JSX.Element => {
   const { scrolled } = useScroll();
@@ -31,11 +35,17 @@ export const NavBar = (): JSX.Element => {
           className="flex items-center justify-center w-9 h-9 rounded-lg active:bg-neutral-400 active:bg-opacity-40"
           onClick={onClickImage}
         >
-          <img
-            src={theme ? images.lightDl : images.nightDL}
-            alt="DiegoLibonati"
-            className="h-full w-full min-h-full object-cover"
-          ></img>
+          <Suspense
+            fallback={<Loader className="h-full w-full min-h-full"></Loader>}
+          >
+            <Image
+              src={theme ? images.lightDl : images.nightDL}
+              alt="DiegoLibonati"
+              className="h-full w-full min-h-full object-cover"
+              width={"100%"}
+              height={"100%"}
+            ></Image>
+          </Suspense>
         </button>
         <button
           className={`flex items-center justify-center w-9 h-9 rounded-lg active:bg-opacity-40 active:bg-neutral-400`}

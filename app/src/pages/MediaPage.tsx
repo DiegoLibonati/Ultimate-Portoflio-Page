@@ -1,4 +1,3 @@
-import { ImgMedia } from "../components/ImgMedia/ImgMedia";
 import { Paginator } from "../components/Paginator/Paginator";
 import { PublicationType } from "../entities/types";
 import { usePaginator } from "../hooks/usePaginator";
@@ -6,8 +5,12 @@ import { usePublicationsStore } from "../hooks/usePublicationsStore";
 import { useRouter } from "../hooks/useRouter";
 import { useUiStore } from "../hooks/useUiStore";
 import { MainLayout } from "../layout/MainLayout";
+import { lazy, Suspense } from "react";
+import { Loader } from "../components/Loader/Loader";
 
-export const MediaPage = (): JSX.Element => {
+const ImgMedia = lazy(() => import("../components/ImgMedia/ImgMedia"));
+
+const MediaPage = (): JSX.Element => {
   const { params } = useRouter();
   const { theme } = useUiStore();
   const { publications: arrPublications } = usePublicationsStore();
@@ -37,13 +40,17 @@ export const MediaPage = (): JSX.Element => {
               .sort((pub, pub2) => pub2.isPinned - pub.isPinned)
               .map((publication: PublicationType) => {
                 return (
-                  <ImgMedia
-                    key={publication.id}
-                    src={publication.link}
-                    alt={publication.title}
-                    id={publication.id}
-                    title={publication.title}
-                  ></ImgMedia>
+                  <Suspense
+                    fallback={<Loader className="w-full h-full"></Loader>}
+                  >
+                    <ImgMedia
+                      key={publication.id}
+                      src={publication.link}
+                      alt={publication.title}
+                      id={publication.id}
+                      title={publication.title}
+                    ></ImgMedia>
+                  </Suspense>
                 );
               })}
           </article>
@@ -58,3 +65,5 @@ export const MediaPage = (): JSX.Element => {
     </>
   );
 };
+
+export default MediaPage;

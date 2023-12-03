@@ -255,3 +255,19 @@ export type CertificateStateType = {
   certificates: CertificateType[];
   activeCertificate: CertificateType | null;
 };
+
+// ImageType
+export type ImageType = {
+  src: string | undefined;
+  alt: string;
+  className?: string;
+  width: string;
+  height: string;
+  onClick?: () => void;
+};
+
+// IframeType
+export type IframeType = {
+  src: string;
+  className?: string;
+};

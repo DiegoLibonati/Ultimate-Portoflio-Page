@@ -1,25 +1,28 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { FeedPage } from "../../pages/FeedPage";
 import { useRouter } from "../../hooks/useRouter";
-import { useEffect } from "react";
-import { MediaPage } from "../../pages/MediaPage";
+import { useEffect, lazy, Suspense } from "react";
 import { NavBar } from "../../components/NavBar/NavBar";
 import { Footer } from "../../components/Footer/Footer";
-import { LinksPage } from "../../pages/LinksPage";
 import { getProfile } from "../../api/getProfile";
 import { useProfileStore } from "../../hooks/useProfileStore";
-import { PublicationPage } from "../../pages/PublicationPage";
 import { getPublications } from "../../api/getPublications";
 import { usePublicationsStore } from "../../hooks/usePublicationsStore";
 import { images } from "../../assets/exports";
 import { useUiStore } from "../../hooks/useUiStore";
 import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
-import { CertificatesPage } from "../../pages/CertificatesPage";
 import { getCertificates } from "../../api/getCertificates";
 import { useCertificatesStore } from "../../hooks/useCertificatesStore";
-import { CertificatePage } from "../../pages/CertificatePage";
+import { Loader } from "../../components/Loader/Loader";
 
-export const PublicRoutes = (): JSX.Element => {
+const FeedPage = lazy(() => import("../../pages/FeedPage"));
+const CertificatesPage = lazy(() => import("../../pages/CertificatesPage"));
+const MediaPage = lazy(() => import("../../pages/MediaPage"));
+const LinksPage = lazy(() => import("../../pages/LinksPage"));
+const PublicationPage = lazy(() => import("../../pages/PublicationPage"));
+const CertificatePage = lazy(() => import("../../pages/CertificatePage"));
+const Image = lazy(() => import("../../components/Image/Image"));
+
+const PublicRoutes = (): JSX.Element => {
   const { pathname, redirectTo } = useRouter();
   const { profile, handleSetProfile } = useProfileStore();
   const { publications, handleSetPublications } = usePublicationsStore();
@@ -49,31 +52,94 @@ export const PublicRoutes = (): JSX.Element => {
     <>
       <NavBar></NavBar>
       <Routes>
-        <Route path="/feed/:page" element={<FeedPage></FeedPage>}></Route>
+        <Route
+          path="/feed/:page"
+          element={
+            <Suspense
+              fallback={
+                <Loader className="h-screen w-screen bg-black"></Loader>
+              }
+            >
+              <FeedPage></FeedPage>
+            </Suspense>
+          }
+        ></Route>
         <Route
           path="/certificates/:page"
-          element={<CertificatesPage></CertificatesPage>}
+          element={
+            <Suspense
+              fallback={
+                <Loader className="h-screen w-screen bg-black"></Loader>
+              }
+            >
+              <CertificatesPage></CertificatesPage>
+            </Suspense>
+          }
         ></Route>
-        <Route path="/media/:page" element={<MediaPage></MediaPage>}></Route>
-        <Route path="/links" element={<LinksPage></LinksPage>}></Route>
+        <Route
+          path="/media/:page"
+          element={
+            <Suspense
+              fallback={
+                <Loader className="h-screen w-screen bg-black"></Loader>
+              }
+            >
+              <MediaPage></MediaPage>
+            </Suspense>
+          }
+        ></Route>
+        <Route
+          path="/links"
+          element={
+            <Suspense
+              fallback={
+                <Loader className="h-screen w-screen bg-black"></Loader>
+              }
+            >
+              <LinksPage></LinksPage>
+            </Suspense>
+          }
+        ></Route>
         <Route
           path="/publication/:id"
-          element={<PublicationPage></PublicationPage>}
+          element={
+            <Suspense
+              fallback={
+                <Loader className="h-screen w-screen bg-black"></Loader>
+              }
+            >
+              <PublicationPage></PublicationPage>
+            </Suspense>
+          }
         ></Route>
         <Route
           path="/certificate/:id"
-          element={<CertificatePage></CertificatePage>}
+          element={
+            <Suspense
+              fallback={
+                <Loader className="h-screen w-screen bg-black"></Loader>
+              }
+            >
+              <CertificatePage></CertificatePage>
+            </Suspense>
+          }
         ></Route>
         <Route path="/*" element={<Navigate to="/feed/1"></Navigate>}></Route>
       </Routes>
       {!isMobile && (
-        <img
-          src={theme ? images.lightDl : images.nightDL}
-          alt="imagen"
-          className="fixed bottom-0 right-0 w-32 h-32 object-cover opacity-30"
-        ></img>
+        <Suspense fallback={<Loader className="w-32 h-32"></Loader>}>
+          <Image
+            src={theme ? images.lightDl : images.nightDL}
+            alt="imagen"
+            className="fixed bottom-0 right-0 w-32 h-32 object-cover opacity-30"
+            width={"100%"}
+            height={"100%"}
+          ></Image>
+        </Suspense>
       )}
       <Footer></Footer>
     </>
   );
 };
+
+export default PublicRoutes;

@@ -1,13 +1,17 @@
 import { Paginator } from "../components/Paginator/Paginator";
-import { Publication } from "../components/Publication/Publication";
+
 import { PublicationType } from "../entities/types";
 import { useCertificatesStore } from "../hooks/useCertificatesStore";
 import { usePaginator } from "../hooks/usePaginator";
 import { useRouter } from "../hooks/useRouter";
 import { useUiStore } from "../hooks/useUiStore";
 import { MainLayout } from "../layout/MainLayout";
+import { lazy, Suspense } from "react";
+import { Loader } from "../components/Loader/Loader";
 
-export const CertificatesPage = (): JSX.Element => {
+const Publication = lazy(() => import("../components/Publication/Publication"));
+
+const CertificatesPage = (): JSX.Element => {
   const { params } = useRouter();
   const { theme } = useUiStore();
   const { certificates } = useCertificatesStore();
@@ -36,11 +40,13 @@ export const CertificatesPage = (): JSX.Element => {
           .sort((pub, pub2) => pub2.isPinned - pub.isPinned)
           .map((publication: PublicationType) => {
             return (
-              <Publication
-                key={publication.id}
-                publication={publication}
-                section="certificate"
-              ></Publication>
+              <Suspense fallback={<Loader className="my-6"></Loader>}>
+                <Publication
+                  key={publication.id}
+                  publication={publication}
+                  section="certificate"
+                ></Publication>
+              </Suspense>
             );
           })}
 
@@ -53,3 +59,5 @@ export const CertificatesPage = (): JSX.Element => {
     </MainLayout>
   );
 };
+
+export default CertificatesPage;

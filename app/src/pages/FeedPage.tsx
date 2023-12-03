@@ -1,13 +1,16 @@
 import { Paginator } from "../components/Paginator/Paginator";
-import { Publication } from "../components/Publication/Publication";
 import { PublicationType } from "../entities/types";
 import { usePaginator } from "../hooks/usePaginator";
 import { usePublicationsStore } from "../hooks/usePublicationsStore";
 import { useUiStore } from "../hooks/useUiStore";
 import { MainLayout } from "../layout/MainLayout";
 import { useRouter } from "../hooks/useRouter";
+import { lazy, Suspense } from "react";
+import { Loader } from "../components/Loader/Loader";
 
-export const FeedPage = (): JSX.Element => {
+const Publication = lazy(() => import("../components/Publication/Publication"));
+
+const FeedPage = (): JSX.Element => {
   const { params } = useRouter();
   const { theme } = useUiStore();
   const { publications: arrPublications } = usePublicationsStore();
@@ -35,11 +38,13 @@ export const FeedPage = (): JSX.Element => {
           .sort((pub, pub2) => pub2.isPinned - pub.isPinned)
           .map((publication: PublicationType) => {
             return (
-              <Publication
-                key={publication.id}
-                publication={publication}
-                section="publication"
-              ></Publication>
+              <Suspense fallback={<Loader className="my-6"></Loader>}>
+                <Publication
+                  key={publication.id}
+                  publication={publication}
+                  section="publication"
+                ></Publication>
+              </Suspense>
             );
           })}
         <Paginator
@@ -51,3 +56,5 @@ export const FeedPage = (): JSX.Element => {
     </MainLayout>
   );
 };
+
+export default FeedPage;

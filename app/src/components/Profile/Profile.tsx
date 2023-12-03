@@ -9,6 +9,10 @@ import { useProfileStore } from "../../hooks/useProfileStore";
 import { Loader } from "../Loader/Loader";
 import { useUiStore } from "../../hooks/useUiStore";
 import { useRouter } from "../../hooks/useRouter";
+import { lazy, Suspense } from "react";
+
+const Image = lazy(() => import("../Image/Image"));
+const Iframe = lazy(() => import("../Iframe/Iframe"));
 
 export const Profile = () => {
   const { profile } = useProfileStore();
@@ -18,23 +22,28 @@ export const Profile = () => {
   return (
     <section className="flex flex-col w-full items-center md:w-[80%] lg:w-[75%] xl:w-[56%] 2xl:w-[48%] 3xl:w-[40%]">
       <article className="relative w-full">
-        {profile.frontPage ? (
-          <iframe className="h-[15rem] w-full" src={profile.frontPage}></iframe>
-        ) : (
-          <Loader className="h-h-[15rem] w-full"></Loader>
-        )}
-
-        {profile.avatar ? (
-          <img
+        <Suspense fallback={<Loader className="h-[15rem] w-full"></Loader>}>
+          <Iframe className="h-[15rem] w-full" src={profile.frontPage}></Iframe>
+        </Suspense>
+        <Suspense
+          fallback={
+            <Loader
+              className={`absolute top-[12rem] left-4 h-24 w-24 object-cover rounded-full border-4 md:h-28 md:w-28 md:left-24 md:top-[11rem] lg:left-28 lg:top-[11.5rem] 2xl:h-32 2xl:w-32 2xl:left-22 2xl:top-[10.8rem] ${
+                theme ? "border-black" : "border-white"
+              }`}
+            ></Loader>
+          }
+        >
+          <Image
             className={`absolute top-[12rem] left-4 h-24 w-24 object-cover rounded-full border-4 md:h-28 md:w-28 md:left-24 md:top-[11rem] lg:left-28 lg:top-[11.5rem] 2xl:h-32 2xl:w-32 2xl:left-22 2xl:top-[10.8rem] ${
               theme ? "border-black" : "border-white"
             }`}
             src={profile.avatar}
             alt="Diego Libonati"
-          ></img>
-        ) : (
-          <Loader className="absolute top-[5.2rem] left-4 h-20 w-20 object-cover rounded-full border-white border-4 md:h-28 md:w-28 md:left-24 md:top-[11rem] lg:left-28 lg:top-[11.5rem] 2xl:h-32 2xl:w-32 2xl:left-22 2xl:top-[10.8rem]"></Loader>
-        )}
+            width={"100%"}
+            height={"100%"}
+          ></Image>
+        </Suspense>
       </article>
 
       <article className="flex flex-col justify-between w-full h-[15.5rem] px-4 mt-2 md:w-[80%] md:h-[14rem]">

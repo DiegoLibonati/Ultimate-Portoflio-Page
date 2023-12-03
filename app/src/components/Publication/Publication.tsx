@@ -10,8 +10,12 @@ import { useUiStore } from "../../hooks/useUiStore";
 import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
 import { useTruncate } from "../../hooks/useTruncate";
 import { openInNewTab } from "../../helpers/openInNewTab";
+import { lazy, Suspense } from "react";
+import { Loader } from "../Loader/Loader";
 
-export const Publication = ({
+const Image = lazy(() => import("../Image/Image"));
+
+const Publication = ({
   section,
   publication,
 }: PublicationComponentType): JSX.Element => {
@@ -98,11 +102,17 @@ export const Publication = ({
       ) : null}
 
       <div className="flex flex-row items-start justify-center w-[10%]">
-        <img
-          src={profile.avatar}
-          alt="Diego Libonati"
-          className="rounded-full h-9 w-9 mt-1 md:h-12 md:w-12 object-cover"
-        ></img>
+        <Suspense
+          fallback={<Loader className="h-9 w-9 mt-1 md:h-12 md:w-12"></Loader>}
+        >
+          <Image
+            src={profile.avatar}
+            alt="Diego Libonati"
+            className="rounded-full h-9 w-9 mt-1 md:h-12 md:w-12 object-cover"
+            width={"100%"}
+            height={"100%"}
+          ></Image>
+        </Suspense>
       </div>
 
       <div className="flex flex-col items-center justify-start w-[90%] pl-2">
@@ -166,18 +176,26 @@ export const Publication = ({
 
         <div className="flex flex-col w-full mt-1 relative">
           <div className="flex items-center justify-center relative w-full">
-            <img
-              src={publication?.link}
-              alt={"Diego Libonati"}
-              className="relative z-20 rounded-lg w-full min-h-[11.25rem] max-h-52 object-cover md:max-h-96 md:min-h-[21.25rem] hover:opacity-25 transition-opacity"
-            ></img>
-            <h2
-              className={`absolute z-10 text-md text-center truncate ${
-                theme ? "text-black" : "text-white"
-              }`}
+            <Suspense
+              fallback={
+                <Loader className="w-full min-h-[11.25rem] max-h-52 md:max-h-96 md:min-h-[21.25rem]"></Loader>
+              }
             >
-              {publication?.title}
-            </h2>
+              <Image
+                src={publication?.link}
+                alt={"Diego Libonati"}
+                className="relative z-20 rounded-lg w-full min-h-[11.25rem] max-h-52 object-cover md:max-h-96 md:min-h-[21.25rem] hover:opacity-25 transition-opacity"
+                width={"100%"}
+                height={"100%"}
+              ></Image>
+              <h2
+                className={`absolute z-10 text-md text-center truncate ${
+                  theme ? "text-black" : "text-white"
+                }`}
+              >
+                {publication?.title}
+              </h2>
+            </Suspense>
           </div>
           {publication?.ubication ? (
             <div className="flex flex-row items-center justify-start mt-2">
@@ -219,3 +237,5 @@ export const Publication = ({
     </article>
   );
 };
+
+export default Publication;
