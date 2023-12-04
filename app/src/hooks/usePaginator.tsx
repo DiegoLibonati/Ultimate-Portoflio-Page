@@ -19,6 +19,7 @@ export const usePaginator = ({
     []
   );
   const [arr, setArr] = useState<PublicationType[] | never>([]);
+  const [originalArr, setOriginalArr] = useState<PublicationType[] | never>([]);
 
   const parentRef = useRef<HTMLElement | null>(null);
 
@@ -45,16 +46,24 @@ export const usePaginator = ({
 
   useEffect(() => {
     if (customArr.length > 0) {
+      const finalArr = [...customArr].sort(
+        (pub, pub2) => pub2.isPinned - pub.isPinned
+      );
+      setOriginalArr(finalArr);
+      return;
+    }
+  }, [customArr]);
+
+  useEffect(() => {
+    if (originalArr.length > 0) {
       setArr(
-        customArr.slice(
+        originalArr.slice(
           elementsPerPage * (actualPage - 1),
           elementsPerPage * actualPage
         )
       );
-
-      return;
     }
-  }, [customArr, elementsPerPage, actualPage]);
+  }, [originalArr, elementsPerPage, actualPage]);
 
   useEffect(() => {
     if (customArr.length > 0) {

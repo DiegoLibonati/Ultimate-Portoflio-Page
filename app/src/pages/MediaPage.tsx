@@ -37,23 +37,21 @@ const MediaPage = (): JSX.Element => {
           key="media_page"
         >
           <article className="grid grid-cols-3 gap-2 mt-2 w-full h-full">
-            {publications
-              .sort((pub, pub2) => pub2.isPinned - pub.isPinned)
-              .map((publication: PublicationType) => {
-                return (
-                  <Suspense
-                    fallback={<Loader className="w-full h-full"></Loader>}
-                    key={publication.id}
-                  >
-                    <ImgMedia
-                      src={publication.link}
-                      alt={publication.title}
-                      id={publication.id}
-                      title={publication.title}
-                    ></ImgMedia>
-                  </Suspense>
-                );
-              })}
+            {publications.map((publication: PublicationType) => {
+              return (
+                <Suspense
+                  fallback={<Loader className="w-full h-full"></Loader>}
+                  key={publication.id}
+                >
+                  <ImgMedia
+                    src={publication.link}
+                    alt={publication.title}
+                    id={publication.id}
+                    title={publication.title}
+                  ></ImgMedia>
+                </Suspense>
+              );
+            })}
           </article>
 
           <Paginator

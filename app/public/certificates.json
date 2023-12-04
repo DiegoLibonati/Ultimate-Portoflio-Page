@@ -7,5 +7,59 @@
     "link": "https://www.diegolibonati.com.ar/images/webgoogle1.webp",
     "title": "Introduction to web development I",
     "description": "Company: Google"
+  },
+  {
+    "id": 1,
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🖥️ Google",
+    "link": "https://www.diegolibonati.com.ar/images/webgoogle2.webp",
+    "title": "Introduction to web development II",
+    "description": "Company: Google"
+  },
+  {
+    "id": 2,
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🖥️ Responsive",
+    "link": "https://www.diegolibonati.com.ar/images/codecampweb.webp",
+    "title": "Responsive Web Design",
+    "description": "Company: FreeCodeCamp"
+  },
+  {
+    "id": 3,
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🖥️ Javascript",
+    "link": "https://www.diegolibonati.com.ar/images/codecampjavascript.webp",
+    "title": "JavaScript Algorithms and Data Structures",
+    "description": "Company: FreeCodeCamp"
+  },
+  {
+    "id": 4,
+    "isPinned": 1,
+    "date": "11/28/2023",
+    "status": "🖥️ React",
+    "link": "https://www.diegolibonati.com.ar/images/reactjsavalith.webp",
+    "title": "React JS",
+    "description": "Company: Avalith"
+  },
+  {
+    "id": 5,
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🖥️ SoftSkills",
+    "link": "https://www.diegolibonati.com.ar/images/workshopavalith.webp",
+    "title": "Workshops of IT Industry",
+    "description": "Company: Avalith"
+  },
+  {
+    "id": 6,
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🖥️ Python",
+    "link": "https://www.diegolibonati.com.ar/images/introduccion-a-la-programacion-con-python.webp",
+    "title": "Introduccion a la programacion con python",
+    "description": "Company: Humai"
   }
 ]

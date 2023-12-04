@@ -11,7 +11,7 @@ export const Tab = ({ tabRoute, tabText, index }: TabType): JSX.Element => {
       className={`flex items-center justify-center w-full py-3 cursor-pointer ${
         index === 3 ? "col-span-3" : "col-span-1"
       } ${
-        pathIsActive.includes(tabRoute) &&
+        pathIsActive.includes(tabText.toLowerCase()) &&
         `border-b-[0.15rem] border-primaryPurpure ${theme && "text-black"}`
       } ${
         theme ? "hover:bg-hoverGray3" : "hover:bg-hoverGray"

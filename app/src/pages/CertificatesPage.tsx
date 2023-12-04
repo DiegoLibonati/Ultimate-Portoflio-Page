@@ -37,21 +37,19 @@ const CertificatesPage = (): JSX.Element => {
         ref={parentRef}
         key="certificates_page"
       >
-        {publications
-          .sort((pub, pub2) => pub2.isPinned - pub.isPinned)
-          .map((publication: PublicationType) => {
-            return (
-              <Suspense
-                fallback={<Loader className="my-6"></Loader>}
-                key={publication.id}
-              >
-                <Publication
-                  publication={publication}
-                  section="certificate"
-                ></Publication>
-              </Suspense>
-            );
-          })}
+        {publications.map((publication: PublicationType) => {
+          return (
+            <Suspense
+              fallback={<Loader className="my-6"></Loader>}
+              key={publication.id}
+            >
+              <Publication
+                publication={publication}
+                section="certificate"
+              ></Publication>
+            </Suspense>
+          );
+        })}
 
         <Paginator
           actualPage={actualPage}
