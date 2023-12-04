@@ -3,6 +3,7 @@ import profileSlice from "./profile/profileSlice";
 import uiSlice from "./ui/uiSlice";
 import publicationsSlice from "./publications/publicationsSlice";
 import certificatesSlice from "./certificates/certificatesSlice";
+import projectsSlice from "./projects/projectsSlice";
 // ...
 
 export const store = configureStore({
@@ -11,6 +12,7 @@ export const store = configureStore({
     ui: uiSlice,
     publications: publicationsSlice,
     certificates: certificatesSlice,
+    projects: projectsSlice,
   },
 });
 

@@ -33,14 +33,17 @@ const FeedPage = (): JSX.Element => {
           theme ? "bg-primaryWhite" : "bg-primaryBlack"
         }`}
         ref={parentRef}
+        key="feed_page"
       >
         {publications
           .sort((pub, pub2) => pub2.isPinned - pub.isPinned)
           .map((publication: PublicationType) => {
             return (
-              <Suspense fallback={<Loader className="my-6"></Loader>}>
+              <Suspense
+                fallback={<Loader className="my-6"></Loader>}
+                key={publication.id}
+              >
                 <Publication
-                  key={publication.id}
                   publication={publication}
                   section="publication"
                 ></Publication>

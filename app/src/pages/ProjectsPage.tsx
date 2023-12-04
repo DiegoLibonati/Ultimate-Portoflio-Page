@@ -1,20 +1,20 @@
 import { Paginator } from "../components/Paginator/Paginator";
 
 import { PublicationType } from "../entities/types";
-import { useCertificatesStore } from "../hooks/useCertificatesStore";
 import { usePaginator } from "../hooks/usePaginator";
 import { useRouter } from "../hooks/useRouter";
 import { useUiStore } from "../hooks/useUiStore";
 import { MainLayout } from "../layout/MainLayout";
 import { lazy, Suspense } from "react";
 import { Loader } from "../components/Loader/Loader";
+import { useProjectsStore } from "../hooks/useProjectsStore";
 
 const Publication = lazy(() => import("../components/Publication/Publication"));
 
-const CertificatesPage = (): JSX.Element => {
+const ProjectsPage = (): JSX.Element => {
   const { params } = useRouter();
   const { theme } = useUiStore();
-  const { certificates } = useCertificatesStore();
+  const { projects } = useProjectsStore();
 
   const {
     publications,
@@ -25,7 +25,7 @@ const CertificatesPage = (): JSX.Element => {
   } = usePaginator({
     page: Number(params.page),
     perPage: 4,
-    customArr: certificates,
+    customArr: projects,
   });
 
   return (
@@ -35,7 +35,7 @@ const CertificatesPage = (): JSX.Element => {
           theme ? "bg-primaryWhite" : "bg-primaryBlack"
         }`}
         ref={parentRef}
-        key="certificates_page"
+        key="projects_page"
       >
         {publications
           .sort((pub, pub2) => pub2.isPinned - pub.isPinned)
@@ -47,7 +47,7 @@ const CertificatesPage = (): JSX.Element => {
               >
                 <Publication
                   publication={publication}
-                  section="certificate"
+                  section="project"
                 ></Publication>
               </Suspense>
             );
@@ -63,4 +63,4 @@ const CertificatesPage = (): JSX.Element => {
   );
 };
 
-export default CertificatesPage;
+export default ProjectsPage;

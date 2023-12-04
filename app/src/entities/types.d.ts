@@ -71,6 +71,7 @@ export type UseRouterType = {
 export type TabType = {
   tabRoute: string;
   tabText: string;
+  index: number;
 };
 
 // ButtonPublicationType
@@ -149,7 +150,7 @@ export type UseCertificatesStore = {
   activeCertificate: CertificateType | null;
   certificates: CertificateType[];
   handleSetCertificate: (
-    publication: Promise<CertificateType>
+    certificate: Promise<CertificateType>
   ) => Promise<void>;
   handleSetCertificates: (
     certificates: Promise<CertificateType[]>
@@ -270,4 +271,30 @@ export type ImageType = {
 export type IframeType = {
   src: string;
   className?: string;
+};
+
+// ProjectType
+export type ProjectType = {
+  id: number;
+  isPinned: number;
+  date: string;
+  status: string;
+  title: string;
+  link: string;
+  description: string;
+  ubication?: string;
+};
+
+//ProjectStateType
+export type ProjectStateType = {
+  projects: ProjectType[];
+  activeProject: ProjectType | null;
+};
+
+// UseProjectsStore
+export type UseProjectsStore = {
+  activeProject: ProjectType | null;
+  projects: ProjectType[];
+  handleSetProject: (project: Promise<ProjectType>) => Promise<void>;
+  handleSetProjects: (projects: Promise<ProjectType[]>) => Promise<void>;
 };

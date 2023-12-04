@@ -1,4 +1,3 @@
-import { images } from "../../assets/exports";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { useScroll } from "../../hooks/useScroll";
 import { useRouter } from "../../hooks/useRouter";
@@ -39,7 +38,11 @@ export const NavBar = (): JSX.Element => {
             fallback={<Loader className="h-full w-full min-h-full"></Loader>}
           >
             <Image
-              src={theme ? images.lightDl : images.nightDL}
+              src={
+                theme
+                  ? "https://www.diegolibonati.com.ar/images/sDL.png"
+                  : "https://www.diegolibonati.com.ar/images/nDL.png"
+              }
               alt="DiegoLibonati"
               className="h-full w-full min-h-full object-cover"
               width={"100%"}

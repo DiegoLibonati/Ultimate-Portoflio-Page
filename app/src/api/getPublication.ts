@@ -2,7 +2,7 @@ import { PublicationType } from "../entities/types";
 
 export const getPublication = async (id: string): Promise<PublicationType> => {
   try {
-    const result = await fetch("/publications.json", {
+    const result = await fetch("/feed.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

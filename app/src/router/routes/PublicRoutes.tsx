@@ -7,12 +7,13 @@ import { getProfile } from "../../api/getProfile";
 import { useProfileStore } from "../../hooks/useProfileStore";
 import { getPublications } from "../../api/getPublications";
 import { usePublicationsStore } from "../../hooks/usePublicationsStore";
-import { images } from "../../assets/exports";
 import { useUiStore } from "../../hooks/useUiStore";
 import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
 import { getCertificates } from "../../api/getCertificates";
 import { useCertificatesStore } from "../../hooks/useCertificatesStore";
 import { Loader } from "../../components/Loader/Loader";
+import { useProjectsStore } from "../../hooks/useProjectsStore";
+import { getProjects } from "../../api/getProjects";
 
 const FeedPage = lazy(() => import("../../pages/FeedPage"));
 const CertificatesPage = lazy(() => import("../../pages/CertificatesPage"));
@@ -20,6 +21,8 @@ const MediaPage = lazy(() => import("../../pages/MediaPage"));
 const LinksPage = lazy(() => import("../../pages/LinksPage"));
 const PublicationPage = lazy(() => import("../../pages/PublicationPage"));
 const CertificatePage = lazy(() => import("../../pages/CertificatePage"));
+const ProjectPage = lazy(() => import("../../pages/ProjectPage"));
+const ProjectsPage = lazy(() => import("../../pages/ProjectsPage"));
 const Image = lazy(() => import("../../components/Image/Image"));
 
 const PublicRoutes = (): JSX.Element => {
@@ -27,6 +30,7 @@ const PublicRoutes = (): JSX.Element => {
   const { profile, handleSetProfile } = useProfileStore();
   const { publications, handleSetPublications } = usePublicationsStore();
   const { certificates, handleSetCertificates } = useCertificatesStore();
+  const { projects, handleSetProjects } = useProjectsStore();
   const { theme } = useUiStore();
   const { isMobile } = useCheckMobileScreen();
 
@@ -44,7 +48,12 @@ const PublicRoutes = (): JSX.Element => {
     if (pathname === "/") return redirectTo("/feed/1");
     if (pathname.includes("certificates") && certificates.length === 0) {
       const certificates = getCertificates();
+      console.log(certificates);
       handleSetCertificates(certificates);
+    }
+    if (pathname.includes("projects") && projects.length === 0) {
+      const projects = getProjects();
+      handleSetProjects(projects);
     }
   }, [pathname]);
 
@@ -89,6 +98,18 @@ const PublicRoutes = (): JSX.Element => {
           }
         ></Route>
         <Route
+          path="/projects/:page"
+          element={
+            <Suspense
+              fallback={
+                <Loader className="h-screen w-screen bg-black"></Loader>
+              }
+            >
+              <ProjectsPage></ProjectsPage>
+            </Suspense>
+          }
+        ></Route>
+        <Route
           path="/links"
           element={
             <Suspense
@@ -124,12 +145,28 @@ const PublicRoutes = (): JSX.Element => {
             </Suspense>
           }
         ></Route>
+        <Route
+          path="/project/:id"
+          element={
+            <Suspense
+              fallback={
+                <Loader className="h-screen w-screen bg-black"></Loader>
+              }
+            >
+              <ProjectPage></ProjectPage>
+            </Suspense>
+          }
+        ></Route>
         <Route path="/*" element={<Navigate to="/feed/1"></Navigate>}></Route>
       </Routes>
       {!isMobile && (
         <Suspense fallback={<Loader className="w-32 h-32"></Loader>}>
           <Image
-            src={theme ? images.lightDl : images.nightDL}
+            src={
+              theme
+                ? "https://www.diegolibonati.com.ar/images/sDL.png"
+                : "https://www.diegolibonati.com.ar/images/nDL.png"
+            }
             alt="imagen"
             className="fixed bottom-0 right-0 w-32 h-32 object-cover opacity-30"
             width={"100%"}
