@@ -10,7 +10,7 @@ export const ButtonPaginator = ({
 
   return (
     <button
-      className={`text-center text-lg h-10 w-10 mx-1 font-semibold rounded-lg ${
+      className={`text-center text-lg h-10 w-10 mx-1 my-1 font-semibold rounded-lg ${
         !theme && actualPage === element
           ? "text-black bg-primaryWhite"
           : !theme && actualPage !== element

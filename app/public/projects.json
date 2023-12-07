@@ -1,6 +1,6 @@
 [
   {
-    "id": 10,
+    "id": 1,
     "isPinned": 1,
     "date": "11/28/2023",
     "status": "🎨 Painter",
@@ -10,7 +10,7 @@
     "github": "https://github.com/DiegoLibonati/Pinturillo-Clone-App-Page"
   },
   {
-    "id": 20,
+    "id": 2,
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "😎 3D",
@@ -20,7 +20,7 @@
     "github": "https://github.com/DiegoLibonati/3D-Object-Viewer-Page"
   },
   {
-    "id": 30,
+    "id": 3,
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "📸 Photographer",
@@ -30,7 +30,7 @@
     "github": "https://github.com/DiegoLibonati/Instagram-Clone-App-Page"
   },
   {
-    "id": 40,
+    "id": 4,
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "🕹️ Gamer",
@@ -38,5 +38,635 @@
     "link": "https://www.diegolibonati.com.ar/images/gamesapp.webp",
     "description": "This time I made an integrative app in React JS. This application has the following features: React, Redux Toolkit, React Router V6, Firebase V9 SDK, Axios, React Custom Hooks. It consists of 3 sections, the main section that serves to receive the user who is registered, logged in or simply logged in with Google. Also in it you can interact with different games. In this section you can add games to favorites. Then as I mentioned before the favorites section where all the user's favorite games will appear and finally a section of games where all the games will appear and the user can filter by categories provided by the API. This API is not mine, it is taken from the internet. For this application i use: react js, firebase, firestore and native css",
     "github": "https://github.com/DiegoLibonati/Games-APP"
+  },
+  {
+    "id": 5,
+    "github": "https://github.com/DiegoLibonati/Foro",
+    "title": "Foro Page",
+    "link": "https://www.diegolibonati.com.ar/images/foroflask-4.webp",
+    "description": "In this project, I made a forum with FLASK. This forum allows many users can be connected at the same time, login system, registration system with encrypted passwords, personal accounts, responsive design, live chat where users can interact in real time, see which users are ON, search for users, personal user profiles, comments can be made on the profiles, you can like the comments made on the profiles, if you are the owner of the comments you can delete the comments you made, if you are the owner of the profile you can delete the comments made to you, subscribers system, users last connection, from your profile you can change: user, email, profile photo, banner photo and profile background photo, you can create posts with title and description and each post has comments and those comments can be deleted if you are the owner of the comment and can also be liked. I use: flask, jinja2, html, css, javascript, sql y mysql",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "✍️ Writer"
+  },
+  {
+    "id": 6,
+    "github": "https://github.com/DiegoLibonati/Space-Runner-Game-Program",
+    "title": "Space Runner Game",
+    "link": "https://www.diegolibonati.com.ar/images/spacerunner-4.webp",
+    "description": "Space Runner is a game developed in Python through the Pygame library. In this game we are going to control a space runner who will try to dodge the targets that come towards him. The way to dodge will be using A, D and Space to jump, a and d to move laterally. As time goes by, it is counted as a score, survive more and you will have more points. We can also use different powers that will appear randomly on the visible field of the map.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🕹️ Gamer"
+  },
+  {
+    "id": 7,
+    "github": "https://github.com/DiegoLibonati/Bookstore-API-REST-PAGE",
+    "title": "Bookstore API REST Page",
+    "link": "https://www.diegolibonati.com.ar/images/libreriaflaskreact-2.webp",
+    "description": "This time I made a page about a Boostore. It is made with the following technologies: API-REST: flask, python, mongodb and FRONT-END with react js. In which you can add books in the main section of the page with title, author, genre, description and an image. In addition you can visualize the loaded books that are stored in MongoDB with the above mentioned features. Endpoints: create a book, get all books, get book by genre, delete book by ID, get all genres, error endpoint.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📚 Reader"
+  },
+  {
+    "id": 8,
+    "github": "https://github.com/DiegoLibonati/E-Commerce-Page",
+    "title": "E-Commerce Page",
+    "link": "https://www.diegolibonati.com.ar/images/ecommerce-2.webp",
+    "description": "This is my first e-commerce made with javascript, html and native css. To get the information I use a free internet API. Also this page has a Loader that allows to show the loader until the information of the Api is completely loaded in the page. It has other pages besides the main one such as: about us, coming soon, contact us, faq page, meet the team and get the voucher. The shop page contains all the products that are available for purchase and each product has its own page to add it to the cart. The cart loads all the items that were added by the user into the cart and calculates the total value. The user will be able to purchase by pressing a single button.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛍️ Shopping"
+  },
+  {
+    "id": 9,
+    "github": "https://github.com/DiegoLibonati/Alexa-Bot-Discord-NodeJS",
+    "title": "Discord BOT Node JS",
+    "link": "https://www.diegolibonati.com.ar/images/diebot-4.webp",
+    "description": "I made a discord bot in Node JS. I made a bot that serves as a virtual assistant, a great example of ALEXA but in DISCORD. That is to say, we can talk to it and the bot will replicate what we said in the chat and that way it will be the bot who executes our commands. In addition to other functionalities such as making the bot talk or different additional commands.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🤖 Discord"
+  },
+  {
+    "id": 10,
+    "github": "https://github.com/DiegoLibonati/Heroes-App-Page",
+    "title": "Heroes App Page",
+    "link": "https://www.diegolibonati.com.ar/images/heroesreact2-4.webp",
+    "description": "I made a web application with React JS with Firebase for user authentication since this application has a login and a register. Also once we log in with an account or with google we can see in the main section different types of heroes and each hero we can see a mini chart with his name, his publisher, a description and a button to access more information about that hero. In addition this APP has a search through the browser bar which will search for the publisher and bring all the heroes of that specific publisher. It also has a search section where we can search by the name of our favorite hero.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🦸 Hero"
+  },
+  {
+    "id": 11,
+    "github": "https://github.com/DiegoLibonati/Flags-App-Game",
+    "title": "Flags Game App Page",
+    "link": "https://www.diegolibonati.com.ar/images/flagsgame-0.webp",
+    "description": "I made a web application with React JS and Flask for the api-rest, I used mongodb to save the information. In this web application you can play guess the flag, there are a total of 3 game modes among them we have normal, hard and hardcore mode. In each of them will appear 5 flags and depending on the game mode will have more or less time. In game modes with a higher difficulty the points multiplier will be higher, because every time you guess a flag you add points. In each game mode there is a ranking and there is also a global ranking of players that is governed by the amount of points they score.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🇦🇷 My Flag"
+  },
+  {
+    "id": 12,
+    "github": "https://github.com/DiegoLibonati/ToDo-Redux-App-Page",
+    "title": "ToDo Redux App Page",
+    "link": "https://www.diegolibonati.com.ar/images/reduxtodo-0.webp",
+    "description": "I made a web application that serves to save things to do. In addition we have a sidebar where you will find our default categories: My Day, Important and Tasks. There is a button to add a new custom category in which we can put the name we want and an emoji of our choice for that category. Within each category you will be able to create, edit and delete all of them. When marking an all as done it will change color. Each action of the user will show an alert.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📝 Tasks"
+  },
+  {
+    "id": 13,
+    "github": "https://github.com/DiegoLibonati/File-Organizer-Program",
+    "title": "File Organizer Program",
+    "link": "https://www.diegolibonati.com.ar/images/fileorganize-4.webp",
+    "description": "I made a program that allows to sort the files in a specific path. It will get all the file extensions and create a folder for each extension in that path. Then it will add to each folder the file that corresponds to it. Basically it sorts files depending on the extension. In addition we will be able to choose which extensions to sort or all of them. Filters can also be applied, being able to sort files with a specific size. Finally, if we want to go back we can also do it by clicking on the `Revert ORGANIZE` button, thus returning to the initial state of the path.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📁 Organizer"
+  },
+  {
+    "id": 14,
+    "github": "https://github.com/DiegoLibonati/Notes-Native-App",
+    "title": "Notes Native App",
+    "link": "https://www.diegolibonati.com.ar/images/notes-react-native-1.webp",
+    "description": "This native application is a notepad. It allows you to add notes, view these notes one by one by tapping on the note to be viewed. Additionally, the creation date, a title, and a content of the note can be viewed. While in the selected note, you can delete that note from all existing notes. Also, thanks to a component that I created, which is a list of checkboxes, you can filter by different filters such as date, title, or description, displaying only the filtered notes if it matches the filter and what you are looking to filter.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📝 Take Notes"
+  },
+  {
+    "id": 15,
+    "github": "https://github.com/DiegoLibonati/Calculator-Native-App",
+    "title": "Calculator Native App",
+    "link": "https://www.diegolibonati.com.ar/images/calculator-react-native-2.webp",
+    "description": "This application is made with react native. It is a calculator that allows to change the theme from light to dark, add, subtract, multiply, divide, change from positive to negative and vice versa, return to 0, get the percentage etc. It is my first native application. The first of hopefully many :D",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📱 Calcs"
+  },
+  {
+    "id": 16,
+    "github": "https://github.com/DiegoLibonati/Stopwatch-Native-App",
+    "title": "Stopwatch Native App",
+    "link": "https://www.diegolibonati.com.ar/images/stopwatch-react-native-1.webp",
+    "description": "In this native application you will be able to time each lap you do using the `lap` button. You can also stop it and change the clock skin. By default there are 4 skins: a classic one, the normal one, an hourglass in pixel format and a running pikachu. There is also one more button to clear the timer and `clear` laps.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "⏱️ Tic Tac"
+  },
+  {
+    "id": 17,
+    "github": "https://github.com/DiegoLibonati/Minecraft-Clone-App-Page",
+    "title": "Minecraft Clone App Page",
+    "link": "https://www.diegolibonati.com.ar/images/minecraftapp-4.webp",
+    "description": "I made a minecraft clone in which you can use 5 different types of blocks. You will be able to attach the blocks to each other and sideways. You can also walk, jump and run. You can also save your world through the save button, this button will save the world in the LocalStorage and a button to reset the world, this way you will delete all the generator blocks to start from 0.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🧊 Minecraft"
+  },
+  {
+    "id": 18,
+    "github": "https://github.com/DiegoLibonati/Finances-Page",
+    "title": "Finances Page",
+    "link": "https://www.diegolibonati.com.ar/images/financespagebt.webp",
+    "description": "I made a website about finances, but basically what I did was to take a design from the internet and implement it on my own without seeing the original code. All this was because I wanted to keep practicing Bootstrap.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📈 Finance"
+  },
+  {
+    "id": 19,
+    "github": "https://github.com/DiegoLibonati/Digital-Agency-Page",
+    "title": "Digital Agency Page",
+    "link": "https://www.diegolibonati.com.ar/images/digitalagency.webp",
+    "description": "I made a website about digital agency, but basically what I did was to take a design from the internet and implement it on my own without seeing the original code. All this was because I wanted to keep practicing Bootstrap.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "💼 Agency"
+  },
+  {
+    "id": 20,
+    "github": "https://github.com/DiegoLibonati/Color-Generator-App-Page",
+    "title": "Color Generator App Page",
+    "link": "https://www.diegolibonati.com.ar/images/reactcolorgenerator-1.webp",
+    "description": "I made a web application that will return a palette of colors depending on the hexadecimal color that the user passes in the input. It will also return the amount of colors specified in the number field, if we choose 10 it will return 10 colors in the color palette of that specific color.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🎨 Colors"
+  },
+  {
+    "id": 21,
+    "github": "https://github.com/DiegoLibonati/Gestion-De-Clientes-App-Page",
+    "title": "Gestion De Clientes App Page",
+    "link": "https://www.diegolibonati.com.ar/images/gestionclientesflask-0.webp",
+    "description": "I made a web application and its rest api to manage customers. Through different endpoints we will bring different information to be able to show it in front. In this web application we will be able to add, edit and delete customers. To save all the information use Mysql with Phpmyadmin.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "👥 Clients"
+  },
+  {
+    "id": 23,
+    "github": "https://github.com/DiegoLibonati/Creative-Studio-Page",
+    "title": "Creative Studio Page",
+    "link": "https://www.diegolibonati.com.ar/images/creativestoriescss-1.webp",
+    "description": "I made a website about creative studio, but basically what I did was to take a design from the internet and implement it on my own without seeing the original code. All this was because I wanted to keep practicing CSS.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🎥 Studio"
+  },
+  {
+    "id": 24,
+    "github": "https://github.com/DiegoLibonati/Mobile-Application-Development-Page",
+    "title": "Mobile Application Development Page",
+    "link": "https://www.diegolibonati.com.ar/images/devmobile-0.webp",
+    "description": "I made a website about mobile application development, but basically what I did was to take a design from the internet and implement it on my own without seeing the original code. All this was because I wanted to keep practicing CSS.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📱 Mobile"
+  },
+  {
+    "id": 25,
+    "github": "https://github.com/DiegoLibonati/Gifs-App-Page",
+    "title": "Gifs App Page",
+    "link": "https://www.diegolibonati.com.ar/images/gifappreact-3.webp",
+    "description": "I made a web application that allows the user to search for gifs. The same user will be able to enter the name of a category by the input, when pressing go, it will search through an API the amount of gifs previously selected from that specific category. Of that category will appear the name and also you can delete it, there is also a button to delete all the categories and if you click on the surprise button it makes a random search of that API and it will bring a random category. If you click on a gif you will be able to see that gif in a modal.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🖼️ Gif"
+  },
+  {
+    "id": 26,
+    "github": "https://github.com/DiegoLibonati/Cocktails-App-Page",
+    "title": "Cocktail App Page",
+    "link": "https://www.diegolibonati.com.ar/images/cocktailreact-0.webp",
+    "description": "I made a web application that allows you to see different types of drinks. If we don't use the search engine on the main page, all the available drinks will appear. If we click on any drink, it will take us to the special page of that drink where we can see different information such as the name, the name of the drink, more information and its ingredients, plus a button to return to home. Also this page has an About section and an Error 404 section in case the URL was not found.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🍹 Sweat"
+  },
+  {
+    "id": 27,
+    "github": "https://github.com/DiegoLibonati/Drawing-Page",
+    "title": "Drawing Page",
+    "link": "https://www.diegolibonati.com.ar/images/draw-2.webp",
+    "description": "I made a web page in which through canvas you can draw. In this canvas box you can draw with different brush sizes and change the color of the brush. There is also a clear button to clear the whole canvas.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🎨 Painter"
+  },
+  {
+    "id": 28,
+    "github": "https://github.com/DiegoLibonati/Weather-Program",
+    "title": "Weather Program",
+    "link": "https://www.diegolibonati.com.ar/images/weatherapppython-2.webp",
+    "description": "I made a python program using tkinter as user interface. This program makes requests to a free weather API. We will have to pass the name of the city or country to collect different information. It will show the current weather, the time, the wind chill, the temperature, the wind, the humidity, the description and the pressure.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🌦️ To Cold"
+  },
+  {
+    "id": 29,
+    "github": "https://github.com/DiegoLibonati/Notepad-Program",
+    "title": "Notepad Program",
+    "link": "https://www.diegolibonati.com.ar/images/notepadpython-3.webp",
+    "description": "I made a python program with user interface using tkinter. This program works like notepad, you can open text files, create and edit them. In addition you can change the font type and change the font type.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📝 Notes"
+  },
+  {
+    "id": 30,
+    "github": "https://github.com/DiegoLibonati/Grocery-Bud-App-Page",
+    "title": "Grocery Bud App Page",
+    "link": "https://www.diegolibonati.com.ar/images/grocerybudreact-3.webp",
+    "description": "I made a web application that serves as a notepad of items in a list. In this list we will be able to enter the items with any name we want, also we will be able to edit and delete them. If we want we can also delete all the items of the list touching in `Clear Items`. Every time we perform an action we will see an alert for success or error. In addition all the information is saved in the LocalStorage in this way, the values will persist.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛒 Shop List"
+  },
+  {
+    "id": 32,
+    "github": "https://github.com/DiegoLibonati/Password-Generator-Page",
+    "title": "Password Generator Page",
+    "link": "https://www.diegolibonati.com.ar/images/password-2.webp",
+    "description": "I made a web page that allows the user to generate a random password. From this generated password you can choose: its length, if it contains uppercase letters, lowercase letters, numbers and/or symbols. It is a very customizable password generator.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🔐 Secure"
+  },
+  {
+    "id": 34,
+    "github": "https://github.com/DiegoLibonati/Cart-App-Page",
+    "title": "Cart App Page",
+    "link": "https://www.diegolibonati.com.ar/images/cartreact-0.webp",
+    "description": "I made a web application that simulates a shopping cart. Basically we will have different types of cell phones, each one of these cell phones will have a price as we add more, the total price will be added and also the amount of products in the cart will be added. If we touch `Clear cart` we will eliminate all the items in the cart. Use useReducer.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛒 Shop"
+  },
+  {
+    "id": 35,
+    "github": "https://github.com/DiegoLibonati/Stripe-Menu-App-Page",
+    "title": "Stripe Menu App Page",
+    "link": "https://www.diegolibonati.com.ar/images/stripemenureact-1.webp",
+    "description": "I made a web application that simulates a new style of navbar. It is not the traditional navbar, but it is a menu that will appear if we hover over the nav link. As you scroll through the different nav links, the menu will scroll as well.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛢️ Menu"
+  },
+  {
+    "id": 36,
+    "github": "https://github.com/DiegoLibonati/Whac-A-Mole-Game-Page",
+    "title": "Whac-a-mole Page",
+    "link": "https://www.diegolibonati.com.ar/images/whac-2.webp",
+    "description": "I made a web page that allows you to play hit the `mole` but in this case it is a `rat`. Basically the user will have 60 seconds to hit the mouse as many times as possible, the mouse will be generated in a random space in the grid. If it is hit by left clicking with the mouse, you will score points.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🐀 A Rat"
+  },
+  {
+    "id": 37,
+    "github": "https://github.com/DiegoLibonati/Footwear-Page",
+    "title": "Footwear Page",
+    "link": "https://www.diegolibonati.com.ar/images/footwear-1.webp",
+    "description": "I made a website about footwear, but basically what I did was to take a design from the internet and implement it on my own without seeing the original code. All this was because I wanted to keep practicing CSS.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "👟 Run"
+  },
+  {
+    "id": 38,
+    "github": "https://github.com/DiegoLibonati/Grocery-Page",
+    "title": "Grocery Page",
+    "link": "https://www.diegolibonati.com.ar/images/grocery-2.webp",
+    "description": "I made a web page that allows you to add items to a list. These items can be edited and deleted. There is also a button to delete all items in the list. It is important to note that every item that is added, is saved in the LocalStorage. This allows to keep the items in each update of the page.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛒 Shop List"
+  },
+  {
+    "id": 39,
+    "github": "https://github.com/DiegoLibonati/Frogger-Game-Page",
+    "title": "Frogger Page",
+    "link": "https://www.diegolibonati.com.ar/images/frogger-1.webp",
+    "description": "I made a web page to play Frogger. Frogger is a traditional game of the frog trying to get to the other side of the map, in this case I made one among us. The first test will be to pass through a traffic full of ferraris and trucks, then you will have to dodge the bullets of two turrets and finally pass through a bridge that disappears and reappears. If you reach the red line, you win.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🐸 Frogger"
+  },
+  {
+    "id": 41,
+    "github": "https://github.com/DiegoLibonati/Game-Developer-Portfolio-Page",
+    "title": "Game Developer Portfolio Page",
+    "link": "https://www.diegolibonati.com.ar/images/gamedesign-0.webp",
+    "description": "I made a website about game developer portfolio, but basically what I did was to take a design from the internet and implement it on my own without seeing the original code. All this was because I wanted to keep practicing CSS.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🕹️ Gamer"
+  },
+  {
+    "id": 42,
+    "github": "https://github.com/DiegoLibonati/Movies-Page",
+    "title": "Movies Page",
+    "link": "https://www.diegolibonati.com.ar/images/movies2-0.webp",
+    "description": "I made a movie website. On this page we can see the 5 movies that are trending and also see the most popular and highest rated movies on the `Home` page. On the `Movies` page we can see 20 movies per page sorted by popularity, the pagination are two arrows to go back and one to go forward. Depending on which arrow is touched we will go to the next page or to the previous one.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🎬 Cinema"
+  },
+  {
+    "id": 43,
+    "github": "https://github.com/DiegoLibonati/Notes-Page",
+    "title": "Notes Page",
+    "link": "https://www.diegolibonati.com.ar/images/notes-3.webp",
+    "description": "I made a web page that allows the user to save notes. With the notes you can add a new one, edit an existing one and delete a specific note. Every time the user performs an action an alert will pop up.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📝 Take Notes"
+  },
+  {
+    "id": 44,
+    "github": "https://github.com/DiegoLibonati/Recipe-Page",
+    "title": "Recipe Page",
+    "link": "https://www.diegolibonati.com.ar/images/recipe-3.webp",
+    "description": "I made a recipe page. In this page you will be able to search for meals randomly, these searches are given thanks to an API (THE MEAL DB). When you put likes, they will appear at the top in the form of instagram story, if you click on the image you can see the instructions to make that meal or take it out of stories.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🍔 Yummy"
+  },
+  {
+    "id": 45,
+    "github": "https://github.com/DiegoLibonati/ToDo-Page",
+    "title": "ToDo Page",
+    "link": "https://www.diegolibonati.com.ar/images/ToDo-2.webp",
+    "description": "I made a web page that works like JIRA. It is a page where we can upload tasks to do, that are in progress or that are done. In addition we can delete all the tasks of each category separately, we can drag and drop the tasks from one category to another with drag and drop. Also by clicking with the wheel we can cross out the task and with the right click we can delete it from the dashboard.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📝 Notes"
+  },
+  {
+    "id": 46,
+    "github": "https://github.com/DiegoLibonati/Imc-Calculator-Program",
+    "title": "IMC Calculator Program",
+    "link": "https://www.diegolibonati.com.ar/images/imc_calculator-2.webp",
+    "description": "I made a python program with tkinter as user interface. In this program we are going to calculate the body mass index, we will have to enter the weight and height of a person. The program will return the BMI of the person in question and how healthy he/she is.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📱 Calcs"
+  },
+  {
+    "id": 47,
+    "github": "https://github.com/DiegoLibonati/Simon-Says-Game-Page",
+    "title": "Simon Says Page",
+    "link": "https://www.diegolibonati.com.ar/images/simonsay-2.webp",
+    "description": "I made a website that allows you to play simon says. You can choose between 3 difficulties: easy, medium and hard. The difference between these difficulties is the speed that the colors will be shown on the screen. Being easy very slow and hard very fast the game itself. Each time we do well the pattern of colors indicated by the game we will add 1 point.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🕹️ Gamer"
+  },
+  {
+    "id": 48,
+    "github": "https://github.com/DiegoLibonati/Weather-Page",
+    "title": "Weather Page",
+    "link": "https://www.diegolibonati.com.ar/images/Wheater-4.webp",
+    "description": "I made a web page that we can search the current weather of cities and countries, through a free internet API will show different information such as the city or country, a weather icon, the degrees and how is the weather.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🌦️ To Cold"
+  },
+  {
+    "id": 49,
+    "github": "https://github.com/DiegoLibonati/Breakout-Game-Page",
+    "title": "Breakout Page",
+    "link": "https://www.diegolibonati.com.ar/images/breakout-2.webp",
+    "description": "I made the game Breakout, in which we must use a platform to move to the sides to hit the ball and in this way the ball hits the blocks. Once we knock down all the blocks we win, if the ball hits the bottom we lose. The controls are the left and right arrows.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🕹️ Gamer"
+  },
+  {
+    "id": 50,
+    "github": "https://github.com/DiegoLibonati/Connect-Four-Game-Page",
+    "title": "Connect Four Page",
+    "link": "https://www.diegolibonati.com.ar/images/connectfour-1.webp",
+    "description": "I made a web page where you can play connect four against an AI. Once the user plays, the AI can play and so on until one of the two can line up 4 horizontally, vertically or diagonally. The first one to collect 4 either way wins.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🕹️ Gamer"
+  },
+  {
+    "id": 51,
+    "github": "https://github.com/DiegoLibonati/Space-Invaders-Game-Page",
+    "title": "Space Invaders Page",
+    "link": "https://www.diegolibonati.com.ar/images/spaceinvaders-1.webp",
+    "description": "I made a web page that allows you to play space invaders, to play you must move with the right and left arrows and with the left click of the mouse you can shoot. Every time you eliminate an alien you add points to your score. If the aliens touch you you will lose, the aliens every time they touch any of the walls, they will go down a few pixels and will go much faster than before.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🕹️ Gamer"
+  },
+  {
+    "id": 53,
+    "github": "https://github.com/DiegoLibonati/Memory-Game-Page",
+    "title": "Memory Game Page",
+    "link": "https://www.diegolibonati.com.ar/images/memorygame-2.webp",
+    "description": "I made a web page that allows you to play the memory game. You have to find the even cards, to know which ones are even you have to search among the different foods, if you find two apples you add points and you add a pair. Once you finish playing and you have found all your pairs it will calculate the time it took you to finish.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🕹️ Gamer"
+  },
+  {
+    "id": 55,
+    "github": "https://github.com/DiegoLibonati/Pointify-Clone-Page",
+    "title": "Pointify Clone Page",
+    "link": "https://www.diegolibonati.com.ar/images/pontify-0.webp",
+    "description": "I made a website about a pointify clone, but basically what I did was to take a design from the internet and implement it on my own without seeing the original code. All this was because I wanted to keep practicing CSS.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "👉 CSS"
+  },
+  {
+    "id": 56,
+    "github": "https://github.com/DiegoLibonati/Login-Program",
+    "title": "Login Program",
+    "link": "https://www.diegolibonati.com.ar/images/loginpython-2.webp",
+    "description": "I made a python program using tkinter as user interface. Basically I made a login system in which if you don't have an account you can register. It will ask you for a username and password, use mongo db to store the information in a database and werkzeug for password encryption. It is very useful to access a program that is protected by this login, if you have an account you will be able to access the program, otherwise you will not be able to.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🔐 Login"
+  },
+  {
+    "id": 61,
+    "github": "https://github.com/DiegoLibonati/Slider-App-Page",
+    "title": "Slider App Page",
+    "link": "https://www.diegolibonati.com.ar/images/sliderreact-3.webp",
+    "description": "I made a web application that simulates or tries to reproduce a section of Reviews in the form of Slider where each review will show a photo, a name, a role and a description. It will also have an automatic slide in case the user does not use the buttons, and a manual slide in case the user wants to use the next or prev buttons.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛝 Next"
+  },
+  {
+    "id": 62,
+    "github": "https://github.com/DiegoLibonati/Encrypter-And-Decrypter-Program",
+    "title": "Encrypter And Decrypter Program",
+    "link": "https://www.diegolibonati.com.ar/images/encranddecr-2.webp",
+    "description": "I made a python program using tkinter as user interface. This program allows to encrypt text files, and also to decrypt them as long as we know a password.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🔐 Secure"
+  },
+  {
+    "id": 67,
+    "github": "https://github.com/DiegoLibonati/Spelling-Checker-Program",
+    "title": "Spelling Checker Program",
+    "link": "https://www.diegolibonati.com.ar/images/spellingchecker-2.webp",
+    "description": "I made a python program with a user interface made with tkinter. This program allows to correct the user through an entered word, if the user enters `hell` it will appear words similar to `hell` like `hello` for example.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "✅ Correct"
+  },
+  {
+    "id": 69,
+    "github": "https://github.com/DiegoLibonati/Menu-App-Page",
+    "title": "Menu App Page",
+    "link": "https://www.diegolibonati.com.ar/images/reactmenu-0.webp",
+    "description": "I made a web application that allows you to see a food menu. This menu has different buttons and depending on which button we touch it will bring us that type of food. If we tap on All, it will bring up all the meals again.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛢️ Menu"
+  },
+  {
+    "id": 73,
+    "github": "https://github.com/DiegoLibonati/Github-Profile-Page",
+    "title": "Github Profile Page",
+    "link": "https://www.diegolibonati.com.ar/images/github-1.webp",
+    "description": "I made a web page that allows the user to search for github profiles. If you find a profile it will show: its profile image, its user, its description, how many followers it has, how many people it follows and how many repos it has. And it will make a list of buttons with each repo, also if you click on any repo it will take you to the official link of that repository in github. If it doesn't find it, it will launch an alert.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "👤 Its Me"
+  },
+  {
+    "id": 75,
+    "github": "https://github.com/DiegoLibonati/Age-Calculator-Program",
+    "title": "Age Calculator Program",
+    "link": "https://www.diegolibonati.com.ar/images/agecalculatorpython-3.webp",
+    "description": "I made a program in Python using Tkinter as user interface that allows the user to visualize how old he/she is depending on the year, month and day we pass it.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📱 Calcs"
+  },
+  {
+    "id": 77,
+    "github": "https://github.com/DiegoLibonati/Tabs-App-Page",
+    "title": "Tabs App Page",
+    "link": "https://www.diegolibonati.com.ar/images/tabsreact-2.webp",
+    "description": "I made a application page that through different tabs you can get different information. Also if you tab with your keyboard you can access the different tabs and not only with the mouse click.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛢️ Menu"
+  },
+  {
+    "id": 78,
+    "github": "https://github.com/DiegoLibonati/Color-Flipper-Page",
+    "title": "Color Flipper Page",
+    "link": "https://www.diegolibonati.com.ar/images/Colorflipper-3.webp",
+    "description": "I made a web page that allows to generate a random color every time we click on `Flip`, it will be put as background and it will also tell us the color in hex to be able to use it anywhere.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🎨 Colors"
+  },
+  {
+    "id": 79,
+    "github": "https://github.com/DiegoLibonati/Newspaper-Page",
+    "title": "Newspaper Page",
+    "link": "https://www.diegolibonati.com.ar/images/newspaper-0.webp",
+    "description": "I made a website about a newspaper, but basically what I did was to take a design from the internet and implement it on my own without seeing the original code. All this was because I wanted to keep practicing CSS.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "News 📰"
+  },
+  {
+    "id": 82,
+    "github": "https://github.com/DiegoLibonati/Calculator-Page",
+    "title": "Calculator Page",
+    "link": "https://www.diegolibonati.com.ar/images/CalculadoraJS2-2.webp",
+    "description": "I made a web page that has a calculator to use. This calculator can add, subtract, multiply and divide. You can also get percentages, use negative numbers, decimal numbers and finally you can perform actions like CE and AC.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📱 Calcs"
+  },
+  {
+    "id": 83,
+    "github": "https://github.com/DiegoLibonati/Expanding-Cards-Page",
+    "title": "Expanding Cards Page",
+    "link": "https://www.diegolibonati.com.ar/images/expandingCards-1.webp",
+    "description": "I made a web page that works like a photo gallery, when you click on an image it expands and the other photos in the gallery shrink. I did this using methods that add and remove classes to the images with javascript.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "👀 That View"
+  },
+  {
+    "id": 84,
+    "github": "https://github.com/DiegoLibonati/Record-Audio-Program",
+    "title": "Record Audio Program",
+    "link": "https://www.diegolibonati.com.ar/images/audiorecorder-1.webp",
+    "description": "I made a program in python with tkinter as the user interface that allows the user to enter the name of a future audio, start recording an audio and save it when the stop button is tapped. Basically I made a voice recorder with python and tkinter.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🎥 Record"
+  },
+  {
+    "id": 86,
+    "github": "https://github.com/DiegoLibonati/Counter-Page",
+    "title": "Counter Page",
+    "link": "https://www.diegolibonati.com.ar/images/counter-2.webp",
+    "description": "I made a web page that contains a simple counter, this counter could increment the result shown on the screen, decrement that value and even do a reset to return to 0 its default value. Also if the number is positive it will be green, if it is negative it will be red and if the default is 0 it will be black.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🔢 1 Plus 1"
+  },
+  {
+    "id": 90,
+    "github": "https://github.com/DiegoLibonati/Speech-Program",
+    "title": "Speech Program",
+    "link": "https://www.diegolibonati.com.ar/images/speechpython-2.webp",
+    "description": "I made a program in Python, using Tkinter as user interface that allows to reproduce a text entered by the user in voice. The user will enter by the input of this program any message, then he will have to choose a voice that reproduces what he wrote, by default it only brings 2 voices, one in Spanish and another in English. Once this is done the user will touch the Listen button to play the message and listen to it.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🗣 Talk"
+  },
+  {
+    "id": 91,
+    "github": "https://github.com/DiegoLibonati/Rock-Paper-Scissors-Game-Page",
+    "title": "Rock, Paper, Or Scissors Game Page",
+    "link": "https://www.diegolibonati.com.ar/images/rcs2-2.webp",
+    "description": "I made a rock-paper-scissors like web page where the user plays against an AI. The AI is configured to choose randomly by rock, paper, scissors. In case the user wins a victory sign and the AI selection will be shown, in case the user loses the same thing will happen and if the user draws as well.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🪨 Rock Win"
+  },
+  {
+    "id": 92,
+    "github": "https://github.com/DiegoLibonati/Employees-And-Departments-Database",
+    "title": "Employees And Departments Database",
+    "link": "https://www.diegolibonati.com.ar/images/emplydepmysql-1.webp",
+    "description": "I made a database in order to practice SQL. I was able to make a database about different employees working in different departments. In addition I could create tables, assign fields to that table with their respective data types, insert information to the tables, delete tables, make queries to it like: select, select *, select distinct, select + order by, select + where, select as, select with conditions, select with mathematical operations, select + group by, select + having, count etc.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛢 DB"
+  },
+  {
+    "id": 93,
+    "github": "https://github.com/DiegoLibonati/Lorem-Ipsum-Page",
+    "title": "Lorem Ipsum Page",
+    "link": "https://www.diegolibonati.com.ar/images/lorem-1.webp",
+    "description": "I made a web page that allows the user to display different paragraphs. Once the user enters the number of paragraphs to display and press `Generate`, it will generate the number of paragraphs the user entered. If the user entered 7 and pressed `Generate`, 7 random paragraphs of lorem ipsum will be displayed.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "💬 Text"
   }
 ]

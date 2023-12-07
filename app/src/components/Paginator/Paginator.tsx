@@ -21,16 +21,19 @@ export const Paginator = ({
         fill={theme ? "#e9e9e9" : "#212529"}
         onClick={() => handleSetPage(actualPage - 1)}
       ></FaChevronLeft>
-      {elementsToRender.map((element: number, index: number) => {
-        return (
-          <ButtonPaginator
-            actualPage={actualPage}
-            element={element}
-            handleSetPage={handleSetPage}
-            key={index * 50}
-          ></ButtonPaginator>
-        );
-      })}
+
+      <div className="flex flex-wrap items-center justify-center">
+        {elementsToRender.map((element: number, index: number) => {
+          return (
+            <ButtonPaginator
+              actualPage={actualPage}
+              element={element}
+              handleSetPage={handleSetPage}
+              key={index * 50}
+            ></ButtonPaginator>
+          );
+        })}
+      </div>
       <FaChevronRight
         size={25}
         className={`mx-1 cursor-pointer ${

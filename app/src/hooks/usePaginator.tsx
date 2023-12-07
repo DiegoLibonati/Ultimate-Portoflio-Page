@@ -12,14 +12,23 @@ export const usePaginator = ({
   customArr,
 }: usePaginatorType): usePaginatorReturnType => {
   const [actualPage, setActualPage] = useState<number>(page);
-  const [navHeight] = useState<number>(60);
   const [lastPage, setLastPage] = useState<number>(0);
   const [elementsPerPage] = useState<number>(perPage);
+
   const [elementsToRender, setElementsToRender] = useState<number[] | never>(
     []
   );
+  const [originalElementsToRender, setOriginalElementsToRender] = useState<
+    number[] | never
+  >([]);
+
   const [arr, setArr] = useState<PublicationType[] | never>([]);
   const [originalArr, setOriginalArr] = useState<PublicationType[] | never>([]);
+
+  const [minIndex, setMinIndex] = useState<number | null>(null);
+  const [maxIndex, setMaxIndex] = useState<number | null>(null);
+
+  const [navHeight] = useState<number>(60);
 
   const parentRef = useRef<HTMLElement | null>(null);
 
@@ -75,7 +84,9 @@ export const usePaginator = ({
         return redirectTo("/feed/1");
       }
 
-      setElementsToRender([...Array(pages).keys()].map((key) => key + 1));
+      setOriginalElementsToRender(
+        [...Array(pages).keys()].map((key) => key + 1)
+      );
     }
   }, [customArr]);
 
@@ -83,7 +94,40 @@ export const usePaginator = ({
     if (parentRef!.current) {
       window.scrollTo({ top: parentRef.current?.offsetTop - navHeight });
     }
-  }, [actualPage]);
+
+    if (originalElementsToRender.length > 0) {
+      const index = originalElementsToRender.findIndex(
+        (elem) => elem === actualPage
+      );
+
+      if (index === 0) {
+        setMinIndex(0);
+        setMaxIndex(3);
+      } else if (index === originalElementsToRender.length - 1) {
+        setMinIndex(actualPage - 3);
+        setMaxIndex(actualPage);
+      } else if (index === originalElementsToRender.length - 2) {
+        setMinIndex(actualPage - 2);
+        setMaxIndex(actualPage + 2);
+      } else {
+        setMinIndex(actualPage - 1);
+        setMaxIndex(actualPage + 2);
+      }
+    }
+  }, [actualPage, originalElementsToRender]);
+
+  useEffect(() => {
+    if (
+      (Number(minIndex) === 0 || Number(minIndex)) &&
+      Number(maxIndex) &&
+      originalElementsToRender.length > 0
+    ) {
+      const min = Number(minIndex) === -1 ? 0 : Number(minIndex);
+      setElementsToRender(
+        originalElementsToRender.slice(min, Number(maxIndex))
+      );
+    }
+  }, [minIndex, maxIndex, originalElementsToRender]);
 
   return {
     publications: arr,
