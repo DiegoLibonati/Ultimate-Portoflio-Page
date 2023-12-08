@@ -11,6 +11,7 @@ import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
 import { useTruncate } from "../../hooks/useTruncate";
 import { openInNewTab } from "../../helpers/openInNewTab";
 import { lazy, Suspense } from "react";
+import { CiLinkedin } from "react-icons/ci";
 import { Loader } from "../Loader/Loader";
 
 const Image = lazy(() => import("../Image/Image"));
@@ -230,6 +231,20 @@ const Publication = ({
                 color={"#495057"}
                 className={"hover:fill-primaryPurpure"}
               ></AiFillGithub>
+            </ButtonPublication>
+          ) : null}
+
+          {publication?.reference ? (
+            <ButtonPublication
+              hasMargin={true}
+              id="copy_link"
+              onClick={(e) => onGithubClick(e, publication!.reference!)}
+            >
+              <CiLinkedin
+                size={30}
+                color={"#495057"}
+                className={"hover:fill-primaryPurpure"}
+              ></CiLinkedin>
             </ButtonPublication>
           ) : null}
         </div>

@@ -1,6 +1,6 @@
-import { PublicationType } from "../entities/types";
+import { CertificateType } from "../entities/types";
 
-export const getCertificates = async (): Promise<PublicationType[]> => {
+export const getCertificates = async (): Promise<CertificateType[]> => {
   try {
     const result = await fetch("/certificates.json", {
       headers: {

@@ -30,7 +30,7 @@ const MediaPage = (): JSX.Element => {
     <>
       <MainLayout>
         <section
-          className={`px-2 w-full md:w-[70%] lg:w-[63%] xl:w-[48%] 2xl:w-[40%] 3xl:w-[35%] ${
+          className={`px-2 w-full md:w-[70%] lg:w-[63%] xl:w-[48%] 2xl:w-[40%] 3xl:w-[35%] 4xl:min-h-[35rem] ${
             theme ? "bg-primaryWhite" : "bg-primaryBlack"
           }`}
           ref={parentRef}

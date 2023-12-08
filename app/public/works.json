@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "title": "Materia Estudios",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🖥️ Code Assist",
+    "link": "https://www.diegolibonati.com.ar/images/materiaestudio.webp",
+    "description": "In this work, help the main developer in the consumption of an API. This API allowed to handle emails to emails through a form without the presence of backend.",
+    "reference": "https://ar.linkedin.com/in/jlibonati"
+  },
+  {
+    "id": 1,
+    "title": "Pointify",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🖥️ Front-End Developer",
+    "link": "https://www.diegolibonati.com.ar/images/pointify.webp",
+    "description": "In this work, I made different templates for the company POINTIFY. I did not have the help of a predetermined design, but I was building as the client asked me to develop. Through these ideas I was able to make different templates so that other developers could be guided when building the site.",
+    "reference": "https://ar.linkedin.com/in/eneasdelgado"
+  },
+  {
+    "id": 2,
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🖥️ Front-End Developer",
+    "name": "MGB Estudio Juridico",
+    "link": "https://www.diegolibonati.com.ar/images/mgb.webp",
+    "description": "In this job, I made a landing page for a client. Through a default design of a single screen resolution (1366x768) I had to make it mobile and desktop. The mobile first and desktop version had to be made by referencing the only design that was available for a single resolution.",
+    "reference": "https://ar.linkedin.com/in/gabriel-berges-3a36a41b0"
+  }
+]

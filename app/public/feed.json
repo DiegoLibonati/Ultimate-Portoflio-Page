@@ -8,5 +8,15 @@
     "description": "I am pleased to announce my new portfolio. On this page I will upload posts of my day to day life, both projects and adventures that I want to share with the public. Welcome to my world, welcome to Diego Libonati's world.",
     "link": "https://www.diegolibonati.com.ar/images/diegolibonatiglasses.webp",
     "ubication": "CABA, Argentina"
+  },
+  {
+    "id": 2,
+    "isPinned": 0,
+    "date": "08/12/2023",
+    "status": "😎 Lucky",
+    "title": "First version of my Portfolio!",
+    "description": "This is the first official version of my portfolio. In this page you will be able to explore all my adventures in the feed section, all my projects (more than 80 projects) in the Projects section, all my certificates in the Certificates section and finally all my freelance work in the Freelance section. In the Media section you will see all the images related to the content of the Feed. Any message is welcome so I recommend you to explore my LinkedIn: https://www.linkedin.com/in/diego-libonati-67102419b/.",
+    "link": "https://www.diegolibonati.com.ar/images/portfolio.webp",
+    "ubication": "CABA, Argentina"
   }
 ]

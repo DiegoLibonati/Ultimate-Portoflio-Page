@@ -14,6 +14,8 @@ import { useCertificatesStore } from "../../hooks/useCertificatesStore";
 import { Loader } from "../../components/Loader/Loader";
 import { useProjectsStore } from "../../hooks/useProjectsStore";
 import { getProjects } from "../../api/getProjects";
+import { useWorksStore } from "../../hooks/useWorksStore";
+import { getWorks } from "../../api/getWorks";
 
 const FeedPage = lazy(() => import("../../pages/FeedPage"));
 const CertificatesPage = lazy(() => import("../../pages/CertificatesPage"));
@@ -23,6 +25,8 @@ const PublicationPage = lazy(() => import("../../pages/PublicationPage"));
 const CertificatePage = lazy(() => import("../../pages/CertificatePage"));
 const ProjectPage = lazy(() => import("../../pages/ProjectPage"));
 const ProjectsPage = lazy(() => import("../../pages/ProjectsPage"));
+const WorkPage = lazy(() => import("../../pages/WorkPage"));
+const WorksPage = lazy(() => import("../../pages/WorksPage"));
 const Image = lazy(() => import("../../components/Image/Image"));
 
 const PublicRoutes = (): JSX.Element => {
@@ -31,6 +35,7 @@ const PublicRoutes = (): JSX.Element => {
   const { publications, handleSetPublications } = usePublicationsStore();
   const { certificates, handleSetCertificates } = useCertificatesStore();
   const { projects, handleSetProjects } = useProjectsStore();
+  const { works, handleSetWorks } = useWorksStore();
   const { theme } = useUiStore();
   const { isMobile } = useCheckMobileScreen();
 
@@ -54,6 +59,10 @@ const PublicRoutes = (): JSX.Element => {
     if (pathname.includes("projects") && projects.length === 0) {
       const projects = getProjects();
       handleSetProjects(projects);
+    }
+    if (pathname.includes("freelance") && works.length === 0) {
+      const works = getWorks();
+      handleSetWorks(works);
     }
   }, [pathname]);
 
@@ -110,6 +119,18 @@ const PublicRoutes = (): JSX.Element => {
           }
         ></Route>
         <Route
+          path="/freelance/:page"
+          element={
+            <Suspense
+              fallback={
+                <Loader className="h-screen w-screen bg-black"></Loader>
+              }
+            >
+              <WorksPage></WorksPage>
+            </Suspense>
+          }
+        ></Route>
+        <Route
           path="/links"
           element={
             <Suspense
@@ -142,6 +163,18 @@ const PublicRoutes = (): JSX.Element => {
               }
             >
               <CertificatePage></CertificatePage>
+            </Suspense>
+          }
+        ></Route>
+        <Route
+          path="/work/:id"
+          element={
+            <Suspense
+              fallback={
+                <Loader className="h-screen w-screen bg-black"></Loader>
+              }
+            >
+              <WorkPage></WorkPage>
             </Suspense>
           }
         ></Route>

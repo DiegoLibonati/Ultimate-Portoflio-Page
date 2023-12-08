@@ -4,6 +4,7 @@ import uiSlice from "./ui/uiSlice";
 import publicationsSlice from "./publications/publicationsSlice";
 import certificatesSlice from "./certificates/certificatesSlice";
 import projectsSlice from "./projects/projectsSlice";
+import worksSlice from "./works/worksSlice";
 // ...
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
     publications: publicationsSlice,
     certificates: certificatesSlice,
     projects: projectsSlice,
+    works: worksSlice,
   },
 });
 

@@ -168,6 +168,7 @@ export type PublicationType = {
   description: string;
   ubication?: string;
   github?: string;
+  reference?: string;
 };
 
 //PublicationStateType
@@ -179,7 +180,12 @@ export type PublicationStateType = {
 // PublicationComponentType
 export type PublicationComponentType = {
   section: string;
-  publication: PublicationType | null;
+  publication:
+    | PublicationType
+    | WorkType
+    | ProjectType
+    | CertificateType
+    | null;
 };
 
 // parseDateType
@@ -249,6 +255,8 @@ export type CertificateType = {
   link: string;
   description: string;
   ubication?: string;
+  github?: string;
+  reference?: string;
 };
 
 //CertificateStateType
@@ -283,6 +291,8 @@ export type ProjectType = {
   link: string;
   description: string;
   ubication?: string;
+  github?: string;
+  reference?: string;
 };
 
 //ProjectStateType
@@ -297,4 +307,32 @@ export type UseProjectsStore = {
   projects: ProjectType[];
   handleSetProject: (project: Promise<ProjectType>) => Promise<void>;
   handleSetProjects: (projects: Promise<ProjectType[]>) => Promise<void>;
+};
+
+// WorkType
+export type WorkType = {
+  id: number;
+  isPinned: number;
+  date: string;
+  status: string;
+  title: string;
+  link: string;
+  description: string;
+  ubication?: string;
+  github?: string;
+  reference: string;
+};
+
+//WorkStateType
+export type WorkStateType = {
+  works: WorkType[];
+  activeWork: WorkType | null;
+};
+
+// UseWorksStoreType
+export type UseWorksStoreType = {
+  activeWork: WorkType | null;
+  works: WorkType[];
+  handleSetWork: (work: Promise<WorkType>) => Promise<void>;
+  handleSetWorks: (works: Promise<WorkType[]>) => Promise<void>;
 };

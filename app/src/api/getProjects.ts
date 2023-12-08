@@ -1,6 +1,6 @@
-import { PublicationType } from "../entities/types";
+import { ProjectType } from "../entities/types";
 
-export const getProjects = async (): Promise<PublicationType[]> => {
+export const getProjects = async (): Promise<ProjectType[]> => {
   try {
     const result = await fetch("/projects.json", {
       headers: {

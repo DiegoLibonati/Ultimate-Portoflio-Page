@@ -1,6 +1,6 @@
-import { PublicationType } from "../entities/types";
+import { ProjectType } from "../entities/types";
 
-export const getProject = async (id: string): Promise<PublicationType> => {
+export const getProject = async (id: string): Promise<ProjectType> => {
   try {
     const result = await fetch("/projects.json", {
       headers: {
@@ -10,7 +10,7 @@ export const getProject = async (id: string): Promise<PublicationType> => {
     });
     const projects = await result.json();
     const project = projects.filter(
-      (project: PublicationType) => project.id === Number(id)
+      (project: ProjectType) => project.id === Number(id)
     )[0];
 
     return project;

@@ -1,6 +1,6 @@
-import { PublicationType } from "../entities/types";
+import { CertificateType } from "../entities/types";
 
-export const getCertificate = async (id: string): Promise<PublicationType> => {
+export const getCertificate = async (id: string): Promise<CertificateType> => {
   try {
     const result = await fetch("/certificates.json", {
       headers: {
@@ -10,7 +10,7 @@ export const getCertificate = async (id: string): Promise<PublicationType> => {
     });
     const certificates = await result.json();
     const certificate = certificates.filter(
-      (pub: PublicationType) => pub.id === Number(id)
+      (pub: CertificateType) => pub.id === Number(id)
     )[0];
 
     return certificate;
