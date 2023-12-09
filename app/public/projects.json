@@ -10,6 +10,16 @@
     "github": "https://github.com/DiegoLibonati/Pinturillo-Clone-App-Page"
   },
   {
+    "id": 94,
+    "isPinned": 0,
+    "date": "12/09/2023",
+    "status": "🕹️ 3D Gamer",
+    "title": "Stack-Game-3D-Page",
+    "link": "https://www.diegolibonati.com.ar/images/stackgame.webp",
+    "description": "In this page I replicated without gravity the famous mobile game 'Stack Game', which consists of stacking blocks one on top of the other. In case of stacking with a block that is not perfectly superimposed to the one below, the block above will lose the part that was not stacked correctly. The game ends when a block is not stacked correctly. To stack you will have to click.",
+    "github": "https://github.com/DiegoLibonati/Stack-Game-3D-Page"
+  },
+  {
     "id": 2,
     "isPinned": 0,
     "date": "11/28/2023",
