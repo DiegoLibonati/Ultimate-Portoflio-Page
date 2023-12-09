@@ -211,7 +211,7 @@ const Publication = ({
         <div className="flex flex-row items-center justify-end w-full mt-2 mr-2 relative">
           <ButtonPublication
             hasMargin={true}
-            id="copy_link"
+            id={`button-${publication?.id}`}
             onClick={(e) => onCopyClipboard(e)}
             arialLabel="Share"
           >
@@ -225,7 +225,7 @@ const Publication = ({
           {publication?.github ? (
             <ButtonPublication
               hasMargin={true}
-              id="github"
+              id={`button-${publication?.github}-${publication.id}`}
               onClick={(e) => onGithubClick(e, publication!.github!)}
               arialLabel="GitHub"
             >
@@ -240,7 +240,7 @@ const Publication = ({
           {publication?.reference ? (
             <ButtonPublication
               hasMargin={true}
-              id="copy_link"
+              id={`button-${publication?.reference}-${publication.id}`}
               onClick={(e) => onGithubClick(e, publication!.reference!)}
               arialLabel="Reference"
             >
