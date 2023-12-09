@@ -281,6 +281,7 @@ export type ImageType = {
 export type IframeType = {
   src: string;
   className?: string;
+  title: string;
 };
 
 // ProjectType

@@ -23,7 +23,11 @@ export const Profile = () => {
     <section className="flex flex-col w-full items-center md:w-[80%] lg:w-[75%] xl:w-[56%] 2xl:w-[48%] 3xl:w-[40%]">
       <article className="relative w-full">
         <Suspense fallback={<Loader className="h-[15rem] w-full"></Loader>}>
-          <Iframe className="h-[15rem] w-full" src={profile.frontPage}></Iframe>
+          <Iframe
+            className="h-[15rem] w-full"
+            src={profile.frontPage}
+            title="profile-iframe"
+          ></Iframe>
         </Suspense>
         <Suspense
           fallback={
