@@ -5,6 +5,7 @@ export const ButtonPublication = ({
   id,
   hasMargin,
   children,
+  arialLabel,
   onClick,
 }: ButtonPublicationType): JSX.Element => {
   const { theme } = useUiStore();
@@ -16,6 +17,7 @@ export const ButtonPublication = ({
       onClick={(e) => onClick!(e)}
       id={id}
       type="button"
+      aria-label={arialLabel}
     >
       {children}
     </button>

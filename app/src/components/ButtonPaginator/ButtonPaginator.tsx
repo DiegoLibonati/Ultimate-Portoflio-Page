@@ -4,6 +4,7 @@ import { useUiStore } from "../../hooks/useUiStore";
 export const ButtonPaginator = ({
   actualPage,
   element,
+  arialLabel,
   handleSetPage,
 }: ButtonPaginatorType): JSX.Element => {
   const { theme } = useUiStore();
@@ -20,6 +21,7 @@ export const ButtonPaginator = ({
           : "text-black bg-hoverGray3 hover:text-white hover:bg-primaryBlack"
       }`}
       onClick={() => handleSetPage(Number(element))}
+      aria-label={arialLabel}
     >
       {element}
     </button>

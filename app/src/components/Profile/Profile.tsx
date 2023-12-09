@@ -52,6 +52,7 @@ export const Profile = () => {
             theme ? "hover:border-black" : "hover:border-white"
           }`}
           onClick={() => openInNewTab(links.linkedin)}
+          aria-label="linkedin"
         >
           <h2 className="text-white text-sm mr-1 font-semibold">Follow</h2>
           <BsLinkedin color="white" size={18}></BsLinkedin>

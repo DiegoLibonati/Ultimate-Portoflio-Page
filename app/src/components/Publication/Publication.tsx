@@ -169,6 +169,7 @@ const Publication = ({
                 e.stopPropagation();
                 setReadMore(!readMore);
               }}
+              aria-label="line-clamp"
             >
               {readMore ? "Read Less" : "Read More"}
             </button>
@@ -212,6 +213,7 @@ const Publication = ({
             hasMargin={true}
             id="copy_link"
             onClick={(e) => onCopyClipboard(e)}
+            arialLabel="Share"
           >
             <AiOutlineShareAlt
               size={30}
@@ -223,8 +225,9 @@ const Publication = ({
           {publication?.github ? (
             <ButtonPublication
               hasMargin={true}
-              id="copy_link"
+              id="github"
               onClick={(e) => onGithubClick(e, publication!.github!)}
+              arialLabel="GitHub"
             >
               <AiFillGithub
                 size={30}
@@ -239,6 +242,7 @@ const Publication = ({
               hasMargin={true}
               id="copy_link"
               onClick={(e) => onGithubClick(e, publication!.reference!)}
+              arialLabel="Reference"
             >
               <CiLinkedin
                 size={30}

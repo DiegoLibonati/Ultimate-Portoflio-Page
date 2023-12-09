@@ -33,6 +33,7 @@ export const NavBar = (): JSX.Element => {
         <button
           className="flex items-center justify-center w-9 h-9 rounded-lg active:bg-neutral-400 active:bg-opacity-40"
           onClick={onClickImage}
+          aria-label="logo"
         >
           <Suspense
             fallback={<Loader className="h-full w-full min-h-full"></Loader>}
@@ -53,6 +54,7 @@ export const NavBar = (): JSX.Element => {
         <button
           className={`flex items-center justify-center w-9 h-9 rounded-lg active:bg-opacity-40 active:bg-neutral-400`}
           onClick={() => handleSetTheme()}
+          aria-label="theme"
         >
           {theme ? (
             <BsFillSunFill color="#000" size={18}></BsFillSunFill>

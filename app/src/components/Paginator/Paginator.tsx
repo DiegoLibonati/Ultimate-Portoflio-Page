@@ -30,6 +30,7 @@ export const Paginator = ({
               element={element}
               handleSetPage={handleSetPage}
               key={index * 50}
+              arialLabel={`page-${element}`}
             ></ButtonPaginator>
           );
         })}

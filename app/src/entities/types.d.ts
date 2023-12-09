@@ -79,6 +79,7 @@ export type ButtonPublicationType = {
   id?: string;
   children: React.ReactNode;
   hasMargin?: boolean;
+  arialLabel: string;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
@@ -228,6 +229,7 @@ export type PaginatorType = {
 export type ButtonPaginatorType = {
   actualPage: number;
   element: number;
+  arialLabel: string;
   handleSetPage: (page: number) => void;
 };
 
