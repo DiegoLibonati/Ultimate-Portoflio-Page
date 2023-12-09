@@ -19,6 +19,7 @@ export const Footer = (): JSX.Element => {
           href={links.github}
           target="_blank"
           className="cursor-pointer transition-all active:scale-50"
+          aria-label="go to github"
         >
           <AiFillGithub
             color={theme ? "#000" : "#dee2e6"}
@@ -33,6 +34,7 @@ export const Footer = (): JSX.Element => {
           href={links.linkedin}
           target="_blank"
           className="cursor-pointer transition-all active:scale-50"
+          aria-label="go to linkedin"
         >
           <AiOutlineLinkedin
             color={theme ? "#000" : "#dee2e6"}
@@ -47,6 +49,7 @@ export const Footer = (): JSX.Element => {
           href={links.instagram}
           target="_blank"
           className="cursor-pointer transition-all active:scale-50"
+          aria-label="go to instagram"
         >
           <AiOutlineInstagram
             color={theme ? "#000" : "#dee2e6"}
