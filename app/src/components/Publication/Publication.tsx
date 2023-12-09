@@ -169,7 +169,7 @@ const Publication = ({
                 e.stopPropagation();
                 setReadMore(!readMore);
               }}
-              aria-label="line-clamp"
+              aria-label={readMore ? "Read Less" : "Read More"}
             >
               {readMore ? "Read Less" : "Read More"}
             </button>
