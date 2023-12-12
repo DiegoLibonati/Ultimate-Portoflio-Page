@@ -1,7 +1,7 @@
 import { BsLinkedin, BsPatchCheckFill } from "react-icons/bs";
 import { MdWork, MdOutlineJoinFull } from "react-icons/md";
 import { LiaLinkSolid } from "react-icons/lia";
-import { FaBirthdayCake } from "react-icons/fa";
+import { FaBirthdayCake, FaDownload } from "react-icons/fa";
 import { openInNewTab } from "../../helpers/openInNewTab";
 import { links } from "../../constants/links";
 import { Tag } from "../Tag/Tag";
@@ -52,7 +52,7 @@ export const Profile = () => {
 
       <article className="flex flex-col justify-between w-full h-[15.5rem] px-4 mt-2 md:w-[80%] md:h-[14rem]">
         <button
-          className={`flex flex-row items-center justify-center h-[2.25rem] w-[6.125rem] bg-primaryPurpure rounded-full cursor-pointer self-end hover:border-2 ${
+          className={`flex flex-row items-center justify-center h-[2.25rem] w-[6.125rem] bg-primaryPurpure rounded-full cursor-pointer self-end ml-2 hover:border-2 ${
             theme ? "hover:border-black" : "hover:border-white"
           }`}
           onClick={() => openInNewTab(links.linkedin)}
@@ -95,13 +95,13 @@ export const Profile = () => {
 
         <div className="flex flex-row flex-wrap w-full mt-2">
           <Tag
-            icon={<MdWork className="fill-primaryGray mr-1"></MdWork>}
+            icon={<MdWork className="fill-primaryGray mr-2"></MdWork>}
             textTag={profile.status}
           ></Tag>
 
           <Tag
             icon={
-              <LiaLinkSolid className="fill-primaryGray mr-1"></LiaLinkSolid>
+              <LiaLinkSolid className="fill-primaryGray mr-2"></LiaLinkSolid>
             }
             textTag="/links"
             onClickTag={() => redirectTo(links.links)}
@@ -109,17 +109,33 @@ export const Profile = () => {
           ></Tag>
 
           <Tag
+            icon={<FaDownload className="fill-primaryGray mr-2"></FaDownload>}
+            textTag="/cv"
+            onClickTag={() => {
+              const a = document.createElement("a");
+              a.setAttribute("target", "_blank");
+              a.href =
+                "https://diegolibonati.com.ar/cv/CV Diego Libonati2023.pdf";
+              a.download = "cv";
+              a.click();
+              a.remove();
+              return;
+            }}
+            isLink={true}
+          ></Tag>
+
+          <Tag
             icon={
-              <FaBirthdayCake className="fill-primaryGray mr-1"></FaBirthdayCake>
+              <FaBirthdayCake className="fill-primaryGray mr-2"></FaBirthdayCake>
             }
             textTag="July 29th"
           ></Tag>
 
           <Tag
             icon={
-              <MdOutlineJoinFull className="fill-primaryGray mr-1"></MdOutlineJoinFull>
+              <MdOutlineJoinFull className="fill-primaryGray mr-2"></MdOutlineJoinFull>
             }
-            textTag="Joined Aug. 2023"
+            textTag="Joined Jun. 2023"
           ></Tag>
         </div>
       </article>
