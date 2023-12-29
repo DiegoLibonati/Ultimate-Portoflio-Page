@@ -134,6 +134,7 @@ export const usePaginator = ({
     parentRef,
     actualPage,
     elementsToRender,
+    originalElementsToRender,
     handleSetPage,
   };
 };

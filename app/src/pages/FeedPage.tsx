@@ -19,6 +19,7 @@ const FeedPage = (): JSX.Element => {
     parentRef,
     actualPage,
     elementsToRender,
+    originalElementsToRender,
     handleSetPage,
   } = usePaginator({
     page: Number(params.page),
@@ -51,6 +52,7 @@ const FeedPage = (): JSX.Element => {
         <Paginator
           actualPage={actualPage}
           elementsToRender={elementsToRender}
+          allElementsToRender={originalElementsToRender}
           handleSetPage={handleSetPage}
         ></Paginator>
       </section>

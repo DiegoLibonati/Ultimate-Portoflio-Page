@@ -10,12 +10,15 @@ import { MdWorkOutline } from "react-icons/md";
 import { useUiStore } from "../hooks/useUiStore";
 import { lazy, Suspense } from "react";
 import { Loader } from "../components/Loader/Loader";
+import { openInNewTab } from "../helpers/openInNewTab";
+import { useRouter } from "../hooks/useRouter";
 
 const Image = lazy(() => import("../components/Image/Image"));
 
 const LinksPage = () => {
   const { profile } = useProfileStore();
   const { theme } = useUiStore();
+  const { redirectTo } = useRouter();
 
   return (
     <main
@@ -45,7 +48,13 @@ const LinksPage = () => {
         </article>
 
         <article className="flex flex-col items-center justify-center mt-14">
-          <Link linkText="Instagram" link={links.instagram}>
+          <Link
+            linkText="Instagram"
+            onClick={() => {
+              openInNewTab(links.instagram);
+              return;
+            }}
+          >
             <AiOutlineInstagram
               color="#fff"
               className="absolute left-2"
@@ -53,7 +62,13 @@ const LinksPage = () => {
             ></AiOutlineInstagram>
           </Link>
 
-          <Link linkText="Linkedin" link={links.linkedin}>
+          <Link
+            linkText="Linkedin"
+            onClick={() => {
+              openInNewTab(links.linkedin);
+              return;
+            }}
+          >
             <AiOutlineLinkedin
               color="#fff"
               className="absolute left-2"
@@ -61,20 +76,32 @@ const LinksPage = () => {
             ></AiOutlineLinkedin>
           </Link>
 
-          <Link linkText="Portfolio" link={links.portfolio}>
-            <MdWorkOutline
-              color="#fff"
-              className="absolute left-2"
-              size={25}
-            ></MdWorkOutline>
-          </Link>
-
-          <Link linkText="Github" link={links.github}>
+          <Link
+            linkText="Github"
+            onClick={() => {
+              openInNewTab(links.github);
+              return;
+            }}
+          >
             <AiFillGithub
               color="#fff"
               className="absolute left-2"
               size={25}
             ></AiFillGithub>
+          </Link>
+
+          <Link
+            linkText="Volver al Feed"
+            onClick={() => {
+              redirectTo("/feed/1");
+              return;
+            }}
+          >
+            <MdWorkOutline
+              color="#fff"
+              className="absolute left-2"
+              size={25}
+            ></MdWorkOutline>
           </Link>
         </article>
       </section>

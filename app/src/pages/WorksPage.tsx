@@ -20,6 +20,7 @@ const CertificatesPage = (): JSX.Element => {
     parentRef,
     actualPage,
     elementsToRender,
+    originalElementsToRender,
     handleSetPage,
   } = usePaginator({
     page: Number(params.page),
@@ -53,6 +54,7 @@ const CertificatesPage = (): JSX.Element => {
         <Paginator
           actualPage={actualPage}
           elementsToRender={elementsToRender}
+          allElementsToRender={originalElementsToRender}
           handleSetPage={handleSetPage}
         ></Paginator>
       </section>

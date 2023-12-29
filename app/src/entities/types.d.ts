@@ -131,7 +131,7 @@ export type UseHoverReturnType = {
 export type LinkType = {
   children: React.ReactNode;
   linkText: string;
-  link: string;
+  onClick: () => void;
 };
 
 // UsePublicationsStore
@@ -215,6 +215,7 @@ export type usePaginatorReturnType = {
   parentRef: LegacyRef<HTMLElement> | undefined;
   actualPage: number;
   elementsToRender: number[];
+  originalElementsToRender: number[];
   handleSetPage: (page: number) => void;
 };
 
@@ -222,6 +223,7 @@ export type usePaginatorReturnType = {
 export type PaginatorType = {
   actualPage: number;
   elementsToRender: number[];
+  allElementsToRender: number[];
   handleSetPage: (page: number) => void;
 };
 

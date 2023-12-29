@@ -1,5 +1,14 @@
 [
   {
+    "id": 7,
+    "isPinned": 0,
+    "date": "12/28/2023",
+    "status": "🖥️ Typing",
+    "link": "https://www.diegolibonati.com.ar/images/typescript.webp",
+    "title": "TypeScript sin fronteras: guía definitiva",
+    "description": "Company: Udemy"
+  },
+  {
     "id": 0,
     "isPinned": 0,
     "date": "11/28/2023",
