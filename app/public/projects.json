@@ -678,5 +678,15 @@
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "💬 Text"
+  },
+  {
+    "id": 95,
+    "github": "https://github.com/DiegoLibonati/Automotive-Car-Page",
+    "title": "Automotive Car Page",
+    "link": "https://www.diegolibonati.com.ar/images/automotive-car.webp",
+    "description": "I made a website about car repair, but basically what I did was to take a design from the internet and implement it on my own without seeing the original code. All this was because I wanted to keep practicing CSS.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🚗 Car"
   }
 ]
