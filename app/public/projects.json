@@ -461,13 +461,13 @@
   },
   {
     "id": 50,
-    "github": "https://github.com/DiegoLibonati/Connect-Four-Game-Page",
-    "title": "Connect Four Page",
-    "link": "https://www.diegolibonati.com.ar/images/connectfour-1.webp",
-    "description": "I made a web page where you can play connect four against an AI. Once the user plays, the AI can play and so on until one of the two can line up 4 horizontally, vertically or diagonally. The first one to collect 4 either way wins.",
+    "github": "https://github.com/DiegoLibonati/Accordion-App-Page",
+    "title": "Accordion App Page",
+    "link": "https://www.diegolibonati.com.ar/images/accordion.webp",
+    "description": "I made a web application with react js that simulates a section of a page, it would be a section of frequently asked questions where they would touch a button to get more information about the question they want to see.",
     "isPinned": 0,
     "date": "11/28/2023",
-    "status": "🕹️ Gamer"
+    "status": "🤔 Ask"
   },
   {
     "id": 51,
