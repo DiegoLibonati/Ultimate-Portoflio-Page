@@ -688,5 +688,15 @@
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "🚗 Car"
+  },
+  {
+    "id": 96,
+    "github": "https://github.com/DiegoLibonati/Countdown-Page",
+    "title": "Countdown Page",
+    "link": "https://www.diegolibonati.com.ar/images/countdown.webp",
+    "description": "I made a web page that allows you to see a countdown, it can be very useful for the section of a page where a new game, product or something like that is about to be released.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📱 Hot Sale"
   }
 ]
