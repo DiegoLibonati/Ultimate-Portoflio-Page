@@ -718,5 +718,15 @@
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "👠 Fashion"
+  },
+  {
+    "id": 99,
+    "github": "https://github.com/DiegoLibonati/Reviews-App-Page",
+    "title": "Reviews App Page",
+    "link": "https://www.diegolibonati.com.ar/images/reviews-app-page.webp",
+    "description": "I made a web application that allows you to see different reviews, this web application allowed me to learn how to make this kind of reviews/slides with next, prev and with a Surprise Me button that basically looks for a random review to show. In this case you see an image, the name, the role and a brief description.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "👥 Review"
   }
 ]
