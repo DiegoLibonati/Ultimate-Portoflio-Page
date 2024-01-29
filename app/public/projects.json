@@ -470,16 +470,6 @@
     "status": "🤔 Ask"
   },
   {
-    "id": 51,
-    "github": "https://github.com/DiegoLibonati/Space-Invaders-Game-Page",
-    "title": "Space Invaders Page",
-    "link": "https://www.diegolibonati.com.ar/images/spaceinvaders-1.webp",
-    "description": "I made a web page that allows you to play space invaders, to play you must move with the right and left arrows and with the left click of the mouse you can shoot. Every time you eliminate an alien you add points to your score. If the aliens touch you you will lose, the aliens every time they touch any of the walls, they will go down a few pixels and will go much faster than before.",
-    "isPinned": 0,
-    "date": "11/28/2023",
-    "status": "🕹️ Gamer"
-  },
-  {
     "id": 53,
     "github": "https://github.com/DiegoLibonati/Memory-Game-Page",
     "title": "Memory Game Page",
