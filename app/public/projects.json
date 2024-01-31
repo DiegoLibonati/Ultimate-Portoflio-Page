@@ -80,16 +80,6 @@
     "status": "🛍️ Shopping"
   },
   {
-    "id": 9,
-    "github": "https://github.com/DiegoLibonati/Alexa-Bot-Discord-NodeJS",
-    "title": "Discord BOT Node JS",
-    "link": "https://www.diegolibonati.com.ar/images/diebot-4.webp",
-    "description": "I made a discord bot in Node JS. I made a bot that serves as a virtual assistant, a great example of ALEXA but in DISCORD. That is to say, we can talk to it and the bot will replicate what we said in the chat and that way it will be the bot who executes our commands. In addition to other functionalities such as making the bot talk or different additional commands.",
-    "isPinned": 0,
-    "date": "11/28/2023",
-    "status": "🤖 Discord"
-  },
-  {
     "id": 10,
     "github": "https://github.com/DiegoLibonati/Heroes-App-Page",
     "title": "Heroes App Page",
