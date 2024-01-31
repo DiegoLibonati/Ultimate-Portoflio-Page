@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "isPinned": 1,
-    "date": "11/28/2023",
-    "status": "🎨 Painter",
-    "title": "Dierillo App Page",
-    "link": "https://www.diegolibonati.com.ar/images/dierillo-2.webp",
-    "description": "I made a web application that will allow different users to enter different rooms using `Socket IO` (which allows us to handle sockets) to be able to play the iconic game pinturillo. This version of pinturillo was made from scratch, my version was called Dierillo. It should be noted that I didn't use code from anywhere else, it was pure improvisation. Users will be able to enter a room through a name or see which rooms are active through the page that is responsible for displaying which rooms have not started yet. After the owner of the lobby and/or room starts the game, the users will paint 1 by 1 during 3 rounds for 90 seconds the words they have to paint and the users that are not painting will have to guess the word and score points.",
-    "github": "https://github.com/DiegoLibonati/Pinturillo-Clone-App-Page"
-  },
-  {
     "id": 94,
     "isPinned": 0,
     "date": "12/09/2023",
