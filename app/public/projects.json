@@ -70,16 +70,6 @@
     "status": "📚 Reader"
   },
   {
-    "id": 8,
-    "github": "https://github.com/DiegoLibonati/E-Commerce-Page",
-    "title": "E-Commerce Page",
-    "link": "https://www.diegolibonati.com.ar/images/ecommerce-2.webp",
-    "description": "This is my first e-commerce made with javascript, html and native css. To get the information I use a free internet API. Also this page has a Loader that allows to show the loader until the information of the Api is completely loaded in the page. It has other pages besides the main one such as: about us, coming soon, contact us, faq page, meet the team and get the voucher. The shop page contains all the products that are available for purchase and each product has its own page to add it to the cart. The cart loads all the items that were added by the user into the cart and calculates the total value. The user will be able to purchase by pressing a single button.",
-    "isPinned": 0,
-    "date": "11/28/2023",
-    "status": "🛍️ Shopping"
-  },
-  {
     "id": 10,
     "github": "https://github.com/DiegoLibonati/Heroes-App-Page",
     "title": "Heroes App Page",
