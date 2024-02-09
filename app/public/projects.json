@@ -140,16 +140,6 @@
     "status": "⏱️ Tic Tac"
   },
   {
-    "id": 17,
-    "github": "https://github.com/DiegoLibonati/Minecraft-Clone-App-Page",
-    "title": "Minecraft Clone App Page",
-    "link": "https://www.diegolibonati.com.ar/images/minecraftapp-4.webp",
-    "description": "I made a minecraft clone in which you can use 5 different types of blocks. You will be able to attach the blocks to each other and sideways. You can also walk, jump and run. You can also save your world through the save button, this button will save the world in the LocalStorage and a button to reset the world, this way you will delete all the generator blocks to start from 0.",
-    "isPinned": 0,
-    "date": "11/28/2023",
-    "status": "🧊 Minecraft"
-  },
-  {
     "id": 18,
     "github": "https://github.com/DiegoLibonati/Finances-Page",
     "title": "Finances Page",
