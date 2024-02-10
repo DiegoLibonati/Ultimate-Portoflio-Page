@@ -678,5 +678,15 @@
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "👥 Review"
+  },
+  {
+    "id": 100,
+    "github": "https://github.com/DiegoLibonati/Tours-App-Page",
+    "title": "Tours App Page",
+    "link": "https://www.diegolibonati.com.ar/images/tours.webp",
+    "description": "I made a web application that shows different tours, of each tour you can see an image, a title, a price, a description that will have a status to show all the information or a cut out part and finally a button that you are not interested in that tour. In case of touching this button the tour will be deleted from the page.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🖼️ Tour"
   }
 ]
