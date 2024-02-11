@@ -698,5 +698,15 @@
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "🍔 Yummy"
+  },
+  {
+    "id": 102,
+    "github": "https://github.com/DiegoLibonati/Lorem-Ipsum-App-Page",
+    "title": "Lorem App Page",
+    "link": "https://www.diegolibonati.com.ar/images/lorem-app-page.webp",
+    "description": "I made a web application that generates lorem ipsum paragraphs each time the user enters a number and press Generate. The allowed values are between 1 to infinite paragraphs. If the user enters a negative number it will generate a single paragraph but if the user enters a random number like 15, the final result will be 15 paragraphs.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "💬 Text"
   }
 ]
