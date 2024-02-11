@@ -170,16 +170,6 @@
     "status": "🎨 Colors"
   },
   {
-    "id": 21,
-    "github": "https://github.com/DiegoLibonati/Gestion-De-Clientes-App-Page",
-    "title": "Gestion De Clientes App Page",
-    "link": "https://www.diegolibonati.com.ar/images/gestionclientesflask-0.webp",
-    "description": "I made a web application and its rest api to manage customers. Through different endpoints we will bring different information to be able to show it in front. In this web application we will be able to add, edit and delete customers. To save all the information use Mysql with Phpmyadmin.",
-    "isPinned": 0,
-    "date": "11/28/2023",
-    "status": "👥 Clients"
-  },
-  {
     "id": 23,
     "github": "https://github.com/DiegoLibonati/Creative-Studio-Page",
     "title": "Creative Studio Page",
