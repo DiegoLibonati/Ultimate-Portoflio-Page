@@ -698,5 +698,15 @@
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "💬 Text"
+  },
+  {
+    "id": 103,
+    "github": "https://github.com/DiegoLibonati/Counter-App-Page",
+    "title": "Counter App Page",
+    "link": "https://www.diegolibonati.com.ar/images/counter-app-page.webp",
+    "description": "I made a web application that serves as a counter, basically we have 3 buttons. An increase button that adds one to our variable or state, decrease that subtracts one to our variable or state and reset that resets our variable or state to 0. If the number is positive it will be green, if it is 0 it will be white and if it is negative it will be red.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "📱 Calcs"
   }
 ]
