@@ -708,5 +708,15 @@
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "📱 Calcs"
+  },
+  {
+    "id": 104,
+    "github": "https://github.com/DiegoLibonati/Quiz-Page",
+    "title": "Quiz Page",
+    "link": "https://www.diegolibonati.com.ar/images/quiz-page.webp",
+    "description": "I made a web page that allows you to solve a quiz about me, about Diego Libonati. When you answer a question you will pass to the next one until you get to the last one, once you answered all the questions of the quiz it will show you the final result of how many were correct. For example: 3/5.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "✅ Correct"
   }
 ]
