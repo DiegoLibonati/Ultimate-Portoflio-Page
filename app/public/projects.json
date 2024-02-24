@@ -738,5 +738,15 @@
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "🛢️ Menu"
+  },
+  {
+    "id": 107,
+    "github": "https://github.com/DiegoLibonati/Tabs-Page",
+    "title": "Tabs Page",
+    "link": "https://www.diegolibonati.com.ar/images/tabs-page.webp",
+    "description": "I made a web page that through different tabs you can get different information. Also if you tab with your keyboard you can access the different tabs and not only with the mouse click.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛢️ Menu"
   }
 ]
