@@ -728,5 +728,15 @@
     "isPinned": 0,
     "date": "11/28/2023",
     "status": "👤 Birthdays"
+  },
+  {
+    "id": 106,
+    "github": "https://github.com/DiegoLibonati/Questions-Page",
+    "title": "Questions Page",
+    "link": "https://www.diegolibonati.com.ar/images/question-page.webp",
+    "description": "I made a web page that works as a section of a future page which is a section of frequently asked questions or faq. When a question is opened it closes a question that was open.",
+    "isPinned": 0,
+    "date": "11/28/2023",
+    "status": "🛢️ Menu"
   }
 ]
