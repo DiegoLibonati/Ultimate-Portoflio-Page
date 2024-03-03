@@ -1,4 +1,4 @@
-import { ImageType } from "../../entities/types";
+import { ImageProps } from "../../entities/entities";
 
 const Image = ({
   src,
@@ -7,7 +7,7 @@ const Image = ({
   width,
   height,
   onClick,
-}: ImageType): JSX.Element => {
+}: ImageProps): JSX.Element => {
   return (
     <img
       src={src}

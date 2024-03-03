@@ -1,13 +1,9 @@
-import { LoaderType } from "../../entities/types";
+import { LoaderProps } from "../../entities/entities";
 import "./Loader.css";
 
-export const Loader = ({ className }: LoaderType): JSX.Element => {
+export const Loader = ({ className }: LoaderProps): JSX.Element => {
   return (
-    <div
-      className={`
-        ${!className ? "w-full h-full" : className}
-      flex items-center justify-center `}
-    >
+    <div className={`flex items-center justify-center ${className}`}>
       <div className="loader"></div>
     </div>
   );

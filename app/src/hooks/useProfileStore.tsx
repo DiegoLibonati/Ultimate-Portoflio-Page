@@ -1,14 +1,14 @@
-import { ProfileStateType, useProfileStoreType } from "../entities/types";
+import { Profile, UseProfileStore } from "../entities/entities";
 import { setProfile } from "../store/profile/profileSlice";
 import { useAppDispatch, useAppSelector } from "./useRedux";
 
-export const useProfileStore = (): useProfileStoreType => {
+export const useProfileStore = (): UseProfileStore => {
   const { id, frontPage, avatar, username, title, description, status } =
     useAppSelector((state) => state.profile);
   const dispacth = useAppDispatch();
 
   const handleSetProfile = async (
-    data: Promise<ProfileStateType>
+    data: Promise<Profile>
   ): Promise<void> => {
     const result = await data;
 

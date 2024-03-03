@@ -1,4 +1,5 @@
-import { CertificateType, UseCertificatesStore } from "../entities/types";
+import { RootState } from "../entities/entities";
+import { Certificate, UseCertificatesStore } from "../entities/entities";
 import {
   setCertificate,
   setCertificates,
@@ -7,19 +8,19 @@ import { useAppDispatch, useAppSelector } from "./useRedux";
 
 export const useCertificatesStore = (): UseCertificatesStore => {
   const { activeCertificate, certificates } = useAppSelector(
-    (state) => state.certificates
+    (state: RootState) => state.certificates
   );
   const dispatch = useAppDispatch();
 
   const handleSetCertificates = async (
-    certificates: Promise<CertificateType[]>
+    certificates: Promise<Certificate[]>
   ): Promise<void> => {
     dispatch(setCertificates(await certificates));
     return;
   };
 
   const handleSetCertificate = async (
-    certificate: Promise<CertificateType>
+    certificate: Promise<Certificate>
   ): Promise<void> => {
     dispatch(setCertificate(await certificate));
     return;

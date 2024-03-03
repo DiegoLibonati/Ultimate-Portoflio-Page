@@ -1,8 +1,8 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { UseRouterType } from "../entities/types";
+import { UseRouter } from "../entities/entities";
 import { useState, useEffect } from "react";
 
-export const useRouter = (): UseRouterType => {
+export const useRouter = (): UseRouter => {
   const [pathIsActive, setPathIsActive] = useState<string>("");
 
   const navigate = useNavigate();

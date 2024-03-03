@@ -1,4 +1,4 @@
-import { ButtonPaginatorType } from "../../entities/types";
+import { ButtonPaginatorProps } from "../../entities/entities";
 import { useUiStore } from "../../hooks/useUiStore";
 
 export const ButtonPaginator = ({
@@ -6,7 +6,7 @@ export const ButtonPaginator = ({
   element,
   arialLabel,
   handleSetPage,
-}: ButtonPaginatorType): JSX.Element => {
+}: ButtonPaginatorProps): JSX.Element => {
   const { theme } = useUiStore();
 
   return (

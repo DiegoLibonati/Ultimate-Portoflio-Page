@@ -1,5 +1,5 @@
 import { Paginator } from "../components/Paginator/Paginator";
-import { PublicationType } from "../entities/types";
+import { Work } from "../entities/entities";
 import { usePaginator } from "../hooks/usePaginator";
 import { useRouter } from "../hooks/useRouter";
 import { useUiStore } from "../hooks/useUiStore";
@@ -10,7 +10,7 @@ import { useWorksStore } from "../hooks/useWorksStore";
 
 const Publication = lazy(() => import("../components/Publication/Publication"));
 
-const CertificatesPage = (): JSX.Element => {
+const WorksPage = (): JSX.Element => {
   const { params } = useRouter();
   const { theme } = useUiStore();
   const { works } = useWorksStore();
@@ -22,7 +22,7 @@ const CertificatesPage = (): JSX.Element => {
     elementsToRender,
     originalElementsToRender,
     handleSetPage,
-  } = usePaginator({
+  } = usePaginator<Work>({
     page: Number(params.page),
     perPage: 4,
     customArr: works,
@@ -37,16 +37,13 @@ const CertificatesPage = (): JSX.Element => {
         ref={parentRef}
         key="works_page"
       >
-        {publications.map((publication: PublicationType) => {
+        {publications.map((work: Work) => {
           return (
             <Suspense
-              fallback={<Loader className="my-6"></Loader>}
-              key={publication.id}
+              fallback={<Loader className="w-full h-full my-6"></Loader>}
+              key={work.id}
             >
-              <Publication
-                publication={publication}
-                section="work"
-              ></Publication>
+              <Publication publication={work} section="work"></Publication>
             </Suspense>
           );
         })}
@@ -62,4 +59,4 @@ const CertificatesPage = (): JSX.Element => {
   );
 };
 
-export default CertificatesPage;
+export default WorksPage;

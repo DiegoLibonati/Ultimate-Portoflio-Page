@@ -1,6 +1,6 @@
-import { ProjectType } from "../entities/types";
+import { Project } from "../entities/entities";
 
-export const getProjects = async (): Promise<ProjectType[]> => {
+export const getProjects = async (): Promise<Project[]> => {
   try {
     const result = await fetch("/projects.json", {
       headers: {
@@ -8,7 +8,7 @@ export const getProjects = async (): Promise<ProjectType[]> => {
         Accept: "application/json",
       },
     });
-    const projects = await result.json();
+    const projects: Project[] = await result.json();
     return projects;
   } catch (e) {
     console.log(e);

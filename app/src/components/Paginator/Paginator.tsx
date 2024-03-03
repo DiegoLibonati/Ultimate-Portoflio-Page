@@ -1,7 +1,7 @@
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import { useUiStore } from "../../hooks/useUiStore";
-import { PaginatorType } from "../../entities/types";
+import { PaginatorProps } from "../../entities/entities";
 import { ButtonPaginator } from "../ButtonPaginator/ButtonPaginator";
 
 export const Paginator = ({
@@ -9,7 +9,7 @@ export const Paginator = ({
   elementsToRender,
   allElementsToRender,
   handleSetPage,
-}: PaginatorType): JSX.Element => {
+}: PaginatorProps): JSX.Element => {
   const { theme } = useUiStore();
 
   return (

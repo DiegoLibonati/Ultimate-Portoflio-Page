@@ -1,21 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { ProfileStateType } from "../../entities/types";
+import { PayloadProfile, ProfileState } from "../../entities/entities";
 
-interface payload {
-  profile: {
-    id: number;
-    frontPage: string;
-    avatar: string;
-    username: string;
-    title: string;
-    description: string;
-    status: string;
-  };
-}
-
-// Define the initial state using that type
-const initialState: ProfileStateType = {
+const initialState: ProfileState = {
   id: 0,
   frontPage: "",
   avatar: "",
@@ -27,10 +14,9 @@ const initialState: ProfileStateType = {
 
 export const profileSlice = createSlice({
   name: "profile",
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    setProfile: (state, action: PayloadAction<payload["profile"]>) => {
+    setProfile: (state, action: PayloadAction<PayloadProfile["profile"]>) => {
       state.id = action.payload.id;
       state.frontPage = action.payload.frontPage;
       state.avatar = action.payload.avatar;

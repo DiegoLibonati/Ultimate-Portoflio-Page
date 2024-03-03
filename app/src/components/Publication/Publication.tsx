@@ -4,7 +4,7 @@ import { SiGooglemaps } from "react-icons/si";
 import { useProfileStore } from "../../hooks/useProfileStore";
 import { ButtonPublication } from "../ButtonPublication/ButtonPublication";
 import { useRouter } from "../../hooks/useRouter";
-import { PublicationComponentType } from "../../entities/types";
+import { PublicationProps } from "../../entities/entities";
 import { parseDate } from "../../helpers/parseDate";
 import { useUiStore } from "../../hooks/useUiStore";
 import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
@@ -19,7 +19,7 @@ const Image = lazy(() => import("../Image/Image"));
 const Publication = ({
   section,
   publication,
-}: PublicationComponentType): JSX.Element => {
+}: PublicationProps): JSX.Element => {
   const { profile } = useProfileStore();
   const { redirectTo } = useRouter();
   const { theme, handleSetAlert } = useUiStore();
@@ -184,7 +184,7 @@ const Publication = ({
               }
             >
               <Image
-                src={publication?.link}
+                src={publication?.link!}
                 alt={"Diego Libonati"}
                 className="relative z-20 rounded-lg w-full min-h-[11.25rem] max-h-52 object-cover md:max-h-96 md:min-h-[21.25rem] hover:opacity-25 transition-opacity"
                 width={"100%"}

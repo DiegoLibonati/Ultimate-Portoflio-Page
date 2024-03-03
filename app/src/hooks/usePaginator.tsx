@@ -1,29 +1,23 @@
 import { useState, useRef, useEffect } from "react";
-import {
-  PublicationType,
-  usePaginatorReturnType,
-  usePaginatorType,
-} from "../entities/types";
 import { useRouter } from "./useRouter";
+import { UsePaginator, UsePaginatorProps } from "../entities/entities";
 
-export const usePaginator = ({
+export const usePaginator = <T,>({
   page,
   perPage,
   customArr,
-}: usePaginatorType): usePaginatorReturnType => {
+}: UsePaginatorProps<T>): UsePaginator<T> => {
   const [actualPage, setActualPage] = useState<number>(page);
   const [lastPage, setLastPage] = useState<number>(0);
   const [elementsPerPage] = useState<number>(perPage);
 
-  const [elementsToRender, setElementsToRender] = useState<number[] | never>(
-    []
-  );
+  const [elementsToRender, setElementsToRender] = useState<number[]>([]);
   const [originalElementsToRender, setOriginalElementsToRender] = useState<
-    number[] | never
+    number[]
   >([]);
 
-  const [arr, setArr] = useState<PublicationType[] | never>([]);
-  const [originalArr, setOriginalArr] = useState<PublicationType[] | never>([]);
+  const [arr, setArr] = useState<T[]>([]);
+  const [originalArr, setOriginalArr] = useState<T[]>([]);
 
   const [minIndex, setMinIndex] = useState<number | null>(null);
   const [maxIndex, setMaxIndex] = useState<number | null>(null);
@@ -56,6 +50,7 @@ export const usePaginator = ({
   useEffect(() => {
     if (customArr.length > 0) {
       const finalArr = [...customArr].sort(
+        // @ts-ignore:next-line
         (pub, pub2) => pub2.isPinned - pub.isPinned
       );
       setOriginalArr(finalArr);

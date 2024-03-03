@@ -1,6 +1,6 @@
-import { WorkType } from "../entities/types";
+import { Work } from "../entities/entities";
 
-export const getWorks = async (): Promise<WorkType[]> => {
+export const getWorks = async (): Promise<Work[]> => {
   try {
     const result = await fetch("/works.json", {
       headers: {
@@ -8,7 +8,7 @@ export const getWorks = async (): Promise<WorkType[]> => {
         Accept: "application/json",
       },
     });
-    const works = await result.json();
+    const works: Work[] = await result.json();
     return works;
   } catch (e) {
     console.log(e);

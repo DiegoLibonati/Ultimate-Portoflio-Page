@@ -10,6 +10,16 @@
     "ubication": "CABA, Argentina"
   },
   {
+    "id": 3,
+    "isPinned": 0,
+    "date": "11/12/2023",
+    "status": "🥹 Satisfaction",
+    "title": "I was recognized as Refactor Man!",
+    "description": "At the Leafnoise end of year party that took place in Mercedes (Argentina), I was recognized as 'Refactor Man'. I feel very excited and happy for this recognition, since it was a general vote of the whole company. Many times we write code to develop a functionality, in my case I also try to make sure that the code is readable, scalable and above all with good practices. By the way Leafnoise is the company where I am currently working.",
+    "link": "https://www.diegolibonati.com.ar/images/refactorman.webp",
+    "ubication": "CABA, Argentina"
+  },
+  {
     "id": 2,
     "isPinned": 0,
     "date": "08/12/2023",
@@ -17,16 +27,6 @@
     "title": "First version of my Portfolio!",
     "description": "This is the first official version of my portfolio. In this page you will be able to explore all my adventures in the feed section, all my projects (more than 80 projects) in the Projects section, all my certificates in the Certificates section and finally all my freelance work in the Freelance section. In the Media section you will see all the images related to the content of the Feed. Any message is welcome so I recommend you to explore my LinkedIn: https://www.linkedin.com/in/diego-libonati-67102419b/.",
     "link": "https://www.diegolibonati.com.ar/images/portfolio.webp",
-    "ubication": "CABA, Argentina"
-  },
-  {
-    "id": 2,
-    "isPinned": 0,
-    "date": "11/12/2023",
-    "status": "🥹 Satisfaction",
-    "title": "I was recognized as Refactor Man!",
-    "description": "At the Leafnoise end of year party that took place in Mercedes (Argentina), I was recognized as 'Refactor Man'. I feel very excited and happy for this recognition, since it was a general vote of the whole company. Many times we write code to develop a functionality, in my case I also try to make sure that the code is readable, scalable and above all with good practices. By the way Leafnoise is the company where I am currently working.",
-    "link": "https://www.diegolibonati.com.ar/images/refactorman.webp",
     "ubication": "CABA, Argentina"
   }
 ]

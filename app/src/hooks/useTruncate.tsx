@@ -1,10 +1,10 @@
 import { useCallback, useState } from "react";
-import { UseTruncateReturnType, UseTruncateType } from "../entities/types";
+import { UseTruncate, UseTruncateProps } from "../entities/entities";
 
 export const useTruncate = ({
   propertyValue,
   fontType,
-}: UseTruncateType): UseTruncateReturnType => {
+}: UseTruncateProps): UseTruncate => {
   const [shouldTruncate, setShouldTruncate] = useState<boolean>(false);
   const [readMore, setReadMore] = useState<boolean>(false);
 

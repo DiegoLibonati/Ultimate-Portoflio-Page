@@ -1,11 +1,11 @@
-import { TagType } from "../../entities/types";
+import { TagProps } from "../../entities/entities";
 
 export const Tag = ({
   icon,
   textTag,
   isLink,
   onClickTag,
-}: TagType): JSX.Element => {
+}: TagProps): JSX.Element => {
   return (
     <div className="flex flex-row items-center mr-6" onClick={onClickTag}>
       {icon}

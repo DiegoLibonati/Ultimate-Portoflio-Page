@@ -1,4 +1,4 @@
-import { ImgMediaType } from "../../entities/types";
+import { ImgMediaProps } from "../../entities/entities";
 import { useRouter } from "../../hooks/useRouter";
 import { useUiStore } from "../../hooks/useUiStore";
 import { lazy, Suspense } from "react";
@@ -6,7 +6,7 @@ import { Loader } from "../Loader/Loader";
 
 const Image = lazy(() => import("../Image/Image"));
 
-const ImgMedia = ({ id, src, alt, title }: ImgMediaType): JSX.Element => {
+const ImgMedia = ({ id, src, alt, title }: ImgMediaProps): JSX.Element => {
   const { redirectTo } = useRouter();
   const { theme } = useUiStore();
 

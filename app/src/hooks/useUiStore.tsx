@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { UseUiStoreType } from "../entities/types";
+import { RootState, UseUiStore } from "../entities/entities";
 import { setAlert, setTheme } from "../store/ui/uiSlice";
 import { useAppDispatch, useAppSelector } from "./useRedux";
 
-export const useUiStore = (): UseUiStoreType => {
-  const { theme, alert } = useAppSelector((state) => state.ui);
+export const useUiStore = (): UseUiStore => {
+  const { theme, alert } = useAppSelector((state: RootState) => state.ui);
   const dispatch = useAppDispatch();
 
   const handleSetTheme = (): void => {

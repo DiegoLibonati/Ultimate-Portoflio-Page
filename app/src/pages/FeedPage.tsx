@@ -1,19 +1,19 @@
 import { Paginator } from "../components/Paginator/Paginator";
-import { PublicationType } from "../entities/types";
 import { usePaginator } from "../hooks/usePaginator";
-import { usePublicationsStore } from "../hooks/usePublicationsStore";
+import { usePublicationsFeedStore } from "../hooks/usePublicationsFeedStore";
 import { useUiStore } from "../hooks/useUiStore";
 import { MainLayout } from "../layout/MainLayout";
 import { useRouter } from "../hooks/useRouter";
 import { lazy, Suspense } from "react";
 import { Loader } from "../components/Loader/Loader";
+import { Publication, PublicationFeed } from "../entities/entities";
 
-const Publication = lazy(() => import("../components/Publication/Publication"));
+const PublicationFeedLazy = lazy(() => import("../components/Publication/Publication"));
 
 const FeedPage = (): JSX.Element => {
   const { params } = useRouter();
   const { theme } = useUiStore();
-  const { publications: arrPublications } = usePublicationsStore();
+  const { publicationsFeed } = usePublicationsFeedStore();
   const {
     publications,
     parentRef,
@@ -21,10 +21,10 @@ const FeedPage = (): JSX.Element => {
     elementsToRender,
     originalElementsToRender,
     handleSetPage,
-  } = usePaginator({
+  } = usePaginator<PublicationFeed>({
     page: Number(params.page),
     perPage: 4,
-    customArr: arrPublications,
+    customArr: publicationsFeed,
   });
 
   return (
@@ -36,16 +36,16 @@ const FeedPage = (): JSX.Element => {
         ref={parentRef}
         key="feed_page"
       >
-        {publications.map((publication: PublicationType) => {
+        {publications.map((publication: Publication) => {
           return (
             <Suspense
-              fallback={<Loader className="my-6"></Loader>}
+              fallback={<Loader className="w-full h-full my-6"></Loader>}
               key={publication.id}
             >
-              <Publication
+              <PublicationFeedLazy
                 publication={publication}
                 section="publication"
-              ></Publication>
+              ></PublicationFeedLazy>
             </Suspense>
           );
         })}

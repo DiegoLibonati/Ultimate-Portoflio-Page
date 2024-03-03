@@ -1,7 +1,7 @@
-import { parseDateType } from "../entities/types";
+import { ParseDate } from "../entities/entities";
 import { addZero } from "./addZero";
 
-export const parseDate = (propDate: string | undefined): parseDateType => {
+export const parseDate = (propDate: string | undefined): ParseDate => {
   const date = new Date(propDate!);
 
   return {

@@ -1,6 +1,6 @@
-import { ProfileStateType } from "../entities/types";
+import { Profile } from "../entities/entities";
 
-export const getProfile = async (): Promise<ProfileStateType> => {
+export const getProfile = async (): Promise<Profile> => {
   try {
     const result = await fetch("/profile.json", {
       headers: {
@@ -8,7 +8,7 @@ export const getProfile = async (): Promise<ProfileStateType> => {
         Accept: "application/json",
       },
     });
-    const profile = await result.json();
+    const profile: Profile = await result.json();
     return profile;
   } catch (e) {
     console.log(e);

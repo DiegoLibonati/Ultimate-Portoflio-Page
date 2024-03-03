@@ -1,30 +1,33 @@
 import { useEffect } from "react";
 import { useRouter } from "../hooks/useRouter";
 import { MainLayout } from "../layout/MainLayout";
-import { getPublication } from "../api/getPublication";
-import { usePublicationsStore } from "../hooks/usePublicationsStore";
+import { getPublicationFeed } from "../api/getPublicationFeed";
+import { usePublicationsFeedStore } from "../hooks/usePublicationsFeedStore";
 import { useUiStore } from "../hooks/useUiStore";
-import { PublicationType } from "../entities/types";
+import { PublicationFeed } from "../entities/entities";
 import { lazy, Suspense } from "react";
 import { Loader } from "../components/Loader/Loader";
 
-const Publication = lazy(() => import("../components/Publication/Publication"));
+const PublicationFeedLazy = lazy(
+  () => import("../components/Publication/Publication")
+);
 
 const PublicationPage = () => {
   const { params, redirectTo } = useRouter();
-  const { activePublication, handleSetPublication } = usePublicationsStore();
+  const { activePublicationFeed, handleSetPublicationFeed } =
+    usePublicationsFeedStore();
   const { theme } = useUiStore();
 
   useEffect(() => {
-    const publication = getPublication(params.id);
+    const publication = getPublicationFeed(params.id);
 
-    publication.then((pub: PublicationType) => {
+    publication.then((pub: PublicationFeed) => {
       if (!pub) {
         return redirectTo("/feed/1");
       }
     });
 
-    handleSetPublication(publication);
+    handleSetPublicationFeed(publication);
   }, []);
 
   return (
@@ -34,11 +37,11 @@ const PublicationPage = () => {
           theme ? "bg-primaryWhite" : "bg-primaryBlack"
         }`}
       >
-        <Suspense fallback={<Loader className="my-6"></Loader>}>
-          <Publication
-            publication={activePublication}
+        <Suspense fallback={<Loader className="h-full w-full my-6"></Loader>}>
+          <PublicationFeedLazy
+            publication={activePublicationFeed!}
             section="publication"
-          ></Publication>
+          ></PublicationFeedLazy>
         </Suspense>
       </section>
     </MainLayout>

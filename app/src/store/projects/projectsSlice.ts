@@ -1,28 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { ProjectStateType, ProjectType } from "../../entities/types";
+import {
+  ProjectState,
+  PayloadProjects,
+} from "../../entities/entities";
 
-interface payload {
-  projects: ProjectType[];
-  activeProject: ProjectType;
-}
-
-// Define the initial state using that type
-const initialState: ProjectStateType = {
+const initialState: ProjectState = {
   projects: [],
   activeProject: null,
 };
 
 export const projectsSlice = createSlice({
   name: "projects",
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    setProjects: (state, action: PayloadAction<payload["projects"]>) => {
+    setProjects: (
+      state,
+      action: PayloadAction<PayloadProjects["projects"]>
+    ) => {
       state.projects = action.payload;
       return;
     },
-    setProject: (state, action: PayloadAction<payload["activeProject"]>) => {
+    setProject: (
+      state,
+      action: PayloadAction<PayloadProjects["activeProject"]>
+    ) => {
       state.activeProject = action.payload;
       return;
     },

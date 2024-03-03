@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "../hooks/useRouter";
 import { MainLayout } from "../layout/MainLayout";
 import { useUiStore } from "../hooks/useUiStore";
-import { PublicationType } from "../entities/types";
+import { Project } from "../entities/entities";
 import { lazy, Suspense } from "react";
 import { Loader } from "../components/Loader/Loader";
 import { useProjectsStore } from "../hooks/useProjectsStore";
@@ -10,7 +10,7 @@ import { getProject } from "../api/getProject";
 
 const Publication = lazy(() => import("../components/Publication/Publication"));
 
-const ProjectPage = () => {
+const ProjectPage = (): JSX.Element => {
   const { params, redirectTo } = useRouter();
   const { activeProject, handleSetProject } = useProjectsStore();
   const { theme } = useUiStore();
@@ -18,8 +18,8 @@ const ProjectPage = () => {
   useEffect(() => {
     const project = getProject(params.id);
 
-    project.then((cer: PublicationType) => {
-      if (!cer) {
+    project.then((res: Project) => {
+      if (!res) {
         return redirectTo("/feed/1");
       }
     });
@@ -34,9 +34,9 @@ const ProjectPage = () => {
           theme ? "bg-primaryWhite" : "bg-primaryBlack"
         }`}
       >
-        <Suspense fallback={<Loader className="my-6"></Loader>}>
+        <Suspense fallback={<Loader className="w-full h-full my-6"></Loader>}>
           <Publication
-            publication={activeProject}
+            publication={activeProject!}
             section="project"
           ></Publication>
         </Suspense>

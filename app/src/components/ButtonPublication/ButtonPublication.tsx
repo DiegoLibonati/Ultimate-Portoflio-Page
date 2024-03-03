@@ -1,4 +1,4 @@
-import { ButtonPublicationType } from "../../entities/types";
+import { ButtonPublicationProps } from "../../entities/entities";
 import { useUiStore } from "../../hooks/useUiStore";
 
 export const ButtonPublication = ({
@@ -7,7 +7,7 @@ export const ButtonPublication = ({
   children,
   arialLabel,
   onClick,
-}: ButtonPublicationType): JSX.Element => {
+}: ButtonPublicationProps): JSX.Element => {
   const { theme } = useUiStore();
   return (
     <button

@@ -4,7 +4,7 @@ import { Loader } from "./components/Loader/Loader";
 
 const PortfolioRouter = lazy(() => import("./router/PortfolioRouter"));
 
-function App(): JSX.Element {
+export const App = (): JSX.Element => {
   return (
     <HashRouter>
       <Suspense
@@ -14,6 +14,4 @@ function App(): JSX.Element {
       </Suspense>
     </HashRouter>
   );
-}
-
-export default App;
+};

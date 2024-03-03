@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "../hooks/useRouter";
 import { MainLayout } from "../layout/MainLayout";
 import { useUiStore } from "../hooks/useUiStore";
-import { PublicationType } from "../entities/types";
+import { Work } from "../entities/entities";
 import { lazy, Suspense } from "react";
 import { Loader } from "../components/Loader/Loader";
 import { useWorksStore } from "../hooks/useWorksStore";
@@ -10,7 +10,7 @@ import { getWork } from "../api/getWork";
 
 const Publication = lazy(() => import("../components/Publication/Publication"));
 
-const WorkPage = () => {
+const WorkPage = (): JSX.Element => {
   const { params, redirectTo } = useRouter();
   const { activeWork, handleSetWork } = useWorksStore();
   const { theme } = useUiStore();
@@ -18,8 +18,8 @@ const WorkPage = () => {
   useEffect(() => {
     const work = getWork(params.id);
 
-    work.then((cer: PublicationType) => {
-      if (!cer) {
+    work.then((res: Work) => {
+      if (!res) {
         return redirectTo("/feed/1");
       }
     });
@@ -34,8 +34,8 @@ const WorkPage = () => {
           theme ? "bg-primaryWhite" : "bg-primaryBlack"
         }`}
       >
-        <Suspense fallback={<Loader className="my-6"></Loader>}>
-          <Publication publication={activeWork} section="work"></Publication>
+        <Suspense fallback={<Loader className="w-full h-full my-6"></Loader>}>
+          <Publication publication={activeWork!} section="work"></Publication>
         </Suspense>
       </section>
     </MainLayout>

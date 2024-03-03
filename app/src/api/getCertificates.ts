@@ -1,6 +1,6 @@
-import { CertificateType } from "../entities/types";
+import { Certificate } from "../entities/entities";
 
-export const getCertificates = async (): Promise<CertificateType[]> => {
+export const getCertificates = async (): Promise<Certificate[]> => {
   try {
     const result = await fetch("/certificates.json", {
       headers: {
@@ -8,7 +8,7 @@ export const getCertificates = async (): Promise<CertificateType[]> => {
         Accept: "application/json",
       },
     });
-    const certificates = await result.json();
+    const certificates: Certificate[] = await result.json();
     return certificates;
   } catch (e) {
     console.log(e);

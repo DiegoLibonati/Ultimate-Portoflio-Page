@@ -14,7 +14,7 @@ import { lazy, Suspense } from "react";
 const Image = lazy(() => import("../Image/Image"));
 const Iframe = lazy(() => import("../Iframe/Iframe"));
 
-export const Profile = () => {
+export const Profile = (): JSX.Element => {
   const { profile } = useProfileStore();
   const { theme } = useUiStore();
   const { redirectTo } = useRouter();
@@ -90,7 +90,7 @@ export const Profile = () => {
             </p>
           </div>
         ) : (
-          <Loader></Loader>
+          <Loader className="h-full w-full"></Loader>
         )}
 
         <div className="flex flex-row flex-wrap w-full mt-2">

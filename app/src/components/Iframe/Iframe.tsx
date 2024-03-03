@@ -1,6 +1,6 @@
-import { IframeType } from "../../entities/types";
+import { IframeProps } from "../../entities/entities";
 
-const Iframe = ({ className, src, title }: IframeType): JSX.Element => {
+const Iframe = ({ className, src, title }: IframeProps): JSX.Element => {
   return (
     <iframe className={className} src={src} title={title}>
       Iframe

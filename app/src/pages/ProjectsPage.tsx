@@ -1,6 +1,5 @@
 import { Paginator } from "../components/Paginator/Paginator";
-
-import { PublicationType } from "../entities/types";
+import { Project } from "../entities/entities";
 import { usePaginator } from "../hooks/usePaginator";
 import { useRouter } from "../hooks/useRouter";
 import { useUiStore } from "../hooks/useUiStore";
@@ -23,7 +22,7 @@ const ProjectsPage = (): JSX.Element => {
     elementsToRender,
     originalElementsToRender,
     handleSetPage,
-  } = usePaginator({
+  } = usePaginator<Project>({
     page: Number(params.page),
     perPage: 4,
     customArr: projects,
@@ -38,14 +37,14 @@ const ProjectsPage = (): JSX.Element => {
         ref={parentRef}
         key="projects_page"
       >
-        {publications.map((publication: PublicationType) => {
+        {publications.map((project: Project) => {
           return (
             <Suspense
-              fallback={<Loader className="my-6"></Loader>}
-              key={publication.id}
+              fallback={<Loader className="w-full h-full my-6"></Loader>}
+              key={project.id}
             >
               <Publication
-                publication={publication}
+                publication={project}
                 section="project"
               ></Publication>
             </Suspense>

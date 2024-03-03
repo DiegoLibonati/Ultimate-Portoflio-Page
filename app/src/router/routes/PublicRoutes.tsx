@@ -1,43 +1,35 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useRouter } from "../../hooks/useRouter";
 import { useEffect, lazy, Suspense } from "react";
-import { NavBar } from "../../components/NavBar/NavBar";
-import { Footer } from "../../components/Footer/Footer";
+import { useRouter } from "../../hooks/useRouter";
 import { getProfile } from "../../api/getProfile";
-import { useProfileStore } from "../../hooks/useProfileStore";
-import { getPublications } from "../../api/getPublications";
-import { usePublicationsStore } from "../../hooks/usePublicationsStore";
-import { useUiStore } from "../../hooks/useUiStore";
-import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
-import { getCertificates } from "../../api/getCertificates";
-import { useCertificatesStore } from "../../hooks/useCertificatesStore";
+import { getPublicationsFeed } from "../../api/getPublicationsFeed";
+import { NavBar } from "../../components/NavBar/NavBar";
 import { Loader } from "../../components/Loader/Loader";
+import { useCheckMobileScreen } from "../../hooks/useCheckMobileScreen";
+import { useProfileStore } from "../../hooks/useProfileStore";
+import { useUiStore } from "../../hooks/useUiStore";
+import { usePublicationsFeedStore } from "../../hooks/usePublicationsFeedStore";
+import { Footer } from "../../components/Footer/Footer";
+import { routes } from "../../constants/routes";
 import { useProjectsStore } from "../../hooks/useProjectsStore";
 import { getProjects } from "../../api/getProjects";
+import { useCertificatesStore } from "../../hooks/useCertificatesStore";
 import { useWorksStore } from "../../hooks/useWorksStore";
+import { getCertificates } from "../../api/getCertificates";
 import { getWorks } from "../../api/getWorks";
 
-const FeedPage = lazy(() => import("../../pages/FeedPage"));
-const CertificatesPage = lazy(() => import("../../pages/CertificatesPage"));
-const MediaPage = lazy(() => import("../../pages/MediaPage"));
-const LinksPage = lazy(() => import("../../pages/LinksPage"));
-const PublicationPage = lazy(() => import("../../pages/PublicationPage"));
-const CertificatePage = lazy(() => import("../../pages/CertificatePage"));
-const ProjectPage = lazy(() => import("../../pages/ProjectPage"));
-const ProjectsPage = lazy(() => import("../../pages/ProjectsPage"));
-const WorkPage = lazy(() => import("../../pages/WorkPage"));
-const WorksPage = lazy(() => import("../../pages/WorksPage"));
 const Image = lazy(() => import("../../components/Image/Image"));
 
 const PublicRoutes = (): JSX.Element => {
   const { pathname, redirectTo } = useRouter();
-  const { profile, handleSetProfile } = useProfileStore();
-  const { publications, handleSetPublications } = usePublicationsStore();
-  const { certificates, handleSetCertificates } = useCertificatesStore();
-  const { projects, handleSetProjects } = useProjectsStore();
-  const { works, handleSetWorks } = useWorksStore();
-  const { theme } = useUiStore();
   const { isMobile } = useCheckMobileScreen();
+  const { theme } = useUiStore();
+  const { profile, handleSetProfile } = useProfileStore();
+  const { projects, handleSetProjects } = useProjectsStore();
+  const { certificates, handleSetCertificates } = useCertificatesStore();
+  const { works, handleSetWorks } = useWorksStore();
+  const { publicationsFeed, handleSetPublicationsFeed } =
+    usePublicationsFeedStore();
 
   useEffect(() => {
     if (!profile.id) {
@@ -45,21 +37,23 @@ const PublicRoutes = (): JSX.Element => {
       handleSetProfile(profileData);
     }
 
-    if (publications.length === 0) {
-      const publications = getPublications();
-      handleSetPublications(publications);
+    if (pathname === "/") return redirectTo("/feed/1");
+
+    if (pathname.includes("feed") && publicationsFeed.length === 0) {
+      const publicationsFeed = getPublicationsFeed();
+      handleSetPublicationsFeed(publicationsFeed);
     }
 
-    if (pathname === "/") return redirectTo("/feed/1");
-    if (pathname.includes("certificates") && certificates.length === 0) {
-      const certificates = getCertificates();
-      console.log(certificates);
-      handleSetCertificates(certificates);
-    }
     if (pathname.includes("projects") && projects.length === 0) {
       const projects = getProjects();
       handleSetProjects(projects);
     }
+
+    if (pathname.includes("certificates") && certificates.length === 0) {
+      const certificates = getCertificates();
+      handleSetCertificates(certificates);
+    }
+
     if (pathname.includes("freelance") && works.length === 0) {
       const works = getWorks();
       handleSetWorks(works);
@@ -70,126 +64,24 @@ const PublicRoutes = (): JSX.Element => {
     <>
       <NavBar></NavBar>
       <Routes>
-        <Route
-          path="/feed/:page"
-          element={
-            <Suspense
-              fallback={
-                <Loader className="h-screen w-screen bg-black"></Loader>
+        {routes.map((route) => {
+          return (
+            <Route
+              key={route.id}
+              path={route.path}
+              element={
+                <Suspense
+                  fallback={
+                    <Loader className="h-screen w-screen bg-black"></Loader>
+                  }
+                >
+                  <route.element />
+                </Suspense>
               }
-            >
-              <FeedPage></FeedPage>
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/certificates/:page"
-          element={
-            <Suspense
-              fallback={
-                <Loader className="h-screen w-screen bg-black"></Loader>
-              }
-            >
-              <CertificatesPage></CertificatesPage>
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/media/:page"
-          element={
-            <Suspense
-              fallback={
-                <Loader className="h-screen w-screen bg-black"></Loader>
-              }
-            >
-              <MediaPage></MediaPage>
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/projects/:page"
-          element={
-            <Suspense
-              fallback={
-                <Loader className="h-screen w-screen bg-black"></Loader>
-              }
-            >
-              <ProjectsPage></ProjectsPage>
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/freelance/:page"
-          element={
-            <Suspense
-              fallback={
-                <Loader className="h-screen w-screen bg-black"></Loader>
-              }
-            >
-              <WorksPage></WorksPage>
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/links"
-          element={
-            <Suspense
-              fallback={
-                <Loader className="h-screen w-screen bg-black"></Loader>
-              }
-            >
-              <LinksPage></LinksPage>
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/publication/:id"
-          element={
-            <Suspense
-              fallback={
-                <Loader className="h-screen w-screen bg-black"></Loader>
-              }
-            >
-              <PublicationPage></PublicationPage>
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/certificate/:id"
-          element={
-            <Suspense
-              fallback={
-                <Loader className="h-screen w-screen bg-black"></Loader>
-              }
-            >
-              <CertificatePage></CertificatePage>
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/work/:id"
-          element={
-            <Suspense
-              fallback={
-                <Loader className="h-screen w-screen bg-black"></Loader>
-              }
-            >
-              <WorkPage></WorkPage>
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/project/:id"
-          element={
-            <Suspense
-              fallback={
-                <Loader className="h-screen w-screen bg-black"></Loader>
-              }
-            >
-              <ProjectPage></ProjectPage>
-            </Suspense>
-          }
-        ></Route>
+            ></Route>
+          );
+        })}
+
         <Route path="/*" element={<Navigate to="/feed/1"></Navigate>}></Route>
       </Routes>
       {!isMobile && (

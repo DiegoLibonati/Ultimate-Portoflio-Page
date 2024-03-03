@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { useScrollReturnType } from "../entities/types";
+import { UseScroll } from "../entities/entities";
 
-export const useScroll = (): useScrollReturnType => {
+export const useScroll = (): UseScroll => {
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   const handleScrolled = (e: Event): void => {

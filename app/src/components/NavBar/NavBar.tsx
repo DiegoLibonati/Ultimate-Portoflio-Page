@@ -4,8 +4,8 @@ import { useRouter } from "../../hooks/useRouter";
 import { links } from "../../constants/links";
 import { useUiStore } from "../../hooks/useUiStore";
 import { lazy, Suspense } from "react";
-import "./NavBar.css";
 import { Loader } from "../Loader/Loader";
+import "./NavBar.css";
 
 const Image = lazy(() => import("../Image/Image"));
 

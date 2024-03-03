@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useCheckMobileScreenType } from "../entities/types";
+import { UseCheckMobileScreen } from "../entities/entities";
 
-export const useCheckMobileScreen = (): useCheckMobileScreenType => {
+export const useCheckMobileScreen = (): UseCheckMobileScreen => {
   const [width, setWidth] = useState<number>(window.innerWidth);
   const handleWindowSizeChange = (): void => {
     setWidth(window.innerWidth);

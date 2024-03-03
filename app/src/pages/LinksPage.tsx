@@ -1,21 +1,21 @@
 import { Link } from "../components/Link/Link";
 import { links } from "../constants/links";
 import { useProfileStore } from "../hooks/useProfileStore";
+import { useUiStore } from "../hooks/useUiStore";
+import { lazy, Suspense } from "react";
+import { Loader } from "../components/Loader/Loader";
+import { openInNewTab } from "../helpers/openInNewTab";
+import { useRouter } from "../hooks/useRouter";
 import {
   AiOutlineInstagram,
   AiOutlineLinkedin,
   AiFillGithub,
 } from "react-icons/ai";
 import { MdWorkOutline } from "react-icons/md";
-import { useUiStore } from "../hooks/useUiStore";
-import { lazy, Suspense } from "react";
-import { Loader } from "../components/Loader/Loader";
-import { openInNewTab } from "../helpers/openInNewTab";
-import { useRouter } from "../hooks/useRouter";
 
 const Image = lazy(() => import("../components/Image/Image"));
 
-const LinksPage = () => {
+const LinksPage = (): JSX.Element => {
   const { profile } = useProfileStore();
   const { theme } = useUiStore();
   const { redirectTo } = useRouter();

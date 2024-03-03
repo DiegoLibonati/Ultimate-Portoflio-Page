@@ -1,6 +1,5 @@
 import { Paginator } from "../components/Paginator/Paginator";
-
-import { PublicationType } from "../entities/types";
+import { Certificate } from "../entities/entities";
 import { useCertificatesStore } from "../hooks/useCertificatesStore";
 import { usePaginator } from "../hooks/usePaginator";
 import { useRouter } from "../hooks/useRouter";
@@ -23,7 +22,7 @@ const CertificatesPage = (): JSX.Element => {
     elementsToRender,
     originalElementsToRender,
     handleSetPage,
-  } = usePaginator({
+  } = usePaginator<Certificate>({
     page: Number(params.page),
     perPage: 4,
     customArr: certificates,
@@ -38,14 +37,14 @@ const CertificatesPage = (): JSX.Element => {
         ref={parentRef}
         key="certificates_page"
       >
-        {publications.map((publication: PublicationType) => {
+        {publications.map((certificate: Certificate) => {
           return (
             <Suspense
-              fallback={<Loader className="my-6"></Loader>}
-              key={publication.id}
+              fallback={<Loader className="w-full h-full my-6"></Loader>}
+              key={certificate.id}
             >
               <Publication
-                publication={publication}
+                publication={certificate}
                 section="certificate"
               ></Publication>
             </Suspense>

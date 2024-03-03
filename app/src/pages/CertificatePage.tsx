@@ -3,14 +3,14 @@ import { useRouter } from "../hooks/useRouter";
 import { MainLayout } from "../layout/MainLayout";
 import { getCertificate } from "../api/getCertificate";
 import { useUiStore } from "../hooks/useUiStore";
-import { PublicationType } from "../entities/types";
+import { Certificate } from "../entities/entities";
 import { useCertificatesStore } from "../hooks/useCertificatesStore";
 import { lazy, Suspense } from "react";
 import { Loader } from "../components/Loader/Loader";
 
 const Publication = lazy(() => import("../components/Publication/Publication"));
 
-const CertificatePage = () => {
+const CertificatePage = (): JSX.Element => {
   const { params, redirectTo } = useRouter();
   const { activeCertificate, handleSetCertificate } = useCertificatesStore();
   const { theme } = useUiStore();
@@ -18,7 +18,7 @@ const CertificatePage = () => {
   useEffect(() => {
     const certificate = getCertificate(params.id);
 
-    certificate.then((cer: PublicationType) => {
+    certificate.then((cer: Certificate) => {
       if (!cer) {
         return redirectTo("/feed/1");
       }
@@ -34,9 +34,9 @@ const CertificatePage = () => {
           theme ? "bg-primaryWhite" : "bg-primaryBlack"
         }`}
       >
-        <Suspense fallback={<Loader className="my-6"></Loader>}>
+        <Suspense fallback={<Loader className="w-full h-full my-6"></Loader>}>
           <Publication
-            publication={activeCertificate}
+            publication={activeCertificate!}
             section="certificate"
           ></Publication>
         </Suspense>

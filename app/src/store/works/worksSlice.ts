@@ -1,28 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { WorkStateType, WorkType } from "../../entities/types";
+import { WorkState, PayloadWork } from "../../entities/entities";
 
-interface payload {
-  works: WorkType[];
-  activeWork: WorkType;
-}
-
-// Define the initial state using that type
-const initialState: WorkStateType = {
+const initialState: WorkState = {
   works: [],
   activeWork: null,
 };
 
 export const worksSlice = createSlice({
   name: "works",
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    setWorks: (state, action: PayloadAction<payload["works"]>) => {
+    setWorks: (state, action: PayloadAction<PayloadWork["works"]>) => {
       state.works = action.payload;
       return;
     },
-    setWork: (state, action: PayloadAction<payload["activeWork"]>) => {
+    setWork: (state, action: PayloadAction<PayloadWork["activeWork"]>) => {
       state.activeWork = action.payload;
       return;
     },

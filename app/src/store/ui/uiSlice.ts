@@ -1,21 +1,11 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-// import type { PayloadAction } from "@reduxjs/toolkit";
-import { UiStateType } from "../../entities/types";
-
-interface payload {
-  alert: {
-    status: boolean;
-    message: string;
-    type: string;
-  };
-}
+import { PayloadUi, UiState } from "../../entities/entities";
 
 // THEME
 // True - White
 // False - Black
 
-// Define the initial state using that type
-const initialState: UiStateType = {
+const initialState: UiState = {
   theme: false,
   alert: {
     status: false,
@@ -26,13 +16,12 @@ const initialState: UiStateType = {
 
 export const uiSlice = createSlice({
   name: "ui",
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
     setTheme: (state) => {
       state.theme = !state.theme;
     },
-    setAlert: (state, action: PayloadAction<payload["alert"]>) => {
+    setAlert: (state, action: PayloadAction<PayloadUi["alert"]>) => {
       state.alert.status = action.payload.status;
       state.alert.message = action.payload.message;
       state.alert.type = action.payload.type;

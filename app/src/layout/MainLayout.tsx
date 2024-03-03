@@ -1,10 +1,10 @@
 import { Alert } from "../components/Alert/Alert";
 import { Profile } from "../components/Profile/Profile";
 import { Tabs } from "../components/Tabs/Tabs";
-import { MainLayoutType } from "../entities/types";
+import { MainLayoutProps } from "../entities/entities";
 import { useUiStore } from "../hooks/useUiStore";
 
-export const MainLayout = ({ children }: MainLayoutType): JSX.Element => {
+export const MainLayout = ({ children }: MainLayoutProps): JSX.Element => {
   const { theme, alert } = useUiStore();
 
   return (

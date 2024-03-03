@@ -1,33 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { CertificateStateType, CertificateType } from "../../entities/types";
+import { CertificateState, PayloadCertificates } from "../../entities/entities";
 
-interface payload {
-  certificates: CertificateType[];
-  activeCertificate: CertificateType;
-}
-
-// Define the initial state using that type
-const initialState: CertificateStateType = {
+const initialState: CertificateState = {
   certificates: [],
   activeCertificate: null,
 };
 
 export const certificatesSlice = createSlice({
   name: "certificates",
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
     setCertificates: (
       state,
-      action: PayloadAction<payload["certificates"]>
+      action: PayloadAction<PayloadCertificates["certificates"]>
     ) => {
       state.certificates = action.payload;
       return;
     },
     setCertificate: (
       state,
-      action: PayloadAction<payload["activeCertificate"]>
+      action: PayloadAction<PayloadCertificates["activeCertificate"]>
     ) => {
       state.activeCertificate = action.payload;
       return;
