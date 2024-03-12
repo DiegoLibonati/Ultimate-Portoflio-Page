@@ -39,7 +39,10 @@ const PublicRoutes = (): JSX.Element => {
 
     if (pathname === "/") return redirectTo("/feed/1");
 
-    if (pathname.includes("feed") && publicationsFeed.length === 0) {
+    if (
+      (pathname.includes("feed") || pathname.includes("media")) &&
+      publicationsFeed.length === 0
+    ) {
       const publicationsFeed = getPublicationsFeed();
       handleSetPublicationsFeed(publicationsFeed);
     }
