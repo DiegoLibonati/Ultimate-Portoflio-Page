@@ -82,7 +82,7 @@ const Publication = ({
 
   return (
     <article
-      className={`flex flex-row justify-start py-2 pl-2 pr-5 mt-2 rounded-lg cursor-pointer ${
+      className={`flex flex-row justify-start relative py-2 pl-2 pr-5 mt-2 rounded-lg cursor-pointer ${
         publication?.isPinned && "flex-wrap"
       } ${
         theme && !isMobile
@@ -95,6 +95,30 @@ const Publication = ({
       }`}
       onClick={onPublicationClick}
     >
+      {publication?.avatarLanguage ? (
+        <Image
+          src={publication?.avatarLanguage}
+          alt={publication?.avatarLanguage}
+          className={`absolute top-2 right-2 object-cover flex items-center justify-center h-7 w-7 rounded-full p-1 ml-2 ${
+            theme ? "bg-trGray" : "bg-secondaryGray"
+          }`}
+          width={"100%"}
+          height={"100%"}
+        ></Image>
+      ) : null}
+
+      {publication?.avatarLanguage2 ? (
+        <Image
+          src={publication?.avatarLanguage2}
+          alt={publication?.avatarLanguage2}
+          className={`absolute top-2 right-12 object-cover flex items-center justify-center h-7 w-7 rounded-full p-1 ml-2 ${
+            theme ? "bg-trGray" : "bg-secondaryGray"
+          }`}
+          width={"100%"}
+          height={"100%"}
+        ></Image>
+      ) : null}
+
       {publication?.isPinned ? (
         <div className="flex flex-row items-center w-full mb-1">
           <TbPinnedFilled size={20} color={"#868E96"}></TbPinnedFilled>
@@ -131,9 +155,9 @@ const Publication = ({
               • {parseDate(publication?.date).date}
             </p>
           </div>
-          <div>
+          <div className="mt-1">
             <p
-              className={`inline-block text-xs font-bold mt-1  rounded-full py-1 px-4 md:text-sm ${
+              className={`inline-block text-xs font-bold rounded-full py-1 px-4 md:text-sm ${
                 theme ? "bg-trGray text-black" : "bg-secondaryGray text-white"
               }`}
             >

@@ -78,6 +78,8 @@ export type Project = {
   link: string;
   description: string;
   github: string;
+  avatarLanguage: string;
+  avatarLanguage2: string;
 };
 
 export type Work = {
