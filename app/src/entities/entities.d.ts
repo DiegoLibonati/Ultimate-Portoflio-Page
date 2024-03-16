@@ -135,6 +135,20 @@ export type WorkState = {
   activeWork: Work | null;
 };
 
+export type Api = {
+  id: number;
+  isPinned: number;
+  date: string;
+  title: string;
+  description: string;
+  github: string;
+  avatarLanguage: string;
+};
+
+export type ApiState = {
+  apis: Api[];
+};
+
 // TYPES CUSTOM HOOKS
 
 export type UseTruncate = {
@@ -215,10 +229,19 @@ export type UseWorksStore = {
   handleSetWorks: (works: Promise<Work[]>) => Promise<void>;
 };
 
+export type UseApisStore = {
+  apis: Api[];
+  handleSetApis: (apis: Promise<Api[]>) => Promise<void>;
+};
+
 // INTERFACES PROPS
 
 export interface LoaderProps {
   className?: string;
+}
+
+export interface CardProps {
+  api: Api;
 }
 
 export interface ImageProps {
@@ -332,4 +355,8 @@ export interface PayloadCertificates {
 export interface PayloadWork {
   works: Work[];
   activeWork: Work;
+}
+
+export interface PayloadApi {
+  apis: Api[];
 }

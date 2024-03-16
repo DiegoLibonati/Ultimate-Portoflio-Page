@@ -5,6 +5,7 @@ import publicationsFeedSlice from "./publicationsFeed/publicationsFeedSlice";
 import projectsSlice from "./projects/projectsSlice";
 import certificatesSlice from "./certificates/certificatesSlice";
 import worksSlice from "./works/worksSlice";
+import apisSlice from "./apis/apisSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     projects: projectsSlice,
     certificates: certificatesSlice,
     works: worksSlice,
+    apis: apisSlice,
   },
 });

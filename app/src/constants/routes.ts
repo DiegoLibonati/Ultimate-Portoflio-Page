@@ -11,7 +11,7 @@ const CertificatePage = lazy(() => import("../pages/CertificatePage"));
 const CertificatesPage = lazy(() => import("../pages/CertificatesPage"));
 const WorkPage = lazy(() => import("../pages/WorkPage"));
 const WorksPage = lazy(() => import("../pages/WorksPage"));
-
+const ApisPage = lazy(() => import("../pages/ApisPage"));
 
 export const routes: Route[] = [
   {
@@ -63,5 +63,10 @@ export const routes: Route[] = [
     id: "work_page_element",
     path: "/work/:id",
     element: WorkPage,
+  },
+  {
+    id: "apis_page_element",
+    path: "/apis/:page",
+    element: ApisPage,
   },
 ];

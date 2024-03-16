@@ -17,6 +17,8 @@ import { useCertificatesStore } from "../../hooks/useCertificatesStore";
 import { useWorksStore } from "../../hooks/useWorksStore";
 import { getCertificates } from "../../api/getCertificates";
 import { getWorks } from "../../api/getWorks";
+import { getApis } from "../../api/getApis";
+import { useApisStore } from "../../hooks/useApisStore";
 
 const Image = lazy(() => import("../../components/Image/Image"));
 
@@ -30,6 +32,7 @@ const PublicRoutes = (): JSX.Element => {
   const { works, handleSetWorks } = useWorksStore();
   const { publicationsFeed, handleSetPublicationsFeed } =
     usePublicationsFeedStore();
+  const { apis, handleSetApis } = useApisStore();
 
   useEffect(() => {
     if (!profile.id) {
@@ -60,6 +63,11 @@ const PublicRoutes = (): JSX.Element => {
     if (pathname.includes("freelance") && works.length === 0) {
       const works = getWorks();
       handleSetWorks(works);
+    }
+
+    if (pathname.includes("apis") && apis.length === 0) {
+      const apis = getApis();
+      handleSetApis(apis);
     }
   }, [pathname]);
 

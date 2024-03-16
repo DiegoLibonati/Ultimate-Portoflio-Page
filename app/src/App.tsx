@@ -11,8 +11,8 @@ export const App = (): JSX.Element => {
   useEffect(() => {
     const body = document.querySelector("body") as HTMLBodyElement;
 
-    if (theme) body.style.backgroundColor = "white";
-    else body.style.backgroundColor = "black";
+    if (theme) body.style.backgroundColor = "#F8F9FA";
+    else body.style.backgroundColor = "#16191D";
   }, [theme]);
 
   return (

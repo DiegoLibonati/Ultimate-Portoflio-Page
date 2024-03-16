@@ -8,9 +8,7 @@ export const Tab = ({ tabRoute, tabText, index }: TabProps): JSX.Element => {
 
   return (
     <article
-      className={`flex items-center justify-center w-full py-3 cursor-pointer ${
-        index === 3 ? "col-span-2" : index === 4 ? "col-span-1" : "col-span-1"
-      } ${
+      className={`flex items-center justify-center w-full py-3 cursor-pointer col-span-1 ${
         pathIsActive.includes(tabText.toLowerCase()) &&
         `border-b-[0.15rem] border-primaryPurpure ${theme && "text-black"}`
       } ${
