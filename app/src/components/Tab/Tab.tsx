@@ -2,7 +2,7 @@ import { TabProps } from "../../entities/entities";
 import { useRouter } from "../../hooks/useRouter";
 import { useUiStore } from "../../hooks/useUiStore";
 
-export const Tab = ({ tabRoute, tabText, index }: TabProps): JSX.Element => {
+export const Tab = ({ tabRoute, tabText }: TabProps): JSX.Element => {
   const { pathIsActive, redirectTo } = useRouter();
   const { theme } = useUiStore();
 

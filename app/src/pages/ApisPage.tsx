@@ -4,7 +4,7 @@ import { usePaginator } from "../hooks/usePaginator";
 import { useRouter } from "../hooks/useRouter";
 import { useUiStore } from "../hooks/useUiStore";
 import { MainLayout } from "../layout/MainLayout";
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import { Loader } from "../components/Loader/Loader";
 import { useApisStore } from "../hooks/useApisStore";
 
