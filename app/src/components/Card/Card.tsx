@@ -139,6 +139,14 @@ const Card = ({ api }: CardProps): JSX.Element => {
           </h2>
 
           <p
+            className={`text-sm mt-1 font-semibold md:text-base  ${
+              theme ? "text-black" : "text-white"
+            }`}
+          >
+            Version: {api?.version}
+          </p>
+
+          <p
             className={`text-base mt-1 md:text-lg  ${
               theme ? "text-black" : "text-white"
             }`}

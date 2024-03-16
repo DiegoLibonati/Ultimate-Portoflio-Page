@@ -141,6 +141,7 @@ export type Api = {
   date: string;
   title: string;
   description: string;
+  version: string;
   github: string;
   avatarLanguage: string;
 };

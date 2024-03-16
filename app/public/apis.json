@@ -5,6 +5,7 @@
     "date": "03/16/2024",
     "title": "Instagram API",
     "description": "This API is developed with the intention of being able to access the instagram API: https://graph.instagram.com in a fast, efficient and well structured way.",
+    "version": "0.0.1",
     "github": "https://github.com/DiegoLibonati/Instagram-API",
     "avatarLanguage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png"
   }
